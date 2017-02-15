@@ -1,6 +1,7 @@
 package EventHandlers;
 
 import PwpCreateComponents.Models;
+import PwpCreateComponents.ModelsPopUpMenuList;
 
 import javax.swing.*;
 import javax.swing.event.TreeModelEvent;
@@ -8,18 +9,20 @@ import javax.swing.event.TreeModelListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Created by Ayettey on 13/02/2017.
  */
-public class ProjectModelEventHandler implements MouseListener,TreeModelListener,TreeSelectionListener {
+public class ProjectModelEventHandler extends ModelsPopUpMenuList implements MouseListener,TreeModelListener,TreeSelectionListener {
 
     private Models models;
     private JMenuItem eventModelHandlerItems;
     private JPopupMenu eventModelHandlerPopupMenu;
-    private JMenu    eventModelHandlerMenu;
+    private JMenu eventModelHandlerMenu;
+
 
 
 
@@ -42,149 +45,78 @@ public class ProjectModelEventHandler implements MouseListener,TreeModelListener
     public void mousePressed(MouseEvent e) {
 
 
+        try {
+            TreePath path = models.treeNodes.getSelectionPath();
+            Object node = path.getLastPathComponent();
+            Object notSelectable = models.treeNodes.getModel().getRoot();
+
+
 
 
         if((e.getModifiers() & InputEvent.BUTTON3_MASK )!=0  && models.treeNodes.getSelectionCount() !=0){
 
+            String getNodeSetText=node.toString();
 
-            BuildModelEventComponents(e.getX(),e.getY());
+            if(node==notSelectable){
 
+                eventModelHandlerMenu.setEnabled(false);
+
+            }else if(getNodeSetText.equals("Business Model")) {
+                System.out.println(node);
+                businessPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Business Interaction")) {
+                System.out.println(node);
+                businessInteractionPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Application Models")) {
+                System.out.println(node);
+                applicationModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Technology Models")) {
+                System.out.println(node);
+               technologyModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Motivation Models")) {
+                System.out.println(node);
+                motivationModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Implementation And Migration  Models")) {
+                System.out.println(node);
+                implementationAndMigrationModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Connector")) {
+                System.out.println(node);
+                connectorModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Relations")) {
+                System.out.println(node);
+                relationsPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Views")) {
+                System.out.println(node);
+                viewsModelsPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }else if(getNodeSetText.equals("Default View")) {
+                System.out.println(node);
+                defaultViewPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+
+            }
+
+        }
+
+
+
+
+        }catch (Exception e1){
+            models.treeNodes.setSelectionRow(1);
 
         }
 
 
     }
 
-    public void BuildModelEventComponents(int x,int y){
 
-
-        eventModelHandlerPopupMenu=new JPopupMenu();
-        eventModelHandlerMenu=new JMenu("New");
-        eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Actor");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Role");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Interface");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
-
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-
-        TreePath  path=models.treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==models.treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(models.treeNodes,x,y);
-        }
-
-
-
-
-    }
 
 
 

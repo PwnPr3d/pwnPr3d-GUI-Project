@@ -32,7 +32,7 @@ public class Models {
 
         //Initialize treeNodes
         newModels=new DefaultMutableTreeNode[12];
-        newModels[0]=new DefaultMutableTreeNode("New Models");
+        newModels[0]=new DefaultMutableTreeNode("Models");
         newModels[1]=new DefaultMutableTreeNode("Business Model");
         newModels[2]=new DefaultMutableTreeNode("Application Models");
         newModels[3]=new DefaultMutableTreeNode("Technology Models");
@@ -43,7 +43,7 @@ public class Models {
         newModels[8]=new DefaultMutableTreeNode("Views");
         newModels[9]=new DefaultMutableTreeNode("Default View");
         newModels[10]=new DefaultMutableTreeNode("NetWork Analysis");
-        newModels[8].add(newModels[9]);
+        newModels[8].add(newModels[10]);
         newModels[11]=new DefaultMutableTreeNode("Business Interaction");
         newModels[1].add(newModels[11]);
 

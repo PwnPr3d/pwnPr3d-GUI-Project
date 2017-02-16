@@ -27,16 +27,20 @@ public class PwnPane extends Models {
         tabbes=new JTabbedPane[5];
         splitLayersOfPan=new JSplitPane[5];
 
-        
+
 
         splitLayersOfPan[0]=new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-        splitLayersOfPan[0].add(modelTree());
+        tabbes[0]=new JTabbedPane();
+        tabbes[0].add(modelTree());
+        splitLayersOfPan[0].add(tabbes[0]);
         //splitLayersOfPan[0].setDividerSize(3);
 
 
 
         splitLayersOfPan[1]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
-        splitLayersOfPan[1].add(new JTree());
+        tabbes[0]=new JTabbedPane();
+        tabbes[0].add(modelEditor());
+        splitLayersOfPan[1].add(tabbes[0]);
         splitLayersOfPan[1].add(new JTree());
 
 

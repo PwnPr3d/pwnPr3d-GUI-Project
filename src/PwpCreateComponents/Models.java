@@ -13,10 +13,14 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 public class Models {
 
 
+
+
     private DefaultMutableTreeNode[] newModels;
     public JTree treeNodes;
     private JPopupMenu menuPopUp;
     private  JMenuItem popUpItems;
+    private JEditorPane pane;
+
     public ProjectModelEventHandler modelHandler=new ProjectModelEventHandler(this);
 
 
@@ -27,7 +31,7 @@ public class Models {
 
 
         //Initialize treeNodes
-        newModels=new DefaultMutableTreeNode[11];
+        newModels=new DefaultMutableTreeNode[12];
         newModels[0]=new DefaultMutableTreeNode("New Models");
         newModels[1]=new DefaultMutableTreeNode("Business Model");
         newModels[2]=new DefaultMutableTreeNode("Application Models");
@@ -38,12 +42,13 @@ public class Models {
         newModels[7]=new DefaultMutableTreeNode("Relations");
         newModels[8]=new DefaultMutableTreeNode("Views");
         newModels[9]=new DefaultMutableTreeNode("Default View");
+        newModels[10]=new DefaultMutableTreeNode("NetWork Analysis");
         newModels[8].add(newModels[9]);
-        newModels[10]=new DefaultMutableTreeNode("Business Interaction");
-        newModels[1].add(newModels[10]);
+        newModels[11]=new DefaultMutableTreeNode("Business Interaction");
+        newModels[1].add(newModels[11]);
 
         for(int i=1;i<newModels.length;i++){
-               if((i>0)&&(i<=8)) {
+               if((i>0)&&(i<=9)) {
                    newModels[0].add(newModels[i]);
                }
 
@@ -77,6 +82,20 @@ public class Models {
 
 
      return treeNodes;
+    }
+
+    public JComponent modelEditor(){
+
+
+
+        return pane=new JEditorPane();
+    }
+
+    public JComponent NetWorkComponents(){
+
+
+
+        return pane;
     }
 
 

@@ -22,25 +22,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Models.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Models.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-970">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MenuBarComponents.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1038">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="269" column="46" selection-start-line="269" selection-start-column="46" selection-end-line="269" selection-end-column="46" />
               <folding>
                 <element signature="method#createFileComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#menuBarList#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#zoomList#0;class#MenuBarComponents#0" expanded="false" />
                 <element signature="method#createToolsComponents#0;class#MenuBarComponents#0" expanded="false" />
                 <element signature="method#createViewFileComponents#0;class#MenuBarComponents#0" expanded="false" />
                 <element signature="method#createWindowsComponents#0;class#MenuBarComponents#0" expanded="false" />
@@ -79,23 +67,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectModelEventHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
+      <file leaf-file-name="Models.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Models.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
-              <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelsPopUpMenuList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectModelEventHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-372">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelsPopUpMenuList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+            <state relative-caret-position="-1936">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#businessPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#applicationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#technologyModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
@@ -104,7 +103,40 @@
                 <element signature="method#connectorModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#relationsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#viewsModelsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#defaultViewPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PwnFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/PwnFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-256">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PwnPane.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/PwnPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-108">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="31" />
+              <folding>
+                <element signature="e#286#287#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,8 +163,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PwpFrame.java" />
+        <option value="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
+        <option value="$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PwnFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PwnPane.java" />
       </list>
     </option>
   </component>
@@ -242,6 +279,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pwnPr3d-GUI-Project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pwnPr3d-GUI-Project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -254,6 +309,9 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/GitHub.appref-ms" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -708,6 +766,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3a6ece85-b283-430b-911d-37fa1acf9e0c" name="Default" comment="" />
@@ -716,12 +777,12 @@
       <option name="presentableId" value="Default" />
       <updated>1487088534420</updated>
       <workItem from="1487088537842" duration="49000" />
-      <workItem from="1487119662996" duration="8864000" />
+      <workItem from="1487119662996" duration="27381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8913000" />
+    <option name="totallyTimeSpent" value="27430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -734,8 +795,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32820514" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32820514" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -766,7 +827,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -774,22 +837,39 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Models.java">
+    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="-372">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1936">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#businessPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#applicationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#technologyModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#motivationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#implementationAndMigrationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#connectorModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#relationsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#viewsModelsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1038">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="240">
+          <caret line="269" column="46" selection-start-line="269" selection-start-column="46" selection-end-line="269" selection-end-column="46" />
           <folding>
             <element signature="method#createFileComponents#0;class#MenuBarComponents#0" expanded="false" />
-            <element signature="method#menuBarList#0;class#MenuBarComponents#0" expanded="false" />
-            <element signature="method#zoomList#0;class#MenuBarComponents#0" expanded="false" />
             <element signature="method#createToolsComponents#0;class#MenuBarComponents#0" expanded="false" />
             <element signature="method#createViewFileComponents#0;class#MenuBarComponents#0" expanded="false" />
             <element signature="method#createWindowsComponents#0;class#MenuBarComponents#0" expanded="false" />
@@ -827,32 +907,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+        <state relative-caret-position="187">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#applicationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#technologyModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#motivationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#implementationAndMigrationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#connectorModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#relationsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#viewsModelsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#defaultViewPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="e#286#287#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Models.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PwnFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PwnPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>pwnPr3d-GUI-Project2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

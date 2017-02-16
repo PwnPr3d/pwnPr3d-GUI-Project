@@ -1,6 +1,7 @@
 package PwpCreateComponents;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,6 +22,7 @@ public class ModelsPopUpMenuList {
     public void businessPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -53,7 +55,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerMenu.add(new JSeparator());
-        
+
         eventModelHandlerItems=new JMenuItem("Business Event");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
@@ -151,6 +153,7 @@ public class ModelsPopUpMenuList {
     public void businessInteractionPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -278,6 +281,7 @@ public class ModelsPopUpMenuList {
     public void applicationModelPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -405,6 +409,7 @@ public class ModelsPopUpMenuList {
     public void technologyModelPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -532,6 +537,7 @@ public class ModelsPopUpMenuList {
     public void motivationModelPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -659,6 +665,7 @@ public class ModelsPopUpMenuList {
     public void implementationAndMigrationModelPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -786,6 +793,7 @@ public class ModelsPopUpMenuList {
     public void connectorModelPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -913,6 +921,7 @@ public class ModelsPopUpMenuList {
     public void relationsPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -1040,6 +1049,7 @@ public class ModelsPopUpMenuList {
     public void viewsModelsPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -1167,6 +1177,7 @@ public class ModelsPopUpMenuList {
     public void defaultViewPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
+        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 

@@ -2,6 +2,7 @@ package PwpCreateComponents;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -246,6 +247,8 @@ public class MenuBarComponents extends JMenuBar {
 
         panel=new JPanel(new BorderLayout());
         panel.add(new JSeparator(JSeparator.VERTICAL));
+        panel.setBorder(new LineBorder(new Color(0x84C2F1),3,true));
+        panel.setBackground(Color.CYAN);
         menuList [1].add(panel);
         menuBar.setLayout(new BorderLayout());
         menuBar.add(menuList [0],BorderLayout.NORTH);
@@ -257,15 +260,18 @@ public class MenuBarComponents extends JMenuBar {
         return menuBar;
     }
 
-    public JComboBox  zoomList(){
+    public JComponent  zoomList(){
 
         Object []listOfZoom={"50%",100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,"Page","Width","Height"};
         List zoomLister=new ArrayList<>();
         zoomLister.add(listOfZoom);
-
+        JPanel panel=new JPanel();
+        panel.setBorder(new LineBorder(new Color(0x82ADFF),1,true));
+        panel.setPreferredSize(new Dimension(80,20));
         zoomList=new JComboBox(listOfZoom);
         zoomList.setSelectedItem(listOfZoom[1]);
-        return zoomList;
+        panel.add(zoomList);
+        return panel;
     }
 
     public JMenu createToolsComponents() {

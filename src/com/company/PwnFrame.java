@@ -23,18 +23,7 @@ public class PwnFrame extends JFrame {
        pane.setLayout(new BorderLayout());
 
        setJMenuBar((menuBar.menuBarList()));
-      // JTabbedPane tabbedPane=new JTabbedPane();
-      //
-      // tabbedPane.addTab("Project",new ImageIcon(getClass().getResource("/PwpIcons/actions/module.png")),models.modelTree());
-      // JScrollPane scrollPane=new JScrollPane(tabbedPane);
-      //
-      // JSplitPane  splitPane=new JSplitPane();
-      // splitPane.setLayout(new BorderLayout());
-      // splitPane.add(scrollPane,BorderLayout.EAST);
-      // splitPane.setBackground(new Color(108, 162, 204));
-      // splitPane.setOneTouchExpandable(true);
-      // splitPane.setResizeWeight(0.1);
-      // splitPane.setContinuousLayout(true);
+
 
        pane.add(new PwnPane().createPane(),BorderLayout.CENTER);
        pane.setBackground(new Color(108, 162, 204));

@@ -22,111 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MenuBarComponents.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="262" column="33" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
-              <folding>
-                <element signature="method#createFileComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#zoomList#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createToolsComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createViewFileComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createWindowsComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditFileComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowOpen#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowSave#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowRedo#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowUndo#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowCut#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowPaste#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowCopy#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowFind#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowReplace#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowBack#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowForward#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowDelete#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowModel#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowProperty#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowOutline#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowHintNavigator#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowVisualizer#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowHint#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModel#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createHelpComponents#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateAlignLift#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelAlignRight#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelAlignCenter#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelAlignTop#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelAlignButton#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelAlighnMiddle#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelWatchWidthOfSelectedObject#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelWatchHeightOfSelectedObject#0;class#MenuBarComponents#0" expanded="false" />
-                <element signature="method#createEditToolWindowValidateModelDefaultSize#0;class#MenuBarComponents#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Models.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Models.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#modelTree#0;class#Models#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProjectModelEventHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="246">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelsPopUpMenuList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#businessPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#applicationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#technologyModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#motivationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#implementationAndMigrationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#connectorModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#relationsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#viewsModelsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PwnFrame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/PwnFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PwnPane.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PwnPane.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/PwnPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
+            <state relative-caret-position="204">
+              <caret line="88" column="140" selection-start-line="88" selection-start-column="140" selection-end-line="88" selection-end-column="140" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,8 +50,46 @@
             <state relative-caret-position="4777">
               <caret line="321" column="11" selection-start-line="321" selection-start-column="11" selection-end-line="321" selection-end-column="11" />
               <folding>
-                <element signature="e#10946#10947#0" expanded="true" />
-                <element signature="e#11034#11035#0" expanded="true" />
+                <element signature="e#0#54442#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#11598#11599#0" expanded="false" />
+                <element signature="e#11646#11647#0" expanded="false" />
+                <element signature="e#11832#11833#0" expanded="false" />
+                <element signature="e#11920#11921#0" expanded="false" />
+                <element signature="e#12377#12378#0" expanded="false" />
+                <element signature="e#12416#12417#0" expanded="false" />
+                <element signature="e#12681#12682#0" expanded="false" />
+                <element signature="e#12712#12713#0" expanded="false" />
+                <element signature="e#13009#13010#0" expanded="false" />
+                <element signature="e#13067#13068#0" expanded="false" />
+                <element signature="e#13392#13393#0" expanded="false" />
+                <element signature="e#13424#13425#0" expanded="false" />
+                <element signature="e#15150#15151#0" expanded="false" />
+                <element signature="e#15177#15178#0" expanded="false" />
+                <element signature="e#15399#15400#0" expanded="false" />
+                <element signature="e#15445#15446#0" expanded="false" />
+                <element signature="e#17227#17228#0" expanded="false" />
+                <element signature="e#17275#17276#0" expanded="false" />
+                <element signature="e#19074#19075#0" expanded="false" />
+                <element signature="e#19111#19112#0" expanded="false" />
+                <element signature="e#28133#28134#0" expanded="false" />
+                <element signature="e#28192#28193#0" expanded="false" />
+                <element signature="e#28481#28482#0" expanded="false" />
+                <element signature="e#28523#28524#0" expanded="false" />
+                <element signature="e#30011#30012#0" expanded="false" />
+                <element signature="e#30068#30069#0" expanded="false" />
+                <element signature="e#30346#30347#0" expanded="false" />
+                <element signature="e#30386#30387#0" expanded="false" />
+                <element signature="e#31679#31680#0" expanded="false" />
+                <element signature="e#31717#31718#0" expanded="false" />
+                <element signature="e#31905#31906#0" expanded="false" />
+                <element signature="e#31936#31937#0" expanded="false" />
+                <element signature="e#34393#34394#0" expanded="false" />
+                <element signature="e#34425#34426#0" expanded="false" />
+                <element signature="e#36505#36506#0" expanded="false" />
+                <element signature="e#36540#36541#0" expanded="false" />
+                <element signature="e#51980#51981#0" expanded="false" />
+                <element signature="e#52037#52038#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -182,10 +130,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java" />
         <option value="$PROJECT_DIR$/src/com/company/PwpFrame.java" />
-        <option value="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/PwnFrame.java" />
+        <option value="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/Models.java" />
         <option value="$PROJECT_DIR$/src/com/company/PwnPane.java" />
       </list>
@@ -282,6 +230,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PwpCreateComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pwnPr3d-GUI-Project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pwnPr3d-GUI-Project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EventHandlers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -793,12 +759,12 @@
       <updated>1487088534420</updated>
       <workItem from="1487088537842" duration="49000" />
       <workItem from="1487119662996" duration="66814000" />
-      <workItem from="1487410769982" duration="649000" />
+      <workItem from="1487410769982" duration="3144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67512000" />
+    <option name="totallyTimeSpent" value="70007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
@@ -903,7 +869,7 @@
           <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#modelTree#0;class#Models#0" expanded="false" />
+            <element signature="method#modelEditor#0;class#Models#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -958,8 +924,46 @@
         <state relative-caret-position="5457">
           <caret line="321" column="11" selection-start-line="321" selection-start-column="11" selection-end-line="321" selection-end-column="11" />
           <folding>
-            <element signature="e#10946#10947#0" expanded="true" />
-            <element signature="e#11034#11035#0" expanded="true" />
+            <element signature="e#0#54442#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#11598#11599#0" expanded="false" />
+            <element signature="e#11646#11647#0" expanded="false" />
+            <element signature="e#11832#11833#0" expanded="false" />
+            <element signature="e#11920#11921#0" expanded="false" />
+            <element signature="e#12377#12378#0" expanded="false" />
+            <element signature="e#12416#12417#0" expanded="false" />
+            <element signature="e#12681#12682#0" expanded="false" />
+            <element signature="e#12712#12713#0" expanded="false" />
+            <element signature="e#13009#13010#0" expanded="false" />
+            <element signature="e#13067#13068#0" expanded="false" />
+            <element signature="e#13392#13393#0" expanded="false" />
+            <element signature="e#13424#13425#0" expanded="false" />
+            <element signature="e#15150#15151#0" expanded="false" />
+            <element signature="e#15177#15178#0" expanded="false" />
+            <element signature="e#15399#15400#0" expanded="false" />
+            <element signature="e#15445#15446#0" expanded="false" />
+            <element signature="e#17227#17228#0" expanded="false" />
+            <element signature="e#17275#17276#0" expanded="false" />
+            <element signature="e#19074#19075#0" expanded="false" />
+            <element signature="e#19111#19112#0" expanded="false" />
+            <element signature="e#28133#28134#0" expanded="false" />
+            <element signature="e#28192#28193#0" expanded="false" />
+            <element signature="e#28481#28482#0" expanded="false" />
+            <element signature="e#28523#28524#0" expanded="false" />
+            <element signature="e#30011#30012#0" expanded="false" />
+            <element signature="e#30068#30069#0" expanded="false" />
+            <element signature="e#30346#30347#0" expanded="false" />
+            <element signature="e#30386#30387#0" expanded="false" />
+            <element signature="e#31679#31680#0" expanded="false" />
+            <element signature="e#31717#31718#0" expanded="false" />
+            <element signature="e#31905#31906#0" expanded="false" />
+            <element signature="e#31936#31937#0" expanded="false" />
+            <element signature="e#34393#34394#0" expanded="false" />
+            <element signature="e#34425#34426#0" expanded="false" />
+            <element signature="e#36505#36506#0" expanded="false" />
+            <element signature="e#36540#36541#0" expanded="false" />
+            <element signature="e#51980#51981#0" expanded="false" />
+            <element signature="e#52037#52038#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -971,14 +975,6 @@
           <folding>
             <element signature="e#286#287#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,9 +989,58 @@
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/jfreechart-1.0.19/jfreechart-1.0.19-demo.jar!/demo/Animator.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/swing/JScrollPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4777">
+          <caret line="321" column="11" selection-start-line="321" selection-start-column="11" selection-end-line="321" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#54442#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#11598#11599#0" expanded="false" />
+            <element signature="e#11646#11647#0" expanded="false" />
+            <element signature="e#11832#11833#0" expanded="false" />
+            <element signature="e#11920#11921#0" expanded="false" />
+            <element signature="e#12377#12378#0" expanded="false" />
+            <element signature="e#12416#12417#0" expanded="false" />
+            <element signature="e#12681#12682#0" expanded="false" />
+            <element signature="e#12712#12713#0" expanded="false" />
+            <element signature="e#13009#13010#0" expanded="false" />
+            <element signature="e#13067#13068#0" expanded="false" />
+            <element signature="e#13392#13393#0" expanded="false" />
+            <element signature="e#13424#13425#0" expanded="false" />
+            <element signature="e#15150#15151#0" expanded="false" />
+            <element signature="e#15177#15178#0" expanded="false" />
+            <element signature="e#15399#15400#0" expanded="false" />
+            <element signature="e#15445#15446#0" expanded="false" />
+            <element signature="e#17227#17228#0" expanded="false" />
+            <element signature="e#17275#17276#0" expanded="false" />
+            <element signature="e#19074#19075#0" expanded="false" />
+            <element signature="e#19111#19112#0" expanded="false" />
+            <element signature="e#28133#28134#0" expanded="false" />
+            <element signature="e#28192#28193#0" expanded="false" />
+            <element signature="e#28481#28482#0" expanded="false" />
+            <element signature="e#28523#28524#0" expanded="false" />
+            <element signature="e#30011#30012#0" expanded="false" />
+            <element signature="e#30068#30069#0" expanded="false" />
+            <element signature="e#30346#30347#0" expanded="false" />
+            <element signature="e#30386#30387#0" expanded="false" />
+            <element signature="e#31679#31680#0" expanded="false" />
+            <element signature="e#31717#31718#0" expanded="false" />
+            <element signature="e#31905#31906#0" expanded="false" />
+            <element signature="e#31936#31937#0" expanded="false" />
+            <element signature="e#34393#34394#0" expanded="false" />
+            <element signature="e#34425#34426#0" expanded="false" />
+            <element signature="e#36505#36506#0" expanded="false" />
+            <element signature="e#36540#36541#0" expanded="false" />
+            <element signature="e#51980#51981#0" expanded="false" />
+            <element signature="e#52037#52038#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="17">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1012,31 +1057,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/swing/JScrollPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4777">
-          <caret line="321" column="11" selection-start-line="321" selection-start-column="11" selection-end-line="321" selection-end-column="11" />
-          <folding>
-            <element signature="e#10946#10947#0" expanded="true" />
-            <element signature="e#11034#11035#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Models.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state relative-caret-position="229">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#modelTree#0;class#Models#0" expanded="false" />
+            <element signature="method#modelEditor#0;class#Models#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
+        <state relative-caret-position="17">
           <caret line="262" column="33" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
           <folding>
             <element signature="method#createFileComponents#0;class#MenuBarComponents#0" expanded="false" />
@@ -1078,21 +1112,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PwnPane.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/PwnFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="297">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PwnFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="246">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PwnPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="88" column="140" selection-start-line="88" selection-start-column="140" selection-end-line="88" selection-end-column="140" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

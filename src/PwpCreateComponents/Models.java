@@ -81,6 +81,7 @@ public class Models {
         changeIcon.setOpenIcon(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         treeNodes.setCellRenderer(changeIcon);
 
+
         treeNodes.addMouseListener(modelHandler);
 
 

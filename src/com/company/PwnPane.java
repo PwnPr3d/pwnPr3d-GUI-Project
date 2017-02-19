@@ -72,8 +72,10 @@ public class PwnPane extends Models {
 
         //Model view and palette
         tabbes[0]=new JTabbedPane();
-        tabbes[0].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
-        tabbes[0].addTab("Diagram View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
+        tabbes[0].addTab("Network model",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowStructure.png")),
+                new JScrollPane(new JEditorPane()));
+        tabbes[0].addTab("Analysis View",new ImageIcon(getClass().getResource("/PwpIcons/toolbarDecorator/analyze.png"))
+                ,new JScrollPane(modelEditor()));
 
         //splitLayersOfPan[1].setDividerLocation(990);
        return tabbes[0];
@@ -83,12 +85,12 @@ public class PwnPane extends Models {
     public JComponent palette(){
 
         tabbes[1]=new JTabbedPane();
-        tabbes[1].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
-        tabbes[1].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
+        tabbes[1].addTab("Palette",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowPalette.png")),new JScrollPane(new JTable()));
+        tabbes[1].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(new JTable()));
 
         splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,tabbes[0],new JScrollPane(tabbes[1]));
         splitLayersOfPan[3].setContinuousLayout(true);
-        splitLayersOfPan[3].setDividerLocation(400);
+        splitLayersOfPan[3].setDividerLocation(770);
         splitLayersOfPan[3].setOneTouchExpandable(true);
         splitLayersOfPan[0].add(splitLayersOfPan[3]);
       
@@ -110,10 +112,10 @@ public class PwnPane extends Models {
 
 
         tabbes[0]=new JTabbedPane();
-        tabbes[0].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
-        tabbes[0].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
+        tabbes[0].addTab("Model Properties",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/properties.gif")),new JScrollPane(new JTable()));
+        tabbes[0].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(new JTable()));
 
-        tabbes[0].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(modelTree()));
+        tabbes[0].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(new JTable()));
 
         splitLayersOfPan[1]=new JSplitPane(JSplitPane.VERTICAL_SPLIT);
         splitLayersOfPan[1].add(new JScrollPane(tabbes[0]));

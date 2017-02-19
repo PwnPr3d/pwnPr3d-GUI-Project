@@ -129,31 +129,6 @@ public class Models {
     }
 
 
-    
-    public JComponent netWorkComponents(){
-
-
-
-        return pane;
-    }
-    public JComponent properties(){
-
-
-
-        return new JTree();
-    }
-    public JComponent validator(){
-
-
-
-        return pane;
-    }
-    public JComponent Palette(){
-
-
-
-        return pane;
-    }
 
 
 

@@ -40,6 +40,7 @@ public class PwnPane extends Models {
         splitLayersOfPan[2]=new JSplitPane(JSplitPane.VERTICAL_SPLIT,splitLayersOfPan[0],splitLayersOfPan[1]);
         splitLayersOfPan[2].setContinuousLayout(true);
         splitLayersOfPan[2].setDividerSize(15);
+        splitLayersOfPan[2].setOneTouchExpandable(true);
         splitLayersOfPan[2].setDividerLocation(400);
 
       panel.add(splitLayersOfPan[2],BorderLayout.CENTER);
@@ -57,6 +58,8 @@ public class PwnPane extends Models {
 
         splitLayersOfPan[0].add(new JScrollPane(tabbes[0]));
         splitLayersOfPan[0].setContinuousLayout(true);
+        splitLayersOfPan[0].setOneTouchExpandable(true);
+
 
 
 
@@ -86,10 +89,12 @@ public class PwnPane extends Models {
         splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,tabbes[0],new JScrollPane(tabbes[1]));
         splitLayersOfPan[3].setContinuousLayout(true);
         splitLayersOfPan[3].setDividerLocation(400);
-
+        splitLayersOfPan[3].setOneTouchExpandable(true);
         splitLayersOfPan[0].add(splitLayersOfPan[3]);
-        splitLayersOfPan[0].setContinuousLayout(true);
-        splitLayersOfPan[0].setDividerLocation(400);
+      
+
+
+
 
 
 
@@ -114,6 +119,7 @@ public class PwnPane extends Models {
         splitLayersOfPan[1].add(new JScrollPane(tabbes[0]));
         splitLayersOfPan[1].setContinuousLayout(true);
         splitLayersOfPan[1].setDividerLocation(400);
+        splitLayersOfPan[1].setOneTouchExpandable(true);
 
 
 

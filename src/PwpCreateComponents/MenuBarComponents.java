@@ -17,258 +17,249 @@ import java.util.List;
 public class MenuBarComponents extends JMenuBar {
 
     private JMenuBar menuBar;
-    private JMenu [] menus;
+    private JMenu[] menus;
     private JPanel panel;
-    private JButton  editToolWindowHandler;
+    private JButton editToolWindowHandler;
+    private JTextField textField;
     private JMenuItem items;
     private JComboBox zoomList;
 
     public JSeparator separator;
 
 
+    public JComponent createFileComponents() {
 
-    public JComponent createFileComponents(){
 
-
-        menus=new JMenu[4];
+        menus = new JMenu[4];
 
 
         //main menu
-        menus[0]=new JMenu("Files");
+        menus[0] = new JMenu("Files");
         menus[0].setMnemonic(KeyEvent.VK_F);
         menus[0].getAccessibleContext().setAccessibleDescription("Files Handler");
 
 
         //new file menu
-        menus[1]=new JMenu("New");
+        menus[1] = new JMenu("New");
         menus[1].setMnemonic(KeyEvent.VK_N);
         menus[1].getAccessibleContext().setAccessibleDescription("Files Handler");
 
         //new file items;
 
 
-        items=new JMenuItem("Empty Model");
+        items = new JMenuItem("Empty Model");
         items.getAccessibleContext().setAccessibleDescription("Create empty model");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M,KeyEvent.VK_C));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, KeyEvent.VK_C));
         menus[1].add(items);
 
-        items=new JMenuItem("Model From Template");
+        items = new JMenuItem("Model From Template");
         menus[1].add(items);
 
-        items=new JMenuItem("Model From Canvas") ;
+        items = new JMenuItem("Model From Canvas");
 
         menus[1].add(items);
         menus[0].add(menus[1]);
 
 
-
-        items=new JMenuItem("Open",new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
+        items = new JMenuItem("Open", new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
         menus[0].add(items);
 
 
-
-        menus[1]=new JMenu("Open Recently");
+        menus[1] = new JMenu("Open Recently");
         menus[1].setMnemonic(KeyEvent.VK_R);
 
-        items=new JMenuItem("Clear Model");
+        items = new JMenuItem("Clear Model");
         menus[1].add(items);
         menus[0].add(menus[1]);
 
-        items=new JMenuItem("Close Project");
+        items = new JMenuItem("Close Project");
         menus[0].add(items);
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[0].add(separator);
 
 
-
-        items=new JMenuItem("Setting",new ImageIcon(getClass().getResource("/PwpIcons/general/settings.png")));
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.VK_S,getAutoscrolls()));
+        items = new JMenuItem("Setting", new ImageIcon(getClass().getResource("/PwpIcons/general/settings.png")));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.VK_S, getAutoscrolls()));
         menus[0].add(items);
 
-        items=new JMenuItem("Project Structure",new ImageIcon(getClass().getResource("/PwpIcons/general/projectStructure.png")));
+        items = new JMenuItem("Project Structure", new ImageIcon(getClass().getResource("/PwpIcons/general/projectStructure.png")));
         menus[0].add(items);
 
 
-
-        menus[1]=new JMenu("Other Settings");
+        menus[1] = new JMenu("Other Settings");
         menus[1].setMnemonic(KeyEvent.VK_O);
-        items=new JMenuItem("Default Setting",new ImageIcon(getClass().getResource("/PwpIcons/general/projectStructure.png")));
+        items = new JMenuItem("Default Setting", new ImageIcon(getClass().getResource("/PwpIcons/general/projectStructure.png")));
         menus[1].add(items);
         menus[0].add(menus[1]);
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[0].add(separator);
 
 
-
-        items=new JMenuItem("Open View");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,KeyEvent.VK_S,getAutoscrolls()));
+        items = new JMenuItem("Open View");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, KeyEvent.VK_S, getAutoscrolls()));
         menus[0].add(items);
 
-        items=new JMenuItem("Close Mode");
+        items = new JMenuItem("Close Mode");
         menus[0].add(items);
 
-        items=new JMenuItem("Close View");
+        items = new JMenuItem("Close View");
         menus[0].add(items);
 
-        items=new JMenuItem("Close AllView");
+        items = new JMenuItem("Close AllView");
         menus[0].add(items);
 
 
-
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[0].add(separator);
 
-        items=new JMenuItem("Save");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.ALT_DOWN_MASK,getAutoscrolls()));
+        items = new JMenuItem("Save");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.ALT_DOWN_MASK, getAutoscrolls()));
         menus[0].add(items);
 
-        items=new JMenuItem("Save As");
+        items = new JMenuItem("Save As");
         menus[0].add(items);
 
-        items=new JMenuItem("Save All",new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-saveall.png")));
+        items = new JMenuItem("Save All", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-saveall.png")));
         menus[0].add(items);
 
-        items=new JMenuItem("Save A Template");
+        items = new JMenuItem("Save A Template");
         menus[0].add(items);
 
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[0].add(separator);
 
-        items=new JMenuItem("Import",new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/importProject.png")));
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I,KeyEvent.VK_S,getAutoscrolls()));
+        items = new JMenuItem("Import", new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/importProject.png")));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, KeyEvent.VK_S, getAutoscrolls()));
         menus[0].add(items);
 
-        items=new JMenuItem("Export",new ImageIcon(getClass().getResource("/PwpIcons/graph/export.png")));
+        items = new JMenuItem("Export", new ImageIcon(getClass().getResource("/PwpIcons/graph/export.png")));
         menus[0].add(items);
 
-        items=new JMenuItem("Setting Repository");
+        items = new JMenuItem("Setting Repository");
         menus[0].add(items);
 
-        items=new JMenuItem("Invalidate Caches");
+        items = new JMenuItem("Invalidate Caches");
         menus[0].add(items);
 
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[0].add(separator);
 
-        items=new JMenuItem("Export As Html",new ImageIcon(getClass().getResource("/PwpIcons/graph/fitContent.png")));
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E,KeyEvent.VK_S,getAutoscrolls()));
+        items = new JMenuItem("Export As Html", new ImageIcon(getClass().getResource("/PwpIcons/graph/fitContent.png")));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, KeyEvent.VK_S, getAutoscrolls()));
         menus[0].add(items);
 
-        items=new JMenuItem("Print",new ImageIcon(getClass().getResource("/PwpIcons/graph/print.png")));
+        items = new JMenuItem("Print", new ImageIcon(getClass().getResource("/PwpIcons/graph/print.png")));
         menus[0].add(items);
 
 
-
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[0].add(separator);
 
-        items=new JMenuItem("Exit");
+        items = new JMenuItem("Exit");
         menus[0].add(items);
 
 
-
-
-
-        items.setPreferredSize(new Dimension(200,20));
-
+        items.setPreferredSize(new Dimension(200, 20));
 
 
         return menus[0];
     }
 
-    public JMenuBar menuBarList(){
-        menuBar=new JMenuBar();
+    public JMenuBar menuBarList() {
+        menuBar = new JMenuBar();
 
 
-        JMenuBar []menuList=new JMenuBar[2];
+        JMenuBar[] menuList = new JMenuBar[2];
 
-        menuList [0]=new JMenuBar();
-        menuList [0].add(createFileComponents());
-        menuList [0].add(createEditFileComponents());
-        menuList [0].add(createViewFileComponents());
-        menuList [0].add(createToolsComponents());
-        menuList [0].add(createWindowsComponents());
-        menuList [0].add(createHelpComponents());
-
-
-        menuList [1]=new JMenuBar();
-        menuList [1].add(createEditToolWindowOpen());
-        menuList [1].add(createEditToolWindowSave());
+        menuList[0] = new JMenuBar();
+        menuList[0].add(createFileComponents());
+        menuList[0].add(createEditFileComponents());
+        menuList[0].add(createViewFileComponents());
+        menuList[0].add(createToolsComponents());
+        menuList[0].add(createWindowsComponents());
+        menuList[0].add(createHelpComponents());
 
 
-       // menuList [1].add(panel);
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowUndo());
-        menuList [1].add(createEditToolWindowRedo());
+        menuList[1] = new JMenuBar();
+        menuList[1].add(createEditToolWindowOpen());
+        menuList[1].add(createEditToolWindowSave());
 
 
-
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowCut());
-        menuList [1].add(createEditToolWindowCopy());
-        menuList [1].add(createEditToolWindowPaste());
-        menuList [1].add(createEditToolWindowDelete());
+        // menuList [1].add(panel);
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowUndo());
+        menuList[1].add(createEditToolWindowRedo());
 
 
-
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowFind());
-        menuList [1].add(createEditToolWindowReplace());
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowBack());
-        menuList [1].add(createEditToolWindowForward());
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowModel());
-        menuList [1].add(createEditToolWindowProperty());
-        menuList [1].add(createEditToolWindowOutline());
-        menuList [1].add(createEditToolWindowHintNavigator());
-        menuList [1].add(createEditToolWindowVisualizer());
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowHint());
-        menuList [1].add(createEditToolWindowValidateModel());
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(zoomList());
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList [1].add(createEditToolWindowValidateAlignLift());
-        menuList [1].add(createEditToolWindowValidateModelAlighnMiddle());
-        menuList [1].add(createEditToolWindowValidateModelAlignCenter());
-        menuList [1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowCut());
+        menuList[1].add(createEditToolWindowCopy());
+        menuList[1].add(createEditToolWindowPaste());
+        menuList[1].add(createEditToolWindowDelete());
 
 
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowFind());
+        menuList[1].add(createEditToolWindowReplace());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowBack());
+        menuList[1].add(createEditToolWindowForward());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowModel());
+        menuList[1].add(createEditToolWindowProperty());
+        menuList[1].add(createEditToolWindowOutline());
+        menuList[1].add(createEditToolWindowHintNavigator());
+        menuList[1].add(createEditToolWindowVisualizer());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowHint());
+        menuList[1].add(createEditToolWindowValidateModel());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(zoomList());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowValidateAlignLeft());
+        menuList[1].add(createEditToolWindowValidateModelAlignCentre());
+        menuList[1].add(createEditToolWindowValidateModelAlignRight());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowValidateModelAlignTop());
+        menuList[1].add(createEditToolWindowValidateModelAlignMiddle());
+        menuList[1].add(createEditToolWindowValidateModelAlignBottom());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowValidateModelMatchWidthOfSelectedObject());
+        menuList[1].add(createEditToolWindowValidateModelMatchHeightOfSelectedObject());
+        menuList[1].add(createEditToolWindowValidateModelDefaultSize());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowValidateModelBrowserGlobe());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(new JLabel("Search Files:"));
+        menuList[1].add(createTextFieldSearchField());
 
 
-
-
-
-
-        panel=new JPanel(new BorderLayout());
+        panel = new JPanel(new BorderLayout());
         panel.add(new JSeparator(JSeparator.VERTICAL));
-        panel.setBorder(new LineBorder(new Color(0x84C2F1),3,true));
+        panel.setBorder(new LineBorder(new Color(0x84C2F1), 3, true));
         panel.setBackground(Color.CYAN);
-        menuList [1].add(panel);
+        menuList[1].add(panel);
         menuBar.setLayout(new BorderLayout());
-        menuBar.add(menuList [0],BorderLayout.NORTH);
-        menuBar.add(menuList [1]);
-
-
+        menuBar.add(menuList[0], BorderLayout.NORTH);
+        menuBar.add(menuList[1]);
 
 
         return menuBar;
     }
 
-    public JComponent  zoomList(){
+    public JComponent zoomList() {
 
-        Object []listOfZoom={"50%",100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,"Page","Width","Height"};
-        List zoomLister=new ArrayList<>();
+        Object[] listOfZoom = {"50%", 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, "Page", "Width", "Height"};
+        List zoomLister = new ArrayList<>();
         zoomLister.add(listOfZoom);
-        JPanel panel=new JPanel();
-        panel.setBorder(new LineBorder(new Color(0x82ADFF),1,true));
-        panel.setPreferredSize(new Dimension(80,20));
-        zoomList=new JComboBox(listOfZoom);
+        JPanel panel = new JPanel();
+        panel.setBorder(new LineBorder(new Color(0x82ADFF), 1, true));
+        panel.setPreferredSize(new Dimension(80, 20));
+        zoomList = new JComboBox(listOfZoom);
         zoomList.setSelectedItem(listOfZoom[1]);
         panel.add(zoomList);
         return panel;
@@ -296,7 +287,93 @@ public class MenuBarComponents extends JMenuBar {
 
         items = new JMenuItem("Validate Model");
         items.getAccessibleContext().setAccessibleDescription("validate model");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, KeyEvent.VK_R));
+        // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, KeyEvent.VK_R));
+        menus[1].add(items);
+
+        separator = new JSeparator();
+        menus[1].add(separator);
+
+        menus[0] = new JMenu("Tasks & Contexts");
+
+
+        // Submenus for the task & contexts item
+        items = new JMenuItem("Switch Task...");
+        items.getAccessibleContext().setAccessibleDescription("switch task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+
+        items = new JMenuItem("Open Task...");
+        items.getAccessibleContext().setAccessibleDescription("open task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+
+        items = new JMenuItem("Close Active Task...");
+        items.getAccessibleContext().setAccessibleDescription("close active task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+        // menus[1].add(menus[0]);
+
+        separator = new JSeparator();
+        menus[0].add(separator);
+
+        items = new JMenuItem("Edit 'Default Task'");
+        menus[0].add(items);
+
+        items = new JMenuItem("Create Changelist...");
+        menus[0].add(items);
+
+        items = new JMenuItem("Show Description");
+        menus[0].add(items);
+
+        items = new JMenuItem("Open in Browser");
+        items.getAccessibleContext().setAccessibleDescription("open task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+
+        separator = new JSeparator();
+        menus[0].add(separator);
+
+        items = new JMenuItem("Configure Servers");
+        menus[0].add(items);
+
+        separator = new JSeparator();
+        menus[0].add(separator);
+
+        items = new JMenuItem("Save Context...");
+        items.getAccessibleContext().setAccessibleDescription("switch task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+
+        items = new JMenuItem("Load Context...");
+        items.getAccessibleContext().setAccessibleDescription("open task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+
+        items = new JMenuItem("Clear Context");
+        items.getAccessibleContext().setAccessibleDescription("close active task");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK));
+        menus[0].add(items);
+        menus[1].add(menus[0]);
+
+        separator = new JSeparator();
+        menus[1].add(separator);
+
+
+        items = new JMenuItem("Save File as Template...");
+        items.getAccessibleContext().setAccessibleDescription("save file as template");
+        // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.VK_S,getAutoscrolls()));
+        menus[1].add(items);
+
+        items = new JMenuItem("Generate JavaDoc...");
+        items.getAccessibleContext().setAccessibleDescription("generate java documents");
+        menus[1].add(items);
+
+        items = new JMenuItem("Save Project as Template...");
+        items.getAccessibleContext().setAccessibleDescription("save project as template");
+        menus[1].add(items);
+
+        items = new JMenuItem("Manage Project Templates...");
+        items.getAccessibleContext().setAccessibleDescription("manage project templates");
         menus[1].add(items);
 
 
@@ -321,17 +398,17 @@ public class MenuBarComponents extends JMenuBar {
 
         items = new JMenuItem("Zoom In", new ImageIcon(getClass().getResource("/PwpIcons/graph/zoomIn.png")));
         items.getAccessibleContext().setAccessibleDescription("Undo");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, KeyEvent.ALT_MASK | KeyEvent.CTRL_MASK));
         menus[1].add(items);
 
         items = new JMenuItem("Zoom Out", new ImageIcon(getClass().getResource("/PwpIcons/graph/zoomOut.png")));
         items.getAccessibleContext().setAccessibleDescription("Redo");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_MINUS, ActionEvent.CTRL_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.ALT_MASK | KeyEvent.CTRL_MASK));
         menus[1].add(items);
 
         items = new JMenuItem("Actual Size", new ImageIcon(getClass().getResource("/PwpIcons/graph/actualZoom.png")));
         items.getAccessibleContext().setAccessibleDescription("Cut");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_0, ActionEvent.CTRL_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, KeyEvent.ALT_MASK | KeyEvent.CTRL_MASK));
         menus[1].add(items);
 
         separator = new JSeparator();
@@ -444,7 +521,6 @@ public class MenuBarComponents extends JMenuBar {
     }
 
 
-
     public JMenu createWindowsComponents() {
         //main menu
         menus[0] = new JMenu("Window");
@@ -460,7 +536,7 @@ public class MenuBarComponents extends JMenuBar {
         //new Edit items;
 
 
-        items = new JMenuItem("Models", new ImageIcon(getClass().getResource("/PwpIcons/actions/undo.png")));
+        items = new JMenuItem("Models", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/models.gif")));
         items.getAccessibleContext().setAccessibleDescription("Models");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
         menus[1].add(items);
@@ -474,12 +550,12 @@ public class MenuBarComponents extends JMenuBar {
         menus[1].add(separator); */
 
 
-        items = new JMenuItem("Outline", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-cut.png")));
+        items = new JMenuItem("Outline", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/outline_co.gif")));
         items.getAccessibleContext().setAccessibleDescription("Outline");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_3, ActionEvent.ALT_MASK));
         menus[1].add(items);
 
-        items = new JMenuItem("Navigator", new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
+        items = new JMenuItem("Navigator", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/navigator-16.png")));
         items.getAccessibleContext().setAccessibleDescription("Navigator");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_4, ActionEvent.ALT_MASK));
         menus[1].add(items);
@@ -489,17 +565,17 @@ public class MenuBarComponents extends JMenuBar {
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_5, ActionEvent.ALT_MASK));
         menus[1].add(items);
 
-        items = new JMenuItem("Visualiser", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        items = new JMenuItem("Visualiser", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/icon.png")));
         items.getAccessibleContext().setAccessibleDescription("Visualiser");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_6, ActionEvent.ALT_MASK));
         menus[1].add(items);
 
-        items = new JMenuItem("Hints", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        items = new JMenuItem("Hints", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/hint-16.png")));
         items.getAccessibleContext().setAccessibleDescription("Hints");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_7, ActionEvent.ALT_MASK));
         menus[1].add(items);
 
-        items = new JMenuItem("Validator", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        items = new JMenuItem("Validator", new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
         items.getAccessibleContext().setAccessibleDescription("Validator");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_8, ActionEvent.ALT_MASK));
         menus[1].add(items);
@@ -541,7 +617,7 @@ public class MenuBarComponents extends JMenuBar {
         menus[0].add(items);
 
         items = new JMenuItem("Previous Editor");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F7, ActionEvent.CTRL_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F6, KeyEvent.CTRL_MASK | KeyEvent.SHIFT_MASK));
         menus[0].add(items);
         menus[1].add(menus[0]);
 
@@ -549,11 +625,11 @@ public class MenuBarComponents extends JMenuBar {
         menus[0].add(separator);
 
         items = new JMenuItem("Next View");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, ActionEvent.CTRL_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F7, ActionEvent.CTRL_MASK));
         menus[0].add(items);
 
         items = new JMenuItem("Previous View");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F9, ActionEvent.CTRL_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F7, KeyEvent.CTRL_MASK | KeyEvent.SHIFT_MASK));
         menus[0].add(items);
         menus[1].add(menus[0]);
 
@@ -563,98 +639,94 @@ public class MenuBarComponents extends JMenuBar {
     }
 
 
-
-    public JMenu createEditFileComponents(){
+    public JMenu createEditFileComponents() {
         //main menu
-        menus[0]=new JMenu("Edit");
+        menus[0] = new JMenu("Edit");
         menus[0].setMnemonic(KeyEvent.VK_F);
         menus[0].getAccessibleContext().setAccessibleDescription("Edit Handler");
 
 
         //new Edit menu
-        menus[1]=new JMenu("Edit");
+        menus[1] = new JMenu("Edit");
         menus[1].setMnemonic(KeyEvent.VK_N);
         menus[1].getAccessibleContext().setAccessibleDescription("Edit Handler");
 
         //new Edit items;
 
 
-        items=new JMenuItem("Undo",new ImageIcon(getClass().getResource("/PwpIcons/actions/undo.png")));
+        items = new JMenuItem("Undo", new ImageIcon(getClass().getResource("/PwpIcons/actions/undo.png")));
         items.getAccessibleContext().setAccessibleDescription("Undo");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
-        items=new JMenuItem("Redo" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/redo.png")));
+        items = new JMenuItem("Redo", new ImageIcon(getClass().getResource("/PwpIcons/actions/redo.png")));
         items.getAccessibleContext().setAccessibleDescription("Redo");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.VK_R));
         menus[1].add(items);
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[1].add(separator);
 
 
-        items=new JMenuItem("Cut",new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-cut.png")));
+        items = new JMenuItem("Cut", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-cut.png")));
         items.getAccessibleContext().setAccessibleDescription("Cut");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
-        items=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
+        items = new JMenuItem("Copy", new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
         items.getAccessibleContext().setAccessibleDescription("Copy");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
-        items=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        items = new JMenuItem("Paste", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
         items.getAccessibleContext().setAccessibleDescription("paste");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
-        items=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
+        items = new JMenuItem("Delete", new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
         items.getAccessibleContext().setAccessibleDescription("Delete");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,KeyEvent.ALT_DOWN_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, KeyEvent.ALT_DOWN_MASK));
         menus[1].add(items);
 
 
-
-
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[1].add(separator);
 
-        items=new JMenuItem("Select");
+        items = new JMenuItem("Select");
         items.getAccessibleContext().setAccessibleDescription("Select");
         menus[1].add(items);
 
 
-
-        items=new JMenuItem("Select  All");
+        items = new JMenuItem("Select  All");
         items.getAccessibleContext().setAccessibleDescription("Select");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.VK_S));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.VK_S));
         menus[1].add(items);
 
 
-        items=new JMenuItem("Duplicate");
+        items = new JMenuItem("Duplicate");
         items.getAccessibleContext().setAccessibleDescription("Duplicate");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
 
-        items=new JMenuItem("Find And Replace");
+        items = new JMenuItem("Find And Replace");
         items.getAccessibleContext().setAccessibleDescription("Find And Replace");
         menus[1].add(items);
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[1].add(separator);
 
 
-        items=new JMenuItem("Fill Color");
+        items = new JMenuItem("Fill Color");
         items.getAccessibleContext().setAccessibleDescription("Find And Replace");
         menus[1].add(items);
 
-        separator=new JSeparator();
+        separator = new JSeparator();
         menus[1].add(separator);
 
-        items=new JMenuItem("Preferences");
+        items = new JMenuItem("Preferences");
         items.getAccessibleContext().setAccessibleDescription("Preference");
-        items.setAccelerator(KeyStroke.getKeyStroke( KeyEvent.VK_P,KeyEvent.ALT_DOWN_MASK));
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, KeyEvent.ALT_DOWN_MASK));
         menus[1].add(items);
 
         return menus[1];
@@ -662,11 +734,17 @@ public class MenuBarComponents extends JMenuBar {
     }
 
 
-    public JButton createEditToolWindowOpen(){
+    public JButton createEditToolWindowOpen() {
+
+        /*  items=new JMenuItem("Select  All");
+        items.getAccessibleContext().setAccessibleDescription("Select");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.VK_S));
+        menus[1].add(items); */
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
+        editToolWindowHandler.setToolTipText("Open Model (Ctrl+O)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -682,11 +760,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowSave(){
+    public JButton createEditToolWindowSave() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-saveall.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-saveall.png")));
+        editToolWindowHandler.setToolTipText("Save (Ctrl+S)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -702,11 +781,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowRedo(){
+    public JButton createEditToolWindowRedo() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/redo.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/redo.png")));
+        editToolWindowHandler.setToolTipText("Redo (Ctrl+Y)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -722,11 +802,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowUndo(){
+    public JButton createEditToolWindowUndo() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/undo.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/undo.png")));
+        editToolWindowHandler.setToolTipText("Undo Move/Size Business Event (Ctrl+Z)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -742,11 +823,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowCut(){
+    public JButton createEditToolWindowCut() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-cut.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-cut.png")));
+        editToolWindowHandler.setToolTipText("Cut (Ctrl+X)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -762,11 +844,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowPaste(){
+    public JButton createEditToolWindowPaste() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        editToolWindowHandler.setToolTipText("Paste (Ctrl+V)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -782,11 +865,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowCopy(){
+    public JButton createEditToolWindowCopy() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
+        editToolWindowHandler.setToolTipText("Copy (Ctrl+C)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -802,11 +886,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowFind(){
+    public JButton createEditToolWindowFind() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-find.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-find.png")));
+        editToolWindowHandler.setToolTipText("Find");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -821,11 +906,13 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowReplace(){
+
+    public JButton createEditToolWindowReplace() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-replace.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-replace.png")));
+        editToolWindowHandler.setToolTipText("Replace");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -840,11 +927,13 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowBack(){
+
+    public JButton createEditToolWindowBack() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/back.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/back.png")));
+        editToolWindowHandler.setToolTipText("Back");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -859,11 +948,13 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowForward(){
+
+    public JButton createEditToolWindowForward() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/forward.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/forward.png")));
+        editToolWindowHandler.setToolTipText("Forward");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -878,11 +969,13 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowDelete(){
+
+    public JButton createEditToolWindowDelete() {
 
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
+        editToolWindowHandler.setToolTipText("Delete from View (Delete)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -897,12 +990,14 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowModel(){
 
-            ImageIcon icon=new ImageIcon();
+    public JButton createEditToolWindowModel() {
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/models.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        ImageIcon icon = new ImageIcon();
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/models.gif")));
+        editToolWindowHandler.setToolTipText("Models (Alt+1)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -917,12 +1012,14 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowProperty(){
 
-        ImageIcon icon=new ImageIcon();
+    public JButton createEditToolWindowProperty() {
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/properties.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        ImageIcon icon = new ImageIcon();
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/properties.gif")));
+        editToolWindowHandler.setToolTipText("Properties (Alt+2)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -937,12 +1034,14 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowOutline(){
 
-        ImageIcon icon=new ImageIcon();
+    public JButton createEditToolWindowOutline() {
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/outline_co.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        ImageIcon icon = new ImageIcon();
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/outline_co.gif")));
+        editToolWindowHandler.setToolTipText("Outline (Alt+3)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -957,12 +1056,14 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowHintNavigator(){
 
-        ImageIcon icon=new ImageIcon();
+    public JButton createEditToolWindowHintNavigator() {
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/navigator-16.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        ImageIcon icon = new ImageIcon();
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/navigator-16.png")));
+        editToolWindowHandler.setToolTipText("Navigator (Alt+4");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -977,12 +1078,14 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowVisualizer(){
 
-        ImageIcon icon=new ImageIcon();
+    public JButton createEditToolWindowVisualizer() {
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/icon.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        ImageIcon icon = new ImageIcon();
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/icon.png")));
+        editToolWindowHandler.setToolTipText("Visualiser (Alt+6)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -997,12 +1100,14 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowHint(){
 
-        ImageIcon icon=new ImageIcon();
+    public JButton createEditToolWindowHint() {
 
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/hint-16.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        ImageIcon icon = new ImageIcon();
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/hint-16.png")));
+        editToolWindowHandler.setToolTipText("Hints (Alt+7)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -1017,12 +1122,13 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-    public JButton createEditToolWindowValidateModel(){
+
+    public JButton createEditToolWindowValidateModel() {
 
 
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
+        editToolWindowHandler.setToolTipText("Validate Model (Alt+8)");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -1053,7 +1159,7 @@ public class MenuBarComponents extends JMenuBar {
         //new Edit items;
 
 
-        items = new JMenuItem("Welcome", new ImageIcon(getClass().getResource("/PwpIcons/actions/undo.png")));
+        items = new JMenuItem("Welcome", new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/welcome.gif")));
         items.getAccessibleContext().setAccessibleDescription("welcome");
         // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, ActionEvent.CTRL_MASK));
         menus[1].add(items);
@@ -1061,7 +1167,7 @@ public class MenuBarComponents extends JMenuBar {
         separator = new JSeparator();
         menus[1].add(separator);
 
-        items = new JMenuItem("Help Contents", new ImageIcon(getClass().getResource("/PwpIcons/actions/redo.png")));
+        items = new JMenuItem("Help Contents", new ImageIcon(getClass().getResource("/PwpIcons/general/help.png")));
         items.getAccessibleContext().setAccessibleDescription("Help contents");
         // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.VK_R));
         menus[1].add(items);
@@ -1071,7 +1177,7 @@ public class MenuBarComponents extends JMenuBar {
         // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.VK_R));
         menus[1].add(items);
 
-        items = new JMenuItem("Dynamic Help", new ImageIcon(getClass().getResource("/PwpIcons/actions/redo.png")));
+        items = new JMenuItem("Dynamic Help");
         items.getAccessibleContext().setAccessibleDescription("Dynamic Help");
         //  items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.VK_R));
         menus[1].add(items);
@@ -1081,18 +1187,18 @@ public class MenuBarComponents extends JMenuBar {
         menus[1].add(separator);
 
 
-        items = new JMenuItem("Cheat Sheets...", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-cut.png")));
+        items = new JMenuItem("Cheat Sheets...");
         items.getAccessibleContext().setAccessibleDescription("Cheat Sheets");
         // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
-        items = new JMenuItem("Check for New Version...", new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
+        items = new JMenuItem("Check for New Version...");
         items.getAccessibleContext().setAccessibleDescription("New Version");
         // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
 
-        items = new JMenuItem("Reset to Defaults...", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        items = new JMenuItem("Reset to Defaults...");
         items.getAccessibleContext().setAccessibleDescription("reset to default");
         // items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
         menus[1].add(items);
@@ -1100,7 +1206,7 @@ public class MenuBarComponents extends JMenuBar {
         separator = new JSeparator();
         menus[1].add(separator);
 
-        items = new JMenuItem("About PwnPr3d", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        items = new JMenuItem("About PwnPr3d", new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/actor-16.png")));
         items.getAccessibleContext().setAccessibleDescription("reset to default");
         //   items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
         menus[1].add(items);
@@ -1110,172 +1216,12 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
-    public JButton createEditToolWindowValidateAlignLift(){
+    public JButton createEditToolWindowValidateAlignLeft() {
 
 
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/alignleft.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelAlignRight(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/alignright.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelAlignCenter(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/aligncenter_d.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelAlignTop(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/alignleft.gif")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelAlignButton(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelAlighnMiddle(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelWatchWidthOfSelectedObject(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelWatchHeightOfSelectedObject(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
-        editToolWindowHandler.setBorder(emptyBorder);
-        editToolWindowHandler.setBorderPainted(false);
-        editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
-
-        return editToolWindowHandler;
-
-    }
-    public JButton createEditToolWindowValidateModelDefaultSize(){
-
-
-
-        editToolWindowHandler=new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/annotate.png")));
-        EmptyBorder emptyBorder=new EmptyBorder(4,4,4,4);
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/alignleft.gif")));
+        editToolWindowHandler.setToolTipText("Align Left");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
@@ -1291,7 +1237,209 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
+    public JButton createEditToolWindowValidateModelAlignCentre() {
 
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/aligncenter.gif")));
+        editToolWindowHandler.setToolTipText("Align Centre");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelAlignRight() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/alignright.gif")));
+        editToolWindowHandler.setToolTipText("Align Right");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+
+    }
+
+    public JButton createEditToolWindowValidateModelAlignTop() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/aligntop_d.gif")));
+        editToolWindowHandler.setToolTipText("Align Top");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("menu");
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelAlignMiddle() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/alignmid_d.gif")));
+        editToolWindowHandler.setToolTipText("Align middle");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelAlignBottom() {
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/alignbottom_d.gif")));
+        editToolWindowHandler.setToolTipText("Align Bottom");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelMatchWidthOfSelectedObject() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/matchwidth_d.gif")));
+        editToolWindowHandler.setToolTipText("Match Width of Selected Objects to the Primary Section");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelMatchHeightOfSelectedObject() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/matchheight_d.gif")));
+        editToolWindowHandler.setToolTipText("Match Height of Selected Objects to the Primary Section");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelDefaultSize() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/actions/reset-to-default.png")));
+        editToolWindowHandler.setToolTipText("Default Size");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JButton createEditToolWindowValidateModelBrowserGlobe() {
+
+
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/providers/bea_dark.png")));
+        editToolWindowHandler.setToolTipText("Internet");
+        EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
+        editToolWindowHandler.setBorder(emptyBorder);
+        editToolWindowHandler.setBorderPainted(false);
+        editToolWindowHandler.setBackground(getBackground());
+        editToolWindowHandler.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Menu");
+
+            }
+        });
+
+        return editToolWindowHandler;
+
+    }
+
+    public JTextField createTextFieldSearchField() {
+
+
+        textField = new JTextField(20);
+        textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Search");
+
+            }
+        });
+
+        return textField;
+
+    }
 
 
 }

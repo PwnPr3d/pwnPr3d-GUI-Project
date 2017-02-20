@@ -20,7 +20,6 @@ public class ModelsPopUpMenuList {
 
 
     public void businessPopUpMenu(int x,int y,JTree treeNodes){
-
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -33,76 +32,59 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Business Actor",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("Business Role",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-role-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Business Collaboration",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-collaboration-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Business Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interface-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
+        eventModelHandlerItems=new JMenuItem("Business Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-function-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Business Process",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-process-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
+        eventModelHandlerItems=new JMenuItem("Business Event",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-event-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Product");
+        eventModelHandlerItems=new JMenuItem("Business Interaction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interaction-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Contact");
+        eventModelHandlerItems=new JMenuItem("Business Product",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-product-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Business Contract",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-contract-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Event");
+        eventModelHandlerItems=new JMenuItem("Business Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-service-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business product");
+        eventModelHandlerItems=new JMenuItem("Business Value",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-value-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Contact");
+        eventModelHandlerItems=new JMenuItem("Business Meaning",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-meaning-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
+        eventModelHandlerItems=new JMenuItem("Business Representation",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-representation-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Value");
+        eventModelHandlerItems=new JMenuItem("Business Object",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-object-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
+        eventModelHandlerItems=new JMenuItem("Location",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-location-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
@@ -119,6 +101,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -132,6 +115,7 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerPopupMenu.add(new JSeparator());
         eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -164,73 +148,61 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Business Actor",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("Business Role",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-role-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Business Collaboration",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-collaboration-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
+        eventModelHandlerItems=new JMenuItem("Business Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interface-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Contact");
+        eventModelHandlerItems=new JMenuItem("Business Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-function-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Business Process",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-process-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Event");
+        eventModelHandlerItems=new JMenuItem("Business Event",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-event-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
+        eventModelHandlerItems=new JMenuItem("Business Interaction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interaction-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Representation");
+        eventModelHandlerItems=new JMenuItem("Business Product",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-product-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
+        eventModelHandlerItems=new JMenuItem("Business Contract",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-contract-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Location");
+        eventModelHandlerItems=new JMenuItem("Business Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-service-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
+        eventModelHandlerItems=new JMenuItem("Business Value",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-value-16.png")));
+        eventModelHandlerMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerMenu.add(new JSeparator());
+
+        eventModelHandlerItems=new JMenuItem("Business Meaning",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-meaning-16.png")));
+        eventModelHandlerMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerItems=new JMenuItem("Business Representation",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-representation-16.png")));
+        eventModelHandlerMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerItems=new JMenuItem("Business Object",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-object-16.png")));
+        eventModelHandlerMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerItems=new JMenuItem("Location",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-location-16.png")));
+        eventModelHandlerMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
@@ -247,6 +219,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -259,7 +232,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -292,71 +266,27 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Application Component",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-component-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("Application Collaboration",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-collaboration-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Application interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-interface-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Application service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-service-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
+        eventModelHandlerItems=new JMenuItem("Application Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-function-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Application Interaction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-interaction-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
+        eventModelHandlerItems=new JMenuItem("Data Object",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-data-object-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
 
@@ -375,6 +305,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -387,7 +318,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -420,71 +352,35 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Artifact",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-artifact-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("Communication Path",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-communication-path-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Network",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-network-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Infrastructure Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-infra-interface-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
+        eventModelHandlerItems=new JMenuItem("Infrastructure Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-function-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Infrastructure Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-infra-service-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Event");
+        eventModelHandlerItems=new JMenuItem("Node",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-node-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Product");
+        eventModelHandlerItems=new JMenuItem("System Software",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-system-software-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
+        eventModelHandlerItems=new JMenuItem("Device",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-device-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
 
@@ -503,6 +399,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -515,7 +412,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -548,71 +446,25 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Stakeholder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/stakeholder-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("Driver",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/driver-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Assessment",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/assessment-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Goal",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/goal-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
+        eventModelHandlerItems=new JMenuItem("Principle",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/principle-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Requirement",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/requirement-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
+        eventModelHandlerItems=new JMenuItem("Constraint",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/constraint-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
 
@@ -631,6 +483,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -643,7 +496,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -676,73 +530,17 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Work Package",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/workpackage-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("Deliverable",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/deliverable-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Plateau",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/plateau-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Gap",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/gap-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
@@ -759,6 +557,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -771,7 +570,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -804,16 +604,16 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems=new JMenuItem("And Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-and-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
+        eventModelHandlerItems=new JMenuItem("Or Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-or-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+    /*    eventModelHandlerItems=new JMenuItem("Business Interface");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerMenu.add(new JSeparator());
@@ -869,7 +669,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerMenu.add(eventModelHandlerItems);  */
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
@@ -887,6 +687,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -899,7 +700,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -930,7 +732,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerMenu.add(new JSeparator());
+     /*   eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Business Actor");
         eventModelHandlerMenu.add(eventModelHandlerItems);
@@ -997,7 +799,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerMenu.add(eventModelHandlerItems);      */
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
@@ -1015,6 +817,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -1027,7 +830,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -1060,73 +864,19 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("PwnPr3d View");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Sketch View",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/sketch-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
+        eventModelHandlerItems=new JMenuItem("Blank Canvas");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Canvas From Template");
         eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
@@ -1143,6 +893,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -1155,7 +906,8 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
@@ -1188,73 +940,19 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems=new JMenuItem("PwnPr3d View");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Role");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Interface");
+        eventModelHandlerItems=new JMenuItem("Sketch View",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/sketch-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
+        eventModelHandlerItems=new JMenuItem("Blank Canvas");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Business Process");
+        eventModelHandlerItems=new JMenuItem("Canvas From Template");
         eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
@@ -1271,6 +969,7 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -1283,10 +982,9 @@ public class ModelsPopUpMenuList {
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems=new JMenuItem("Properties");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
 
         eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
 

@@ -45,8 +45,9 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
     public void mousePressed(MouseEvent e) {
 
 
-        try {
+
             TreePath path = models.treeNodes.getSelectionPath();
+            System.out.println(path);
             Object node = path.getLastPathComponent();
             Object notSelectable = models.treeNodes.getModel().getRoot();
 
@@ -108,10 +109,7 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
 
 
 
-        }catch (Exception e1){
-            models.treeNodes.setSelectionRow(1);
 
-        }
 
 
     }

@@ -232,10 +232,9 @@ public class MenuBarComponents extends JMenuBar {
         menuList[1].add(createEditToolWindowValidateModelMatchHeightOfSelectedObject());
         menuList[1].add(createEditToolWindowValidateModelDefaultSize());
         menuList[1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList[1].add(createEditToolWindowValidateModelBrowserGlobe());
-        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
-        menuList[1].add(new JLabel("Search Files:"));
         menuList[1].add(createTextFieldSearchField());
+        menuList[1].add(new JSeparator(JSeparator.VERTICAL));
+        menuList[1].add(createEditToolWindowValidateModelBrowserGlobe());
 
 
         panel = new JPanel(new BorderLayout());
@@ -1404,10 +1403,27 @@ public class MenuBarComponents extends JMenuBar {
 
     }
 
+
+    public JTextField createTextFieldSearchField() {
+
+
+        textField = new JTextField(5);
+        textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Search");
+
+            }
+        });
+
+        return textField;
+
+    }
+
     public JButton createEditToolWindowValidateModelBrowserGlobe() {
 
 
-        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/providers/bea_dark.png")));
+        editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/general/web.png")));
         editToolWindowHandler.setToolTipText("Internet");
         EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
@@ -1424,22 +1440,5 @@ public class MenuBarComponents extends JMenuBar {
         return editToolWindowHandler;
 
     }
-
-    public JTextField createTextFieldSearchField() {
-
-
-        textField = new JTextField(20);
-        textField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Search");
-
-            }
-        });
-
-        return textField;
-
-    }
-
 
 }

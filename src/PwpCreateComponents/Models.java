@@ -2,10 +2,18 @@ package PwpCreateComponents;
 
 
 import EventHandlers.ProjectModelEventHandler;
+import org.jfree.chart.ChartColor;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.ui.ApplicationFrame;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import java.awt.*;
 
 /**
  * Created by Ayettey on 10/02/2017.
@@ -15,11 +23,15 @@ public class Models {
 
 
 
+
+
+
     private DefaultMutableTreeNode[] newModels;
     public JTree treeNodes;
     private JPopupMenu menuPopUp;
     private  JMenuItem popUpItems;
     private JEditorPane pane;
+
 
     public ProjectModelEventHandler modelHandler=new ProjectModelEventHandler(this);
 
@@ -32,7 +44,7 @@ public class Models {
 
         //Initialize treeNodes
         newModels=new DefaultMutableTreeNode[12];
-        newModels[0]=new DefaultMutableTreeNode("New Models");
+        newModels[0]=new DefaultMutableTreeNode("Models");
         newModels[1]=new DefaultMutableTreeNode("Business Model");
         newModels[2]=new DefaultMutableTreeNode("Application Models");
         newModels[3]=new DefaultMutableTreeNode("Technology Models");
@@ -43,7 +55,7 @@ public class Models {
         newModels[8]=new DefaultMutableTreeNode("Views");
         newModels[9]=new DefaultMutableTreeNode("Default View");
         newModels[10]=new DefaultMutableTreeNode("NetWork Analysis");
-        newModels[8].add(newModels[9]);
+        newModels[8].add(newModels[10]);
         newModels[11]=new DefaultMutableTreeNode("Business Interaction");
         newModels[1].add(newModels[11]);
 
@@ -69,6 +81,7 @@ public class Models {
         changeIcon.setOpenIcon(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         treeNodes.setCellRenderer(changeIcon);
 
+
         treeNodes.addMouseListener(modelHandler);
 
 
@@ -86,17 +99,38 @@ public class Models {
 
     public JComponent modelEditor(){
 
+        pane=new JEditorPane();
 
+        // pieDataset=new DefaultValueDataset(new Integer(90));
+        final DefaultCategoryDataset dataset=new DefaultCategoryDataset();
+        dataset.addValue(1,"Gate","Fist Attack");
+        dataset.addValue(2,"school","Second Attack");
+        dataset.addValue(11,"Idle","OFF");
+        dataset.addValue(21,"Save it","Grace");
+        dataset.addValue(15,"GATE","Open");
+        dataset.addValue(13,"Led","Weed");
+        dataset.addValue(17,"Low","Make it");
+        dataset.addValue(11,"Low","Body");
+       // cyclic.centerRange(2);
+        JFreeChart X= ChartFactory.createBarChart("Holograme"," "," ",dataset,PlotOrientation.VERTICAL,true,true,false);
+        ApplicationFrame frame=new ApplicationFrame("Pie");
 
-        return pane=new JEditorPane();
-    }
+        JPanel P=new JPanel();
+        X.setBorderPaint(new ChartColor(4,4,4));
 
-    public JComponent NetWorkComponents(){
+        P.add(new ChartPanel(X));
+        frame.setContentPane(P);
+
+        pane.setLayout(new BorderLayout());
+        pane.add(P);
 
 
 
         return pane;
     }
+
+
+
 
 
 }

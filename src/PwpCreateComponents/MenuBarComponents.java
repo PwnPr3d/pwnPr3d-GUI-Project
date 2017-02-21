@@ -24,7 +24,7 @@ public class MenuBarComponents extends JMenuBar {
     private JMenuItem items;
     private JComboBox zoomList;
 
-    public JSeparator separator;
+    private JSeparator separator;
 
 
     public JComponent createFileComponents() {
@@ -237,12 +237,8 @@ public class MenuBarComponents extends JMenuBar {
         menuList[1].add(createEditToolWindowValidateModelBrowserGlobe());
 
 
-        panel = new JPanel(new BorderLayout());
-        panel.add(new JSeparator(JSeparator.VERTICAL));
-        panel.setBorder(new LineBorder(new Color(0x84C2F1), 3, true));
-        panel.setBackground(Color.CYAN);
-        menuList[1].add(panel);
         menuBar.setLayout(new BorderLayout());
+
         menuBar.add(menuList[0], BorderLayout.NORTH);
         menuBar.add(menuList[1]);
 

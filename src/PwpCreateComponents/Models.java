@@ -2,18 +2,20 @@ package PwpCreateComponents;
 
 
 import EventHandlers.ProjectModelEventHandler;
-import org.jfree.chart.ChartColor;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.ui.ApplicationFrame;
+
+
+
+
+
+
+
+
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import java.awt.*;
+
 
 /**
  * Created by Ayettey on 10/02/2017.
@@ -31,6 +33,9 @@ public class Models {
     private JPopupMenu menuPopUp;
     private  JMenuItem popUpItems;
     private JEditorPane pane;
+    private JPanel modelPanel;
+    private JLabel []paletteNetworkObjects;
+    private ImageIcon paletteImages;
 
 
     public ProjectModelEventHandler modelHandler=new ProjectModelEventHandler(this);
@@ -101,28 +106,46 @@ public class Models {
 
         pane=new JEditorPane();
 
-        // pieDataset=new DefaultValueDataset(new Integer(90));
-        final DefaultCategoryDataset dataset=new DefaultCategoryDataset();
-        dataset.addValue(1,"Gate","Fist Attack");
-        dataset.addValue(2,"school","Second Attack");
-        dataset.addValue(11,"Idle","OFF");
-        dataset.addValue(21,"Save it","Grace");
-        dataset.addValue(15,"GATE","Open");
-        dataset.addValue(13,"Led","Weed");
-        dataset.addValue(17,"Low","Make it");
-        dataset.addValue(11,"Low","Body");
-       // cyclic.centerRange(2);
-        JFreeChart X= ChartFactory.createBarChart("Holograme"," "," ",dataset,PlotOrientation.VERTICAL,true,true,false);
-        ApplicationFrame frame=new ApplicationFrame("Pie");
 
-        JPanel P=new JPanel();
-        X.setBorderPaint(new ChartColor(4,4,4));
-
-        P.add(new ChartPanel(X));
-        frame.setContentPane(P);
 
         pane.setLayout(new BorderLayout());
-        pane.add(P);
+
+
+
+
+        return pane;
+    }
+
+    public JComponent paletteModel(){
+
+        pane=new JEditorPane();
+        GridLayout layout=new GridLayout(3,5);
+        layout.setHgap(-150);
+        layout.setVgap(-150);
+        modelPanel=new JPanel(layout);
+        pane.setLayout(new BorderLayout());
+
+        paletteNetworkObjects=new JLabel[11];
+
+        for(int i=1;i<paletteNetworkObjects.length;i++){
+
+
+            paletteImages=new ImageIcon(new ImageIcon(getClass().getResource("/PaletteIconsNetworkIcons/NetworkAndActivities" +
+                    "/pwp-computer-analyzer-"+i+".png")).getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT));
+
+            paletteNetworkObjects[i]=new JLabel(paletteImages);
+            paletteNetworkObjects[i].setCursor(new Cursor(12));
+
+
+
+            modelPanel.add(paletteNetworkObjects[i]);
+
+
+        }
+
+        pane.add(modelPanel,BorderLayout.CENTER);
+
+
 
 
 

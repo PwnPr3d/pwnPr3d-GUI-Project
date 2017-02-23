@@ -39,7 +39,7 @@ public class PwnPane extends Models {
 
         splitLayersOfPan[2]=new JSplitPane(JSplitPane.VERTICAL_SPLIT,splitLayersOfPan[0],splitLayersOfPan[1]);
         splitLayersOfPan[2].setContinuousLayout(true);
-        splitLayersOfPan[2].setDividerSize(15);
+        splitLayersOfPan[2].setDividerSize(25);
         splitLayersOfPan[2].setOneTouchExpandable(true);
         splitLayersOfPan[2].setDividerLocation(400);
 
@@ -57,6 +57,7 @@ public class PwnPane extends Models {
         tabbes[0].addTab("Project",new ImageIcon(getClass().getResource("/PwpIcons/general/projectTab.png")),new JScrollPane(modelTree()));
 
         splitLayersOfPan[0].add(new JScrollPane(tabbes[0]));
+        splitLayersOfPan[0].setDividerSize(20);
         splitLayersOfPan[0].setContinuousLayout(true);
         splitLayersOfPan[0].setOneTouchExpandable(true);
 
@@ -85,14 +86,16 @@ public class PwnPane extends Models {
     public JComponent palette(){
 
         tabbes[1]=new JTabbedPane();
-        tabbes[1].addTab("Palette",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowPalette.png")),new JScrollPane(new JTable()));
+        tabbes[1].addTab("Palette",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowPalette.png")),new JScrollPane(paletteModel()));
         tabbes[1].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(new JTable()));
 
         splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,tabbes[0],new JScrollPane(tabbes[1]));
         splitLayersOfPan[3].setContinuousLayout(true);
         splitLayersOfPan[3].setDividerLocation(770);
+        splitLayersOfPan[3].setDividerSize(20);
         splitLayersOfPan[3].setOneTouchExpandable(true);
         splitLayersOfPan[0].add(splitLayersOfPan[3]);
+
       
 
 

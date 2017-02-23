@@ -2,70 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6ece85-b283-430b-911d-37fa1acf9e0c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/drown-attack-openssl-vulnerability.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/spy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/globe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_drive_dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_drive_offline.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_folder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_help.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_lan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_monitor_diskette.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_notebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_pencil.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_reload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_server_database.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_socket.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_transmit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_transmit_receive.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_wireless.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/symmetric_network_lock_open.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jfreechart-1.0.13.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpIcons/network_analysis.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PwpIcons/network_analysis.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/company/testfile.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$1.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$10.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$11.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$12.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$13.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$14.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$15.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$16.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$17.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$18.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$19.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$2.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$20.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$21.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$22.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$23.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$24.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$25.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$25.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$26.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$26.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$27.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$27.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$28.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$28.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$29.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$29.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$3.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$30.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$30.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$4.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$5.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$6.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$7.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$8.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$9.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/MenuBarComponents.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/Models.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/Models.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/com/company/PwnFrame.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/com/company/PwnFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/com/company/PwnPane.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/com/company/PwnPane.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_23.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_23.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pwnPr3d-GUI-Project2.iml" afterPath="$PROJECT_DIR$/pwnPr3d-GUI-Project2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" afterPath="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/Models.java" afterPath="$PROJECT_DIR$/src/PwpCreateComponents/Models.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PwnPane.java" afterPath="$PROJECT_DIR$/src/com/company/PwnPane.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/22982.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/attacker_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/canva-computer-cpu-server-icon-MAB5srNv6is.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/canva-computer-server-icon-MAB7k30yU2k.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/canva-database-hard-disk-database-host-system-MAB8iPpDDFE.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/canva-server-MAB0h8Yt6Rg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/canva-technology-pc-laptop-theme-concept.-MAB4YqTadxc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/canva-wi-fi-router-modem-icon-MAB4Bckh2zY.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/shield-lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/NetworkAndActivities/tower-sign-access-point-router-internet-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_drive.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaletteIconsNetworkIcons/network_wireless_encrypted.png" afterPath="" />
     </list>
     <ignored path="pwnPr3d-GUI-Project2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -737,7 +685,7 @@
       <workItem from="1487616748470" duration="590000" />
       <workItem from="1487620164050" duration="404000" />
       <workItem from="1487673020211" duration="2119000" />
-      <workItem from="1487675907266" duration="23602000" />
+      <workItem from="1487675907266" duration="24029000" />
     </task>
     <task id="LOCAL-00001" summary="deleted panel">
       <created>1487679886058</created>
@@ -774,11 +722,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487854347860</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="palette update">
+      <created>1487856499658</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1487856499658</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61554000" />
+    <option name="totallyTimeSpent" value="61981000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -798,14 +753,14 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.50610685" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21875" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.49389312" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24885496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24885496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -848,6 +803,24 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">

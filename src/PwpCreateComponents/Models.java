@@ -12,6 +12,7 @@ import EventHandlers.ProjectModelEventHandler;
 
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import java.awt.*;
@@ -119,19 +120,23 @@ public class Models {
     public JComponent paletteModel(){
 
         pane=new JEditorPane();
-        GridLayout layout=new GridLayout(3,5);
-        layout.setHgap(-150);
-        layout.setVgap(-150);
+        GridLayout layout=new GridLayout(6,5);
+         layout.setHgap(-15);
+         layout.setVgap(-90);
+
         modelPanel=new JPanel(layout);
+        modelPanel.setBackground(new Color(0x76BCFF));
+        modelPanel.setBorder(new LineBorder(new Color(0xFF4F59),1,true));
+
         pane.setLayout(new BorderLayout());
 
-        paletteNetworkObjects=new JLabel[11];
+        paletteNetworkObjects=new JLabel[25];
 
         for(int i=1;i<paletteNetworkObjects.length;i++){
 
 
             paletteImages=new ImageIcon(new ImageIcon(getClass().getResource("/PaletteIconsNetworkIcons/NetworkAndActivities" +
-                    "/pwp-computer-analyzer-"+i+".png")).getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT));
+                    "/pwp-computer-analyzer-"+i+".png")).getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT));
 
             paletteNetworkObjects[i]=new JLabel(paletteImages);
             paletteNetworkObjects[i].setCursor(new Cursor(12));

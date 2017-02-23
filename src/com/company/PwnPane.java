@@ -87,6 +87,7 @@ public class PwnPane extends Models {
 
         tabbes[1]=new JTabbedPane();
         tabbes[1].addTab("Palette",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowPalette.png")),new JScrollPane(paletteModel()));
+
         tabbes[1].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),new JScrollPane(new JTable()));
 
         splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,tabbes[0],new JScrollPane(tabbes[1]));
@@ -94,7 +95,10 @@ public class PwnPane extends Models {
         splitLayersOfPan[3].setDividerLocation(770);
         splitLayersOfPan[3].setDividerSize(20);
         splitLayersOfPan[3].setOneTouchExpandable(true);
+        splitLayersOfPan[3].setBackground(treeNodes.getBackground());
         splitLayersOfPan[0].add(splitLayersOfPan[3]);
+
+
 
       
 

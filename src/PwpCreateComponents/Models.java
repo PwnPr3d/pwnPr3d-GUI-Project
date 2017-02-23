@@ -125,8 +125,8 @@ public class Models {
          layout.setVgap(-90);
 
         modelPanel=new JPanel(layout);
-        modelPanel.setBackground(new Color(0x76BCFF));
-        modelPanel.setBorder(new LineBorder(new Color(0xFF4F59),1,true));
+        modelPanel.setBackground(modelPanel.getBackground());
+        modelPanel.setBorder(new LineBorder(new Color(0x9C353E),1,true));
 
         pane.setLayout(new BorderLayout());
 

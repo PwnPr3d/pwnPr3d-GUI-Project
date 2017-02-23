@@ -1,6 +1,7 @@
 package com.company;
 
 import PwpCreateComponents.MenuBarComponents;
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,16 +18,27 @@ public class PwnFrame extends JFrame {
          JScrollPane,JSplitPane,JTabbedPane and put Component on their instance
         */
 
-       MenuBarComponents menuBar=new MenuBarComponents();
-       menuBar.setBackground(new Color(142, 208, 255));
-       Container pane=getContentPane();
-       pane.setLayout(new BorderLayout());
+       try{
+           UIManager.setLookAndFeel(new WindowsLookAndFeel());
 
-       setJMenuBar((menuBar.menuBarList()));
+           MenuBarComponents menuBar=new MenuBarComponents();
+           menuBar.setBackground(new Color(142, 208, 255));
+           Container pane=getContentPane();
+           pane.setLayout(new BorderLayout());
+
+           setJMenuBar((menuBar.menuBarList()));
+           ImageIcon icon=new ImageIcon((getClass().getResource("/PwpIcons/windowDecorator/favicon_1.png") ));
+           Image image=icon.getImage();
+           setIconImage(image);
 
 
-       pane.add(new PwnPane().createPane(),BorderLayout.CENTER);
-       pane.setBackground(new Color(108, 162, 204));
+           pane.add(new PwnPane().createPane(),BorderLayout.CENTER);
+           pane.setBackground(new Color(108, 162, 204));
+
+
+       } catch (UnsupportedLookAndFeelException e) {
+           e.printStackTrace();
+       }
 
 
 

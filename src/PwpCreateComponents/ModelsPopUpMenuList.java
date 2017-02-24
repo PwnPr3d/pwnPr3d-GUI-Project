@@ -1,21 +1,29 @@
 package PwpCreateComponents;
 
+import EventHandlers.ProjectModelEventHandler;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 /**
  * Created by Ayettey on 15/02/2017.
  */
-public class ModelsPopUpMenuList {
+public class ModelsPopUpMenuList  {
 
 
     private JMenuItem eventModelHandlerItems;
     private JPopupMenu eventModelHandlerPopupMenu;
     private JMenu    eventModelHandlerMenu;
+    private ProjectModelEventHandler eventItemHandler;
+
 
 
 
@@ -88,6 +96,21 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
+        trimTree(x,y,treeNodes);
+
+
+
+
+
+
+    }
+
+
+    private void trimTree(int x,int y,JTree treeNodes){
+
+
+        eventItemHandler=new ProjectModelEventHandler(this);
+
         eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
@@ -98,7 +121,26 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
+        eventModelHandlerItems.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DefaultMutableTreeNode node;
+                DefaultTreeModel treeModel;
+                DefaultTreeModel model=(DefaultTreeModel) treeNodes.getModel();
+                TreePath []paths=treeNodes.getSelectionPaths();
+                TreeModel path=treeNodes.getModel();
+
+                for(int i=0;i<paths.length;i++){
+
+                    node=(DefaultMutableTreeNode) paths[i].getLastPathComponent();
+                    model.removeNodeFromParent(node);
+
+                }
+            }
+        });
+
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
 
         eventModelHandlerItems=new JMenuItem("Rename");
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
@@ -122,7 +164,6 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
 
-
         TreePath path=treeNodes.getSelectionPath();
         Object node=path.getLastPathComponent();
         if(node==treeNodes.getModel().getRoot()){
@@ -131,7 +172,60 @@ public class ModelsPopUpMenuList {
             eventModelHandlerPopupMenu.show(treeNodes,x,y);
         }
 
+    }
+    private void trimTreeCollapse(int x,int y,JTree treeNodes){
+        eventItemHandler=new ProjectModelEventHandler(this);
 
+
+        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventItemHandler);
+
+
+        eventModelHandlerItems=new JMenuItem("Rename");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+
+        eventModelHandlerPopupMenu.add(new JSeparator());
+        eventModelHandlerItems=new JMenuItem("Collapse",new ImageIcon(getClass().getResource("/PwpIcons/actions/collapseall.png")));
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4,0));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerPopupMenu.add(new JSeparator());
+        eventModelHandlerItems=new JMenuItem("Generate view for..");
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+
+
+        eventModelHandlerItems=new JMenuItem("Validate model");
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+        eventModelHandlerPopupMenu.add(new JSeparator());
+        eventModelHandlerItems=new JMenuItem("Property");
+        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+
+
+
+        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
+
+        TreePath path=treeNodes.getSelectionPath();
+        Object node=path.getLastPathComponent();
+        if(node==treeNodes.getModel().getRoot()){
+            eventModelHandlerPopupMenu.setEnabled(false);
+        }else {
+            eventModelHandlerPopupMenu.show(treeNodes,x,y);
+        }
 
     }
     public void businessInteractionPopUpMenu(int x,int y,JTree treeNodes){
@@ -206,48 +300,9 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        trimTree(x,y,treeNodes);
 
 
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
 
 
 
@@ -291,50 +346,7 @@ public class ModelsPopUpMenuList {
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
-
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
-
+        trimTree(x,y,treeNodes);
 
 
     }
@@ -386,48 +398,12 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
 
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        trimTree(x,y,treeNodes);
 
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
 
 
 
@@ -470,48 +446,11 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
 
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        trimTree(x,y,treeNodes);
 
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
 
 
 
@@ -544,48 +483,9 @@ public class ModelsPopUpMenuList {
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
+        trimTree(x,y,treeNodes);
 
 
 
@@ -613,110 +513,16 @@ public class ModelsPopUpMenuList {
         eventModelHandlerItems=new JMenuItem("Or Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-or-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-    /*    eventModelHandlerItems=new JMenuItem("Business Interface");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);  */
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
 
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
-
+        trimTree(x,y,treeNodes);
 
 
     }
@@ -732,120 +538,12 @@ public class ModelsPopUpMenuList {
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-     /*   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Role");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Collaboration");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Interface");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Interaction");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Process");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Event");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business product");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Contact");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Service");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Value");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Meaning");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerMenu.add(new JSeparator());
-
-        eventModelHandlerItems=new JMenuItem("Business Representation");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-
-        eventModelHandlerItems=new JMenuItem("Business Object");
-        eventModelHandlerMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Business Location");
-        eventModelHandlerMenu.add(eventModelHandlerItems);      */
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
+        trimTree(x,y,treeNodes);
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
 
 
 
@@ -878,54 +576,16 @@ public class ModelsPopUpMenuList {
         eventModelHandlerItems=new JMenuItem("Canvas From Template");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
+
+
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
-
+        trimTreeCollapse(x,y,treeNodes);
 
 
     }
+
     public void defaultViewPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
@@ -954,50 +614,11 @@ public class ModelsPopUpMenuList {
         eventModelHandlerItems=new JMenuItem("Canvas From Template");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
-        eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
-        eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Generate view for..");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-
-
-        eventModelHandlerItems=new JMenuItem("Validate model");
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-
-        eventModelHandlerPopupMenu.add(new JSeparator());
-        eventModelHandlerItems=new JMenuItem("Properties");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
 
-
-        TreePath path=treeNodes.getSelectionPath();
-        Object node=path.getLastPathComponent();
-        if(node==treeNodes.getModel().getRoot()){
-            eventModelHandlerPopupMenu.setEnabled(false);
-        }else {
-            eventModelHandlerPopupMenu.show(treeNodes,x,y);
-        }
-
-
+         trimTree(x,y,treeNodes);
 
     }
 

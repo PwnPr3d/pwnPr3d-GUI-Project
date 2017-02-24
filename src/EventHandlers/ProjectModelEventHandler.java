@@ -4,24 +4,20 @@ import PwpCreateComponents.Models;
 import PwpCreateComponents.ModelsPopUpMenuList;
 
 import javax.swing.*;
-import javax.swing.event.TreeModelEvent;
-import javax.swing.event.TreeModelListener;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 /**
  * Created by Ayettey on 13/02/2017.
  */
-public class ProjectModelEventHandler extends ModelsPopUpMenuList implements MouseListener,TreeModelListener,TreeSelectionListener {
+public class ProjectModelEventHandler extends ModelsPopUpMenuList implements MouseListener, ActionListener {
 
     private Models models;
     private JMenuItem eventModelHandlerItems;
     private JPopupMenu eventModelHandlerPopupMenu;
     private JMenu eventModelHandlerMenu;
+    private ModelsPopUpMenuList popUpMenuList;
+    private Object nodeSelected;
 
 
 
@@ -29,6 +25,14 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
     public ProjectModelEventHandler(Models models){
 
         this.models=models;
+
+
+
+    }
+
+    public ProjectModelEventHandler(ModelsPopUpMenuList popUpMenuList){
+
+        this.popUpMenuList=popUpMenuList;
 
 
 
@@ -46,12 +50,13 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
 
          try {
 
-
+             System.out.println("This was"+nodeSelected);
 
             TreePath path = models.treeNodes.getSelectionPath();
             System.out.println(path);
             Object node = path.getLastPathComponent();
             Object nodeNotSelected = models.treeNodes.getModel().getRoot();
+             nodeSelected = models.treeNodes.getModel().getRoot();
 
 
 
@@ -106,12 +111,19 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
 
             }
 
+
+
+
         }
+
+
 
          }catch (NullPointerException x){
              models.treeNodes.setSelectionRow(1);
 
          }
+
+
 
 
 
@@ -140,30 +152,10 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
 
     }
 
-    @Override
-    public void treeNodesChanged(TreeModelEvent e) {
-
-    }
 
     @Override
-    public void treeNodesInserted(TreeModelEvent e) {
+    public void actionPerformed(ActionEvent e) {
+
 
     }
-
-    @Override
-    public void treeNodesRemoved(TreeModelEvent e) {
-
-    }
-
-    @Override
-    public void treeStructureChanged(TreeModelEvent e) {
-
-    }
-
-    @Override
-    public void valueChanged(TreeSelectionEvent e) {
-        System.out.println("Selected");
-    }
-
-
 }

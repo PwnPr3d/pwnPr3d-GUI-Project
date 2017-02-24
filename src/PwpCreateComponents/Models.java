@@ -15,6 +15,8 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import java.awt.*;
 
 
@@ -59,8 +61,9 @@ public class Models {
         newModels[6]=new DefaultMutableTreeNode("Connector");
         newModels[7]=new DefaultMutableTreeNode("Relations");
         newModels[8]=new DefaultMutableTreeNode("Views");
-        newModels[9]=new DefaultMutableTreeNode("Default View");
-        newModels[10]=new DefaultMutableTreeNode("NetWork Analysis");
+        newModels[9]=new DefaultMutableTreeNode("NetWork Analysis");
+        newModels[10]=new DefaultMutableTreeNode("Default View");
+
         newModels[8].add(newModels[10]);
         newModels[11]=new DefaultMutableTreeNode("Business Interaction");
         newModels[1].add(newModels[11]);
@@ -121,8 +124,8 @@ public class Models {
 
         pane=new JEditorPane();
         GridLayout layout=new GridLayout(6,5);
-         layout.setHgap(-15);
-         layout.setVgap(-90);
+         layout.setHgap(-150);
+         layout.setVgap(-120);
 
         modelPanel=new JPanel(layout);
         modelPanel.setBackground(modelPanel.getBackground());
@@ -136,9 +139,9 @@ public class Models {
 
 
             paletteImages=new ImageIcon(new ImageIcon(getClass().getResource("/PaletteIconsNetworkIcons/NetworkAndActivities" +
-                    "/pwp-computer-analyzer-"+i+".png")).getImage().getScaledInstance(30,30,Image.SCALE_DEFAULT));
+                    "/pwp-computer-analyzer-"+i+".png")).getImage().getScaledInstance(35,35,Image.SCALE_DEFAULT));
 
-            paletteNetworkObjects[i]=new JLabel(paletteImages);
+            paletteNetworkObjects[i]=new JLabel(paletteImages,JLabel.CENTER);
             paletteNetworkObjects[i].setCursor(new Cursor(12));
 
 
@@ -157,7 +160,17 @@ public class Models {
         return pane;
     }
 
+    public void delete(JTree treeNodes){
+        DefaultMutableTreeNode node;
+        DefaultTreeModel model=(DefaultTreeModel) treeNodes.getModel();
+        TreePath[]paths=treeNodes.getSelectionPaths();
 
+        for(int i=0;i<paths.length;i++){
+            node= (DefaultMutableTreeNode) paths[i].getLastPathComponent();
+            model.removeNodeFromParent(node);
+        }
+
+    }
 
 
 

@@ -92,7 +92,7 @@ public class PwnPane extends Models {
 
         splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,tabbes[0],new JScrollPane(tabbes[1]));
         splitLayersOfPan[3].setContinuousLayout(true);
-        splitLayersOfPan[3].setDividerLocation(770);
+        splitLayersOfPan[3].setDividerLocation(740);
         splitLayersOfPan[3].setDividerSize(20);
         splitLayersOfPan[3].setOneTouchExpandable(true);
         splitLayersOfPan[3].setBackground(treeNodes.getBackground());

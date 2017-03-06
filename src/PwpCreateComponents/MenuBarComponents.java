@@ -531,8 +531,8 @@ public class MenuBarComponents extends JMenuBar {
         //new Edit items;
 
 
-        items = new JMenuItem("Models", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/models.gif")));
-        items.getAccessibleContext().setAccessibleDescription("Models");
+        items = new JMenuItem("CreateFolders", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/models.gif")));
+        items.getAccessibleContext().setAccessibleDescription("CreateFolders");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
         menus[1].add(items);
 
@@ -731,10 +731,6 @@ public class MenuBarComponents extends JMenuBar {
 
     public JButton createEditToolWindowOpen() {
 
-        /*  items=new JMenuItem("Select  All");
-        items.getAccessibleContext().setAccessibleDescription("Select");
-        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.VK_S));
-        menus[1].add(items); */
 
 
         editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
@@ -991,7 +987,7 @@ public class MenuBarComponents extends JMenuBar {
         ImageIcon icon = new ImageIcon();
 
         editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/models.gif")));
-        editToolWindowHandler.setToolTipText("Models (Alt+1)");
+        editToolWindowHandler.setToolTipText("CreateFolders (Alt+1)");
         EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);

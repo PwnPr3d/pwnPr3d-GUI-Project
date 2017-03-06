@@ -1,25 +1,67 @@
 package EventHandlers;
 
-import PwpCreateComponents.Models;
+import PwpCreateComponents.ModelsPopUpMenuList;
 
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Ayettey on 23/02/2017.
  */
-public class ComponentActionEvents extends Models{
+public class ComponentActionEvents extends ModelsPopUpMenuList  {
 
-    public void delete(){
-        DefaultMutableTreeNode node;
-        DefaultTreeModel model=(DefaultTreeModel) treeNodes.getModel();
-        TreePath []paths=treeNodes.getSelectionPaths();
+    public int counter;
 
-        for(int i=0;i<paths.length;i++){
-            node= (DefaultMutableTreeNode) paths[i].getLastPathComponent();
-            model.removeNodeFromParent(node);
-        }
+    public ActionListener eventHandler(JTree treeNode,JMenuItem item){
 
+
+
+        ActionListener listen=new ActionListener() {
+
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Kill it");
+
+                 counter++;
+
+
+               if(item.getText().equals("Delete")){
+                   System.out.println("Those is what was selected" + item.getText());
+
+                   delete(treeNode);
+
+               }else if(item.getText().equals("Folder")){
+                   System.out.println("Those is what was selected" + item.getText() + counter);
+
+                   newFolder(treeNode);
+
+               }
+               else if(item.getText().equals(e.getActionCommand())){
+
+                   allBusinessActivities(treeNode,e.getActionCommand());
+                   System.out.println("Action" + e.getActionCommand() );
+
+
+
+               }
+                   else {
+                   System.out.println("Those is what was date" + item.getText());
+               }
+                System.out.println("Those is what was selected" + item.getText());
+            }
+
+
+        };
+        return listen;
     }
+
+
+
+
+
+
+
+
 }

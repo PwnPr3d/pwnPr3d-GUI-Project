@@ -1,45 +1,51 @@
 package EventHandlers;
 
-import PwpCreateComponents.Models;
+import PwpCreateComponents.CreateFolders;
 import PwpCreateComponents.ModelsPopUpMenuList;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
 
 /**
  * Created by Ayettey on 13/02/2017.
  */
-public class ProjectModelEventHandler extends ModelsPopUpMenuList implements MouseListener, ActionListener {
+public class ProjectModelEventHandler extends ModelsPopUpMenuList implements MouseListener,ActionListener{
 
-    private Models models;
+    private CreateFolders CreateFolders;
     private JMenuItem eventModelHandlerItems;
     private JPopupMenu eventModelHandlerPopupMenu;
     private JMenu eventModelHandlerMenu;
     private ModelsPopUpMenuList popUpMenuList;
-    private Object nodeSelected;
+    private DefaultMutableTreeNode leafs;
+    private TreePath[]paths;
+    private DefaultTreeModel leafsModel;
+    private JTree treeNodes;
 
 
 
 
-    public ProjectModelEventHandler(Models models){
+    public ProjectModelEventHandler(CreateFolders CreateFolders){
 
-        this.models=models;
+        this.CreateFolders = CreateFolders;
 
 
 
     }
 
+
+
     public ProjectModelEventHandler(ModelsPopUpMenuList popUpMenuList){
-
         this.popUpMenuList=popUpMenuList;
-
-
-
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
+
+
 
     }
 
@@ -48,81 +54,109 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
     @Override
     public void mousePressed(MouseEvent e) {
 
+
          try {
 
-             System.out.println("This was"+nodeSelected);
 
-            TreePath path = models.treeNodes.getSelectionPath();
-            System.out.println(path);
+             DefaultMutableTreeNode newNodes;
+            TreePath path = CreateFolders.treeNodes.getSelectionPath();
             Object node = path.getLastPathComponent();
-            Object nodeNotSelected = models.treeNodes.getModel().getRoot();
-             nodeSelected = models.treeNodes.getModel().getRoot();
+            Object nodeNotSelected = CreateFolders.treeNodes.getModel().getRoot();
+             newNodes= (DefaultMutableTreeNode) path.getLastPathComponent();
 
 
 
 
-        if((e.getModifiers() & InputEvent.BUTTON3_MASK )!=0  && models.treeNodes.getSelectionCount() !=0){
 
-            String getNodeSetText=node.toString();
 
-            if(node==nodeNotSelected){
 
-                eventModelHandlerMenu.setEnabled(false);
 
-            }else if(getNodeSetText.equals("Business Model")) {
+
+
+             if((e.getModifiers() & InputEvent.BUTTON3_MASK )!=0  && CreateFolders.treeNodes.getSelectionCount() >0){
+
+                 String getNodeSetText=node.toString();
+
+                 if(nodeNotSelected.equals(node)){
+
+                     eventModelHandlerMenu.setEnabled(false);
+
+                 }
+
+
+
+          if(getNodeSetText.equals("Business Model")) {
                 System.out.println(node);
-                businessPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                businessPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
+                //applicationModelPopUpMenu(e.getX(),e.getY(),CreateFolders.treeNodes);
 
             }else if(getNodeSetText.equals("Business Interaction")) {
                 System.out.println(node);
-                businessInteractionPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                businessPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
-            }else if(getNodeSetText.equals("Application Models")) {
+            }else if(getNodeSetText.equals("Application CreateFolders")) {
                 System.out.println(node);
-                applicationModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                applicationModelPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
-            }else if(getNodeSetText.equals("Technology Models")) {
+            }else if(getNodeSetText.equals("Technology CreateFolders")) {
                 System.out.println(node);
-               technologyModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+               technologyModelPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
-            }else if(getNodeSetText.equals("Motivation Models")) {
+            }else if(getNodeSetText.equals("Motivation CreateFolders")) {
                 System.out.println(node);
-                motivationModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                motivationModelPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
-            }else if(getNodeSetText.equals("Implementation And Migration  Models")) {
+            }else if(getNodeSetText.equals("Implementation And Migration  CreateFolders")) {
                 System.out.println(node);
-                implementationAndMigrationModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                implementationAndMigrationModelPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
             }else if(getNodeSetText.equals("Connector")) {
                 System.out.println(node);
-                connectorModelPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                connectorModelPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
             }else if(getNodeSetText.equals("Relations")) {
                 System.out.println(node);
-                relationsPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                relationsPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
             }else if(getNodeSetText.equals("Views")) {
                 System.out.println(node);
-                viewsModelsPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                viewsModelsPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
             }else if(getNodeSetText.equals("Default View")) {
                 System.out.println(node);
-                defaultViewPopUpMenu(e.getX(),e.getY(),models.treeNodes);
+                defaultViewPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
+
+            }
+
+
+            else if(getNodeSetText.equals("Network Analysis")) {
+                System.out.println(node);
+                networkAnalysisPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
 
             }
 
 
 
 
-        }
+          else if(getNodeSetText.equals(newNodes.toString())) {
+              System.out.println(node);
+              businessPopUpMenu(e.getX(),e.getY(), CreateFolders.treeNodes);
+
+          }
+
+
+
+
+             }
 
 
 
          }catch (NullPointerException x){
-             models.treeNodes.setSelectionRow(1);
+
+          CreateFolders.treeNodes.setSelectionRow(CreateFolders.treeNodes.getRowCount());
+
 
          }
-
 
 
 
@@ -155,7 +189,8 @@ public class ProjectModelEventHandler extends ModelsPopUpMenuList implements Mou
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-
+        CreateFolders =new CreateFolders();
+        System.out.println("The boy");
+         popUpMenuList.delete(treeNodes);
     }
 }

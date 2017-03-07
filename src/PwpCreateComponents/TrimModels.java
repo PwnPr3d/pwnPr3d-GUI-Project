@@ -3,8 +3,6 @@ package PwpCreateComponents;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
 import java.awt.*;
 
 /**
@@ -17,7 +15,7 @@ public class TrimModels  extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded,
                                                   boolean leaf, int row, boolean hasFocus) {
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
-        tree.setRowHeight(18);
+        tree.setRowHeight(20);
         if(sel)
             setBackground(new Color(0xFF4F59));
 
@@ -32,18 +30,14 @@ public class TrimModels  extends DefaultTreeCellRenderer {
 
         }
 
+        
+
         if(((DefaultMutableTreeNode)value).getUserObject() instanceof SubFolders ){
             if(((SubFolders) ((DefaultMutableTreeNode) value).getUserObject())
 
                     .getBusinessInteraction().equals("Business Interaction")){
                 setIcon(((SubFolders)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
                 tree.setToolTipText("Business Interaction");
-
-            }else if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
-                    .getBusinessInteractionAndDefaultView().equals("Default View")){
-                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                tree.setToolTipText("Default View");
-
 
             }
 
@@ -53,26 +47,105 @@ public class TrimModels  extends DefaultTreeCellRenderer {
                 //tree.setToolTipText("Business Actor");
 
 
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Role")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Role")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Collaboration")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Interface")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Function")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Process")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }else if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Event")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                tree.setToolTipText("Default View");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Product")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Contract")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Service")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Value")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Meaning")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
             }
-             DefaultMutableTreeNode node;
-            TreePath []paths=  tree.getSelectionPaths();
-            DefaultTreeModel model= (DefaultTreeModel) tree.getModel();
-           try {
 
-               for (int i = 0; i < paths.length; i++) {
-                   node = (DefaultMutableTreeNode) paths[i].getLastPathComponent();
-                   if (node.getUserObject().equals("Business Actor")) {
-                       setIcon((((SubFolders) ((DefaultMutableTreeNode) value).getUserObject())).getIcon());
-                       tree.setToolTipText("Business Actor");
-
-                       System.out.println("Yeah");
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Representation")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
 
 
-                   }
-               }
-           }catch (Exception e){
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Representation")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
 
-           }
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Object")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Location")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
 
 
         }

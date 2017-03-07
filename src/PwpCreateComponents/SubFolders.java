@@ -12,12 +12,12 @@ public class SubFolders {
     private String files;
     private ImageIcon changeIcon= new ImageIcon("/PwpIcons/OtherImages/fldr_obj.gif");
     private ImageIcon defaultViewIcon = new ImageIcon("/PwpIcons/OtherImages/default_model_thumb.png");
-    private ImageIcon icon = new ImageIcon("/PwpIcons/OtherImages/aligncenter.gif");
+    private Icon icon = new ImageIcon("/PwpIcons/OtherImages/aligncenter.gif");
 
 
 
 
-    public SubFolders(String businessInteractionAndDefaultView,ImageIcon icon) {
+    public SubFolders(String businessInteractionAndDefaultView,Icon icon) {
         this.businessInteractionAndDefaultView = businessInteractionAndDefaultView;
         this.icon=icon;
 

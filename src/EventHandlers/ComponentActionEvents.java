@@ -5,15 +5,26 @@ import PwpCreateComponents.ModelsPopUpMenuList;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  * Created by Ayettey on 23/02/2017.
  */
 public class ComponentActionEvents extends ModelsPopUpMenuList  {
 
-    public int counter;
+    private int counter;
+    private String getItems;
+    public ArrayList <String>addItems=new ArrayList<>();
 
-    public ActionListener eventHandler(JTree treeNode,JMenuItem item){
+    public void setGetItems(String getItems) {
+        this.getItems = getItems;
+    }
+
+    public String getGetItems() {
+        return getItems;
+    }
+
+    public ActionListener eventHandler(JTree treeNode, JMenuItem item){
 
 
 
@@ -39,9 +50,18 @@ public class ComponentActionEvents extends ModelsPopUpMenuList  {
 
                }
                else if(item.getText().equals(e.getActionCommand())){
+                   setGetItems(e.getActionCommand());
+                   setGetItems(e.getActionCommand());
+                   for (int x=0;x<100;x++)
 
-                   allBusinessActivities(treeNode,e.getActionCommand());
-                   System.out.println("Action" + e.getActionCommand() );
+                   addItems.add(x,getGetItems());
+                   allBusinessActivities(treeNode,e.getActionCommand()
+                           ,item.getIcon());
+
+
+
+
+                  System.out.println("Action" + e.getActionCommand() );
 
 
 

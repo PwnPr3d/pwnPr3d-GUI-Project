@@ -157,16 +157,11 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
 
-        //create a renderer object for the treeNods using DefaultTreeCellRenderer
-
-
-
-
-
-
 
 
         treeNodes.setCellRenderer(new TrimModels());
+        UIManager.put("Tree.expandedIcon",expandedIcon);
+        UIManager.put("Tree.collapsedIcon",collapseIcon);
 
 
         treeNodes.addMouseListener(modelHandler);

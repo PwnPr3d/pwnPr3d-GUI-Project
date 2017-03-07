@@ -5,7 +5,10 @@ import EventHandlers.ProjectModelEventHandler;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
@@ -30,7 +33,8 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
     private ArrayList<String> hashTemp;
     private DefaultMutableTreeNode newFolder;
     private Folders createFiles;
-    Object userObject;
+    private Object userObject;
+    ImageIcon icon;
 
 
 
@@ -55,64 +59,82 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Actor",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png")));
+        eventModelHandlerItems=new JMenuItem("Business Actor");
+        eventModelHandlerItems.setIcon(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
         eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Role",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-role-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Role");
+        eventModelHandlerItems.setIcon(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-role-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Collaboration",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-collaboration-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Collaboration",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-collaboration-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interface-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interface-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        //   eventModelHandlerMenu.add(new JSeparator());
+       //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-function-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-function-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Process",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-process-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Process",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-process-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Event",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-event-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Event",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-event-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Interaction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interaction-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Interaction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-interaction-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        //   eventModelHandlerMenu.add(new JSeparator());
+       //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Product",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-product-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Product",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-product-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Contract",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-contract-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Contract",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-contract-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-service-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-service-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Value",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-value-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Value",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-value-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        //   eventModelHandlerMenu.add(new JSeparator());
+       //   eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("Business Meaning",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-meaning-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Meaning",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-meaning-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Representation",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-representation-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Representation",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-representation-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Business Object",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-object-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Business Object",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-object-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Location",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-location-16.png")));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems=new JMenuItem("Location",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-location-16.png")));
+       eventModelHandlerMenu.add(eventModelHandlerItems);
+       eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
+       eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
         trimTree(x,y,treeNodes);
+       // allBusinessActivities( treeNodes,"Business Actor" ,eventModelHandlerItems.getIcon());
 
 
 
@@ -170,7 +192,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
 
 
-               System.out.println(userObject.toString());
+//               System.out.println(userObject.toString());
 
                 if (!message.toString().equals("") && !message.equals(userObject.toString())) {
                     temp = new List();
@@ -225,7 +247,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
 
     DefaultMutableTreeNode newNodes;
-    public DefaultTreeModel allBusinessActivities(JTree treeNodes, String itemName) {
+    public DefaultTreeModel allBusinessActivities(JTree treeNodes, String itemName,Icon icon) {
 
 
 
@@ -247,22 +269,26 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
 
 
-              ImageIcon icon=new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png"));
+             // ImageIcon icon=new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png"));
               createFiles=new Folders();
-              createFiles.setSubFolders(new SubFolders(itemName,icon));
+              if((itemName.startsWith(itemName))) {
+                  System.out.println("This is real" +itemName);
+                  createFiles.setSubFolders(new SubFolders(itemName,icon));
 
 
+              }
 
               for(int i=0;i<paths.length;i++){
 
 
                   newNodes= (DefaultMutableTreeNode) paths[i].getLastPathComponent();
 
-                  System.out.println("This is real" +createFiles.getModels());
+                    for(int x=0;x<createFiles.getSubFolders().size();x++) {
 
-                  model.insertNodeInto(newFolder=new DefaultMutableTreeNode(createFiles.getSubFolders().iterator().next()),newNodes,newNodes.getChildCount());
+                        model.insertNodeInto(newFolder = new DefaultMutableTreeNode(createFiles.getSubFolders().get(x)),
+                                newNodes, newNodes.getChildCount());
 
-
+                    }
 
 
                                    //model.reload();

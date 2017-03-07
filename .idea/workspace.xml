@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6ece85-b283-430b-911d-37fa1acf9e0c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/CreateNewFiles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/CreateNewFiles.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ComponentActionEvents$1.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ComponentActionEvents$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ComponentActionEvents.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ComponentActionEvents.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ProjectModelEventHandler.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ProjectModelEventHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/CreateFolders.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/CreateFolders.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/ModelsPopUpMenuList$1.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/ModelsPopUpMenuList$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/ModelsPopUpMenuList.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/ModelsPopUpMenuList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/SubFolders.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/SubFolders.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/TrimModels.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/TrimModels.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java" afterPath="$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" afterPath="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/CreateFolders.java" afterPath="$PROJECT_DIR$/src/PwpCreateComponents/CreateFolders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java" afterPath="$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/SubFolders.java" afterPath="$PROJECT_DIR$/src/PwpCreateComponents/SubFolders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/TrimModels.java" afterPath="$PROJECT_DIR$/src/PwpCreateComponents/TrimModels.java" />
     </list>
     <ignored path="pwnPr3d-GUI-Project2.iws" />
@@ -48,11 +41,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModelsPopUpMenuList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreateFolders.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/CreateFolders.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="217" column="52" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Folders.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Folders.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="66" column="10" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuBarComponents.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="1011" column="7" selection-start-line="1011" selection-start-column="7" selection-end-line="1011" selection-end-column="7" />
+              <folding>
+                <element signature="docComment;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createFileComponents#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#menuBarList#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#zoomList#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createToolsComponents#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createViewFileComponents#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createWindowsComponents#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditFileComponents#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowOpen#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowSave#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowRedo#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowUndo#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowCut#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowPaste#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowCopy#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowFind#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowReplace#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowBack#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowForward#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowDelete#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowModel#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowOutline#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowHintNavigator#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowVisualizer#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowHint#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModel#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createHelpComponents#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateAlignLeft#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelAlignCentre#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelAlignRight#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelAlignTop#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelAlignMiddle#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelAlignBottom#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelMatchWidthOfSelectedObject#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelMatchHeightOfSelectedObject#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelDefaultSize#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createTextFieldSearchField#0;class#MenuBarComponents#0" expanded="false" />
+                <element signature="method#createEditToolWindowValidateModelBrowserGlobe#0;class#MenuBarComponents#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelsPopUpMenuList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-585">
-              <caret line="136" column="9" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
+            <state relative-caret-position="24">
+              <caret line="648" column="59" selection-start-line="648" selection-start-column="59" selection-end-line="648" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#delete#0;class#ModelsPopUpMenuList#0" expanded="false" />
@@ -61,14 +127,6 @@
                 <element signature="method#trimTree#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#trimTreeCollapse#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#networkAnalysisPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#technologyModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#motivationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#implementationAndMigrationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#connectorModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#relationsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#viewsModelsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-                <element signature="method#defaultViewPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
                 <element signature="method#lostOwnership#0;class#ModelsPopUpMenuList#0" expanded="false" />
               </folding>
             </state>
@@ -78,18 +136,18 @@
       <file leaf-file-name="ProjectModelEventHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="91" column="18" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+            <state relative-caret-position="330">
+              <caret line="153" column="87" selection-start-line="153" selection-start-column="87" selection-end-line="153" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrimModels.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrimModels.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/TrimModels.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+            <state relative-caret-position="221">
+              <caret line="194" column="91" selection-start-line="194" selection-start-column="91" selection-end-line="194" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -98,8 +156,8 @@
       <file leaf-file-name="ComponentActionEvents.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+            <state relative-caret-position="-197">
+              <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
               <folding>
                 <element signature="e#466#467#0" expanded="true" />
                 <element signature="e#506#507#0" expanded="true" />
@@ -191,10 +249,10 @@
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/Folders.java" />
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/SubFolders.java" />
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java" />
-        <option value="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
-        <option value="$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java" />
         <option value="$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java" />
+        <option value="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
         <option value="$PROJECT_DIR$/src/PwpCreateComponents/TrimModels.java" />
+        <option value="$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java" />
       </list>
     </option>
   </component>
@@ -381,7 +439,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/lib" />
-    <property name="SearchEverywhereHistoryKey" value="Property&#9;PSI&#9;JAVA://PwpCreateComponents.MenuBarComponents#createEditToolWindowProperty&#10;property&#9;PSI&#9;JAVA://PwpCreateComponents.MenuBarComponents#createEditToolWindowProperty&#10;paletteModel()&#9;PSI&#9;JAVA://PwpCreateComponents.CreateFolders#paletteModel&#10;businessPopUpMenu&#9;PSI&#9;JAVA://PwpCreateComponents.ModelsPopUpMenuList#businessInteractionPopUpMenu&#10;eventItemHandler&#9;PSI&#9;JAVA://PwpCreateComponents.ModelsPopUpMenuList#eventItemHandler" />
+    <property name="SearchEverywhereHistoryKey" value="appl&#9;PSI&#9;JAVA://PwpCreateComponents.ModelsPopUpMenuList#applicationModelPopUpMenu&#10;Property&#9;PSI&#9;JAVA://PwpCreateComponents.MenuBarComponents#createEditToolWindowProperty&#10;property&#9;PSI&#9;JAVA://PwpCreateComponents.MenuBarComponents#createEditToolWindowProperty&#10;paletteModel()&#9;PSI&#9;JAVA://PwpCreateComponents.CreateFolders#paletteModel&#10;businessPopUpMenu&#9;PSI&#9;JAVA://PwpCreateComponents.ModelsPopUpMenuList#businessInteractionPopUpMenu&#10;eventItemHandler&#9;PSI&#9;JAVA://PwpCreateComponents.ModelsPopUpMenuList#eventItemHandler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -941,7 +999,7 @@
       <workItem from="1487870553186" duration="196589000" />
       <workItem from="1488413518631" duration="4904000" />
       <workItem from="1488448997668" duration="95799000" />
-      <workItem from="1488799376549" duration="32000000" />
+      <workItem from="1488799376549" duration="38572000" />
     </task>
     <task id="LOCAL-00001" summary="deleted panel">
       <created>1487679886058</created>
@@ -996,7 +1054,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="393527000" />
+    <option name="totallyTimeSpent" value="400099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1362,41 +1420,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/SubFolders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Folders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
+        <state relative-caret-position="424">
           <caret line="66" column="10" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1119#1120#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1334#1335#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#236#245#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1448,53 +1477,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/CreateFolders.java">
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3434">
-          <caret line="217" column="52" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
+        <state relative-caret-position="424">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#236#245#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/SubFolders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="91" column="18" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+        <state relative-caret-position="204">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585">
-          <caret line="136" column="9" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#delete#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#newFolder#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#cut#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#trimTree#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#trimTreeCollapse#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#networkAnalysisPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#technologyModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#motivationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#implementationAndMigrationModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#connectorModelPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#relationsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#viewsModelsPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#defaultViewPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
-            <element signature="method#lostOwnership#0;class#ModelsPopUpMenuList#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="-197">
+          <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
           <folding>
             <element signature="e#466#467#0" expanded="true" />
             <element signature="e#506#507#0" expanded="true" />
@@ -1504,11 +1509,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="153" column="87" selection-start-line="153" selection-start-column="87" selection-end-line="153" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/TrimModels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        <state relative-caret-position="221">
+          <caret line="194" column="91" selection-start-line="194" selection-start-column="91" selection-end-line="194" selection-end-column="91" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/CreateFolders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="217" column="52" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/ModelsPopUpMenuList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="648" column="59" selection-start-line="648" selection-start-column="59" selection-end-line="648" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#delete#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#newFolder#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#cut#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#trimTree#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#trimTreeCollapse#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#businessInteractionPopUpMenu#0;class#ModelsPopUpMenuList#0" expanded="false" />
+            <element signature="method#lostOwnership#0;class#ModelsPopUpMenuList#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

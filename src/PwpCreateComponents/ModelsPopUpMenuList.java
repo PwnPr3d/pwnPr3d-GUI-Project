@@ -540,6 +540,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
     }
     public void networkAnalysisPopUpMenu(int x,int y,JTree treeNodes){
 
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -618,41 +619,50 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void applicationModelPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
+
         eventModelHandlerPopupMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Application Component",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-component-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Application Collaboration",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-collaboration-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Application interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-interface-16.png")));
+        eventModelHandlerItems=new JMenuItem("Application Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-interface-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
-        eventModelHandlerItems=new JMenuItem("Application service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-service-16.png")));
+        eventModelHandlerItems=new JMenuItem("Application Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-service-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
      //   eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Application Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-function-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Application Interaction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-interaction-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Data Object",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/application-data-object-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
@@ -661,7 +671,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void technologyModelPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -671,39 +681,48 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Artifact",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-artifact-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Communication Path",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-communication-path-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Network",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-network-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Infrastructure Interface",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-infra-interface-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
      //   eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Infrastructure Function",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-function-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Infrastructure Service",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-infra-service-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Node",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-node-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("System Software",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-system-software-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
      //   eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Device",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/technology-device-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
@@ -719,7 +738,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void motivationModelPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -729,29 +748,36 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Stakeholder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/stakeholder-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Driver",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/driver-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems=new JMenuItem("Assessment",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/assessment-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Goal",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/goal-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Principle",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/principle-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Requirement",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/requirement-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Constraint",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/constraint-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
@@ -766,7 +792,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void implementationAndMigrationModelPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -776,20 +802,25 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Work Package",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/workpackage-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Deliverable",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/deliverable-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Plateau",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/plateau-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Gap",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/gap-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems.setPreferredSize(new Dimension(200,20));
 
@@ -801,7 +832,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void connectorModelPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -811,17 +842,21 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("And Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-and-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Or Junction",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/junction-or-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
 
@@ -837,7 +872,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void relationsPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -847,6 +882,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
 
@@ -859,7 +895,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
     }
     public void viewsModelsPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -869,22 +905,27 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("PwnPr3d View");
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
+
         eventModelHandlerItems=new JMenuItem("Sketch View",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/sketch-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Blank Canvas");
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Canvas From Template");
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
 
@@ -897,7 +938,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
     }
 
     public void defaultViewPopUpMenu(int x,int y,JTree treeNodes){
-
+        eventHandler=new ComponentActionEvents();
         eventModelHandlerPopupMenu=new JPopupMenu();
         eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
         eventModelHandlerMenu=new JMenu("New");
@@ -907,22 +948,27 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Folder",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/fldr_obj.gif")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("PwnPr3d View");
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Sketch View",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/sketch-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerMenu.add(new JSeparator());
 
         eventModelHandlerItems=new JMenuItem("Blank Canvas");
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Canvas From Template");
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
 
 

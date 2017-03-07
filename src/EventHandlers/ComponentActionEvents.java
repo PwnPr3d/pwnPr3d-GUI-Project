@@ -43,18 +43,14 @@ public class ComponentActionEvents extends ModelsPopUpMenuList  {
 
                    delete(treeNode);
 
-               }else if(item.getText().equals("Folder")){
+               } if(item.getText().equals("Folder")){
                    System.out.println("Those is what was selected" + item.getText() + counter);
 
                    newFolder(treeNode);
 
                }
-               else if(item.getText().equals(e.getActionCommand())){
-                   setGetItems(e.getActionCommand());
-                   setGetItems(e.getActionCommand());
-                   for (int x=0;x<100;x++)
-
-                   addItems.add(x,getGetItems());
+                if(item.getText().equals(e.getActionCommand())){
+               ;
                    allBusinessActivities(treeNode,e.getActionCommand()
                            ,item.getIcon());
 

@@ -758,6 +758,7 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerItems=new JMenuItem("Driver",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/driver-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Assessment",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/assessment-filled-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
@@ -909,9 +910,9 @@ public class ModelsPopUpMenuList  implements ClipboardOwner {
 
         eventModelHandlerMenu.add(new JSeparator());
 
-        eventModelHandlerItems=new JMenuItem("PwnPr3d View");
+        eventModelHandlerItems=new JMenuItem("PwnPr3d View",new ImageIcon(getClass().getResource("/PwpIcons/windowDecorator/favicon_1.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);
-
+        eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Sketch View",new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/sketch-16.png")));
         eventModelHandlerMenu.add(eventModelHandlerItems);

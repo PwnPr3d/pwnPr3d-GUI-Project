@@ -17,16 +17,25 @@ public class TrimModels  extends DefaultTreeCellRenderer {
                                                   boolean leaf, int row, boolean hasFocus) {
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
         tree.setRowHeight(20);
+        tree.setEditable(true);
+
         if(sel)
             setBackground(new Color(0xFF4F59));
 
         if(tree.getModel().getRoot().equals((DefaultMutableTreeNode)value ) ){
             setIcon(((Model)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
+
+
             tree.setToolTipText("Model");
         }
         if( ((DefaultMutableTreeNode) value).getUserObject() instanceof Folders){
              //System.out.println(((DefaultMutableTreeNode) value).getUserObject().toString());
             setIcon(((Folders)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
+
+            if(tree.isEditable()){
+                setIcon(((Folders)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
+                tree.setToolTipText("Model");
+            }
 
 
         }
@@ -206,9 +215,42 @@ public class TrimModels  extends DefaultTreeCellRenderer {
 
             }
 
-
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
-                    .getBusinessInteractionAndDefaultView().equals("Default View")){
+                    .getBusinessInteractionAndDefaultView().equals("Artifact")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Communication Path")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Networking")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Infrastructure Interface")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Infrastructure Function")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }   if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Infrastructure Service")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
                 //tree.setToolTipText("Business Actor");
 
@@ -216,9 +258,159 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             }
 
 
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Node")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("System Software")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Device")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Stakeholder")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Driver")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }   if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Infrastructure Service")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+
+
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Assessment")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Goal")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Principle")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Assessment")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Requirement")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Constraint")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+
+
+
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Work Package")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Deliverable")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Plateau")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Gap")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Junction")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("And Junction")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+
+            if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Or Junction")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+                //tree.setToolTipText("Business Actor");
+
+
+            }
+
+
+
+
+        if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                .getBusinessInteractionAndDefaultView().equals("Default View")){
+            setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+            //tree.setToolTipText("Business Actor");
+
+
         }
 
-
+    }
 
         return this;
 

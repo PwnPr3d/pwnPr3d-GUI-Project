@@ -1,7 +1,7 @@
 package PwpCreateComponents;
 
 
-import EventHandlers.ProjectModelEventHandler;
+import EventHandlers.T;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -41,7 +41,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
 
-    public ProjectModelEventHandler modelHandler=new ProjectModelEventHandler(this);
+    public T modelHandler=new T(this);
 
 
 

@@ -410,7 +410,11 @@ public class TrimModels  extends DefaultTreeCellRenderer {
 
         }
 
-    }
+    }else {
+            setLeafIcon(getIcon());
+            setOpenIcon(getIcon());
+            setClosedIcon(getIcon());
+        }
 
         return this;
 

@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6ece85-b283-430b-911d-37fa1acf9e0c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/EditCell.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ComponentActionEvents$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ComponentActionEvents.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/EventHandlers/ProjectModelEventHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/CreateFolders.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/Folders.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/Model.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/SubFolders.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/PwpCreateComponents/TrimModels.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/TreeExp/Estudiante.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/TreeExp/Materia.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/TreeExp/MyTreeCellRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/TreeExp/Universidad.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/TreeExp/treeTeam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EventHandlers/T.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/CreateFolders.java" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/CreateFolders.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/Folders.java" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Folders.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/Model.java" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Model.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/SubFolders.java" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/SubFolders.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PwpCreateComponents/TrimModels.java" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/TrimModels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/com/company/PwnPane.class" afterPath="$PROJECT_DIR$/out/production/pwnPr3d-GUI-Project2/com/company/PwnPane.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java" afterPath="$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" afterPath="$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PwnPane.java" afterPath="$PROJECT_DIR$/src/com/company/PwnPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java" afterPath="$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java" />
     </list>
     <ignored path="pwnPr3d-GUI-Project2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +56,7 @@
       <file leaf-file-name="MenuBarComponents.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-638">
+            <state relative-caret-position="578">
               <caret line="1011" column="7" selection-start-line="1011" selection-start-column="7" selection-end-line="1011" selection-end-column="7" />
               <folding>
                 <element signature="docComment;class#MenuBarComponents#0" expanded="false" />
@@ -141,32 +117,43 @@
       <file leaf-file-name="FolderAndFileEventHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4446">
-              <caret line="1382" column="67" selection-start-line="1382" selection-start-column="67" selection-end-line="1382" selection-end-column="67" />
+            <state relative-caret-position="-453">
+              <caret line="594" column="8" selection-start-line="594" selection-start-column="8" selection-end-line="594" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setClip#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#copyClone#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#folderClone#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#cloneDrag#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#mouseClicked#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#mousePressed#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#trimTree#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#trimLeaves#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#trimTreeCollapse#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#getEditedValue#0;class#FolderAndFileEventHandler#0" expanded="false" />
-                <element signature="class#20829:22665" expanded="false" />
-                <element signature="method#businessPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="class#22928:24764" expanded="false" />
                 <element signature="method#mouseReleased#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#mouseEntered#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#mouseExited#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#actionPerformed#0;class#FolderAndFileEventHandler#0" expanded="false" />
-                <element signature="method#listenToItems#0;class#FolderAndFileEventHandler#0" expanded="false" />
-                <element signature="method#actionPerformed#0;class#31026:35098" expanded="false" />
                 <element signature="method#dragObject#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#copy#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#paste#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#rename#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#newFolder#0;class#FolderAndFileEventHandler#0" expanded="false" />
                 <element signature="method#cloneEditedValue#0;class#FolderAndFileEventHandler#0" expanded="false" />
-                <marker date="1490649509024" expanded="false" signature="35446:35969" ph="{...}" />
+                <element signature="method#dragEnter#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#dragOver#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#dropActionChanged#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#dragExit#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#drop#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#networkAnalysisPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#applicationModelPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#technologyModelPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#motivationModelPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#relationsPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <element signature="method#defaultViewPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+                <marker date="1490654910950" expanded="false" signature="37501:38024" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -175,11 +162,15 @@
       <file leaf-file-name="ProjectModelEventHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-281">
+            <state relative-caret-position="252">
               <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
               <folding>
                 <element signature="method#mouseClicked#0;class#ProjectModelEventHandler#0" expanded="false" />
                 <element signature="method#mousePressed#0;class#ProjectModelEventHandler#0" expanded="false" />
+                <element signature="method#mouseReleased#0;class#ProjectModelEventHandler#0" expanded="false" />
+                <element signature="method#mouseEntered#0;class#ProjectModelEventHandler#0" expanded="false" />
+                <element signature="method#mouseExited#0;class#ProjectModelEventHandler#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#ProjectModelEventHandler#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -423,11 +414,12 @@
       <file leaf-file-name="PopUpMenuListComponents.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/PopUpMenuListComponents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+            <state relative-caret-position="1409">
+              <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#delete#0;class#PopUpMenuListComponents#0" expanded="false" />
+                <element signature="method#allBusinessActivities#0;class#PopUpMenuListComponents#0" expanded="false" />
                 <element signature="method#duplicate#0;class#PopUpMenuListComponents#0" expanded="false" />
               </folding>
             </state>
@@ -516,11 +508,11 @@
         <option value="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Model.java" />
         <option value="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/EditCell.java" />
         <option value="$PROJECT_DIR$/src/EventHandlers/ComponentActionEvents.java" />
-        <option value="$PROJECT_DIR$/src/PwpCreateComponents/PopUpMenuListComponents.java" />
         <option value="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/CreateFolders.java" />
         <option value="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/TrimModels.java" />
         <option value="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/SubFolders.java" />
         <option value="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Folders.java" />
+        <option value="$PROJECT_DIR$/src/PwpCreateComponents/PopUpMenuListComponents.java" />
         <option value="$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java" />
       </list>
     </option>
@@ -1281,7 +1273,7 @@
       <workItem from="1488799376549" duration="42186000" />
       <workItem from="1490015663458" duration="137647000" />
       <workItem from="1490440602477" duration="17558000" />
-      <workItem from="1490477203217" duration="65927000" />
+      <workItem from="1490477203217" duration="71328000" />
     </task>
     <task id="LOCAL-00001" summary="deleted panel">
       <created>1487679886058</created>
@@ -1339,11 +1331,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490108334711</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Tree update">
+      <created>1490649596927</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1490649596927</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624845000" />
+    <option name="totallyTimeSpent" value="630246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1452,15 +1451,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1864,20 +1855,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/EditCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-281">
-          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+        <state relative-caret-position="121">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
-            <element signature="method#mouseClicked#0;class#ProjectModelEventHandler#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#ProjectModelEventHandler#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/TrimModels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/CreateFolders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="167" column="42" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#cursor#0;class#CreateFolders#0" expanded="false" />
+            <element signature="method#modelEditor#0;class#CreateFolders#0" expanded="false" />
+            <element signature="method#paletteModel#0;class#CreateFolders#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/SubFolders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Folders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/PopUpMenuListComponents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1409">
+          <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#delete#0;class#PopUpMenuListComponents#0" expanded="false" />
+            <element signature="method#allBusinessActivities#0;class#PopUpMenuListComponents#0" expanded="false" />
+            <element signature="method#duplicate#0;class#PopUpMenuListComponents#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/MenuBarComponents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
+        <state relative-caret-position="578">
           <caret line="1011" column="7" selection-start-line="1011" selection-start-column="7" selection-end-line="1011" selection-end-column="7" />
           <folding>
             <element signature="docComment;class#MenuBarComponents#0" expanded="false" />
@@ -1922,97 +1966,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/EditCell.java">
+    <entry file="file://$PROJECT_DIR$/src/EventHandlers/ProjectModelEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="252">
+          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/FolderAndFileCellEditor/TrimModels.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PwpCreateComponents/PopUpMenuListComponents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#delete#0;class#PopUpMenuListComponents#0" expanded="false" />
-            <element signature="method#duplicate#0;class#PopUpMenuListComponents#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/CreateFolders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="167" column="42" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#cursor#0;class#CreateFolders#0" expanded="false" />
-            <element signature="method#modelEditor#0;class#CreateFolders#0" expanded="false" />
-            <element signature="method#paletteModel#0;class#CreateFolders#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/SubFolders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Folders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="method#mouseClicked#0;class#ProjectModelEventHandler#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#ProjectModelEventHandler#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#ProjectModelEventHandler#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#ProjectModelEventHandler#0" expanded="false" />
+            <element signature="method#mouseExited#0;class#ProjectModelEventHandler#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#ProjectModelEventHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4446">
-          <caret line="1382" column="67" selection-start-line="1382" selection-start-column="67" selection-end-line="1382" selection-end-column="67" />
+        <state relative-caret-position="-453">
+          <caret line="594" column="8" selection-start-line="594" selection-start-column="8" selection-end-line="594" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setClip#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#copyClone#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#folderClone#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#cloneDrag#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#mousePressed#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#trimTree#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#trimLeaves#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#trimTreeCollapse#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#getEditedValue#0;class#FolderAndFileEventHandler#0" expanded="false" />
-            <element signature="class#20829:22665" expanded="false" />
-            <element signature="method#businessPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="class#22928:24764" expanded="false" />
             <element signature="method#mouseReleased#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#mouseEntered#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#mouseExited#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#FolderAndFileEventHandler#0" expanded="false" />
-            <element signature="method#listenToItems#0;class#FolderAndFileEventHandler#0" expanded="false" />
-            <element signature="method#actionPerformed#0;class#31026:35098" expanded="false" />
             <element signature="method#dragObject#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#copy#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#paste#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#rename#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#newFolder#0;class#FolderAndFileEventHandler#0" expanded="false" />
             <element signature="method#cloneEditedValue#0;class#FolderAndFileEventHandler#0" expanded="false" />
-            <marker date="1490649509024" expanded="false" signature="35446:35969" ph="{...}" />
+            <element signature="method#dragEnter#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#dragOver#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#dropActionChanged#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#dragExit#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#drop#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#networkAnalysisPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#applicationModelPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#technologyModelPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#motivationModelPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#relationsPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <element signature="method#defaultViewPopUpMenu#0;class#FolderAndFileEventHandler#0" expanded="false" />
+            <marker date="1490654910950" expanded="false" signature="37501:38024" ph="{...}" />
           </folding>
         </state>
       </provider>

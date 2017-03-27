@@ -1,6 +1,6 @@
 package EventHandlers;
 
-import PwpCreateComponents.CreateFolders;
+import RenderFoldersAndSubFoders.CreateFolders;
 import PwpCreateComponents.PopUpMenuListComponents;
 
 import javax.swing.*;
@@ -508,19 +508,6 @@ public class ProjectModelEventHandler extends PopUpMenuListComponents implements
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,14 +1,19 @@
-package PwpCreateComponents;
+package RenderFoldersAndSubFoders;
 
 
-import EventHandlers.T;
+import EventHandlers.FolderAndFileEventHandler;
+import RenderFoldersAndSubFoders.FolderAndFileCellEditor.TrimModels;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DragSource;
+import java.awt.dnd.DropTarget;
 
 
 /**
@@ -30,6 +35,9 @@ public class CreateFolders extends DefaultTreeCellRenderer{
     private JPanel modelPanel;
     private JLabel []paletteNetworkObjects;
     private ImageIcon paletteImages;
+    DefaultMutableTreeNode nodes;
+    DefaultMutableTreeNode root;
+    int count=0;
 
     private ImageIcon modelIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/module.png"));
     private ImageIcon folderIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-open.png"));
@@ -37,11 +45,11 @@ public class CreateFolders extends DefaultTreeCellRenderer{
     private ImageIcon collapseIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/collapseall.png"));
     private ImageIcon defaultViewIcon = new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/models.gif"));
 
+    public JLabel label;
 
 
 
-
-    public T modelHandler=new T(this);
+    public FolderAndFileEventHandler modelHandler=new FolderAndFileEventHandler(this);
 
 
 
@@ -54,7 +62,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
         //Initialize tree objects
-
+       label=new JLabel();
         Model modelRoot=new Model();
         modelRoot.setModels("Models");
         modelRoot.setIcon(modelIcon);
@@ -117,7 +125,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
 
-        DefaultMutableTreeNode root=new DefaultMutableTreeNode(modelRoot);
+        root=new DefaultMutableTreeNode(modelRoot);
 
         //Initialize Tree Nodes
 
@@ -130,7 +138,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
        for(Folders folders:modelRoot.getNodesOfFolders()){
 
-           DefaultMutableTreeNode nodes=new DefaultMutableTreeNode(folders);
+            nodes=new DefaultMutableTreeNode(folders);
 
            for(SubFolders subFolders:folders.getSubFolders()){
 
@@ -149,9 +157,23 @@ public class CreateFolders extends DefaultTreeCellRenderer{
         DefaultTreeModel model=new DefaultTreeModel(root);
         treeNodes=new JTree();
         treeNodes.setModel(model);
+        TreeSelectionModel treeSelectionModel=treeNodes.getSelectionModel();
+        treeSelectionModel.setSelectionMode(TreeSelectionModel.CONTIGUOUS_TREE_SELECTION);
+        treeNodes.setSelectionModel(treeSelectionModel);
+
 
         //Set the tree cell editable true and show handle of the root
-        treeNodes.setEditable(true);
+        treeNodes.setDropMode(DropMode.ON);
+        treeNodes.setDragEnabled(true);
+        treeNodes.setDropTarget(new DropTarget(treeNodes,modelHandler));
+
+
+
+
+
+
+
+
         treeNodes.setShowsRootHandles(true);
 
 
@@ -165,6 +187,10 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
         treeNodes.addMouseListener(modelHandler);
+       //treeNodes.setInvokesStopCellEditing(true);
+
+
+
 
 
 
@@ -179,6 +205,15 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
      return treeNodes;
     }
+
+
+
+    private Cursor cursor(int action){
+        return (action==DnDConstants.ACTION_MOVE)?
+                DragSource.DefaultMoveDrop:DragSource.DefaultCopyDrop;
+    }
+
+
 
     public JComponent modelEditor(){
 

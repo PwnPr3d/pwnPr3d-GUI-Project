@@ -1,23 +1,50 @@
-package PwpCreateComponents;
+package RenderFoldersAndSubFoders;
 
 import javax.swing.*;
+import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreePath;
 import java.util.ArrayList;
 
 /**
  * Created by Ayettey on 05/03/2017.
  */
-public class Folders {
+public class Folders  extends CreateFolders{
 
     private String models;
     private String nodes;
 
 
     private ArrayList <SubFolders> subFolders=new ArrayList<>();
+    private  MutableTreeNode subNode;
     private ImageIcon empty=new ImageIcon("/PwpIcons/actions/showHiddens_dark.png");
-    private ImageIcon icon=new ImageIcon("/PwpIcons/OtherImages/fldr_obj.gif");
+    private ImageIcon icon=new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-open.png"));;
+    String value;
 
 
+    public Folders(String value, ImageIcon icon) {
+        this.value=value;
+        this.icon=icon;
 
+    }
+
+    public Folders(){
+
+    }
+    TreePath node;
+    public void setSubNode(MutableTreeNode subNode) {
+
+        if(node !=null){
+            node=(TreePath) treeNodes.getLastSelectedPathComponent();
+        for(int x=0;x<node.getPathCount();x++){
+            this.subNode.insert(subNode,x);
+        }
+        }
+
+    }
+
+    public MutableTreeNode getSubNode() {
+        return subNode;
+    }
 
     public void setEmpty(ImageIcon empty) {
         this.empty = empty;

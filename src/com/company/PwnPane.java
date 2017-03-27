@@ -1,6 +1,6 @@
 package com.company;
 
-import PwpCreateComponents.CreateFolders;
+import RenderFoldersAndSubFoders.CreateFolders;
 
 import javax.swing.*;
 import java.awt.*;

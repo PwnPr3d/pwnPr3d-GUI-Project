@@ -1,4 +1,4 @@
-package PwpCreateComponents;
+package RenderFoldersAndSubFoders;
 
 import javax.swing.*;
 
@@ -10,16 +10,23 @@ public class SubFolders {
     private String defaultView;
     private String businessInteractionAndDefaultView;
     private String files;
-    private ImageIcon changeIcon= new ImageIcon("/PwpIcons/OtherImages/fldr_obj.gif");
+    private ImageIcon folderIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-open.png"));
     private ImageIcon defaultViewIcon = new ImageIcon("/PwpIcons/OtherImages/default_model_thumb.png");
-    private Icon icon = new ImageIcon("/PwpIcons/OtherImages/aligncenter.gif");
+    private Icon icon =new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-open.png"));
 
 
 
 
-    public SubFolders(String businessInteractionAndDefaultView,Icon icon) {
+    public SubFolders(String businessInteractionAndDefaultView, Icon icon) {
         this.businessInteractionAndDefaultView = businessInteractionAndDefaultView;
         this.icon=icon;
+
+    }
+
+
+    public SubFolders(String businessInteractionAndDefaultView) {
+        this.businessInteractionAndDefaultView = businessInteractionAndDefaultView;
+
 
     }
 
@@ -27,8 +34,9 @@ public class SubFolders {
         this.businessInteractionAndDefaultView = businessInteractionAndDefaultView;
     }
 
+
     public void setChangeIcon(ImageIcon changeIcon) {
-        this.changeIcon = changeIcon;
+        this.folderIcon = changeIcon;
     }
 
     public void setDefaultViewIcon(ImageIcon defaultViewIcon) {
@@ -38,7 +46,7 @@ public class SubFolders {
 
 
     public Icon getChangeIcon() {
-        return changeIcon;
+        return folderIcon;
     }
 
     public Icon getIcon() {

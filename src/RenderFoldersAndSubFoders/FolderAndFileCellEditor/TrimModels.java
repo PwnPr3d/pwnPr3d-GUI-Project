@@ -1,4 +1,8 @@
-package PwpCreateComponents;
+package RenderFoldersAndSubFoders.FolderAndFileCellEditor;
+
+import RenderFoldersAndSubFoders.Folders;
+import RenderFoldersAndSubFoders.Model;
+import RenderFoldersAndSubFoders.SubFolders;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -17,56 +21,61 @@ public class TrimModels  extends DefaultTreeCellRenderer {
                                                   boolean leaf, int row, boolean hasFocus) {
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
         tree.setRowHeight(20);
-        tree.setEditable(true);
+        //tree.setEditable(true);
+         tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
         if(sel)
             setBackground(new Color(0xFF4F59));
 
         if(tree.getModel().getRoot().equals((DefaultMutableTreeNode)value ) ){
+
             setIcon(((Model)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
+            //tree.setEditable(false);
 
 
-            tree.setToolTipText("Model");
+
         }
         if( ((DefaultMutableTreeNode) value).getUserObject() instanceof Folders){
              //System.out.println(((DefaultMutableTreeNode) value).getUserObject().toString());
             setIcon(((Folders)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
 
-            if(tree.isEditable()){
+
                 setIcon(((Folders)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
-                tree.setToolTipText("Model");
-            }
+                //tree.setEditable(true);
+
+
 
 
         }
 
 
 
-        if(((DefaultMutableTreeNode)value).getUserObject() instanceof SubFolders ){
+        if(((DefaultMutableTreeNode)value).getUserObject() instanceof SubFolders){
+            //tree.setEditable(true);
             if(((SubFolders) ((DefaultMutableTreeNode) value).getUserObject())
 
                     .getBusinessInteraction().equals("Business Interaction")){
                 setIcon(((SubFolders)((DefaultMutableTreeNode)value).getUserObject()).getIcon());
-                tree.setToolTipText("Business Interaction");
+
 
             }
 
             else if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Actor")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
 
-
-            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
-                    .getBusinessInteractionAndDefaultView().equals("Business Role")){
-                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Role")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
+
+
+            }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
+                    .getBusinessInteractionAndDefaultView().equals("Business Role")){
+                setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
@@ -78,19 +87,18 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Interface")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Function")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Process")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }else if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
@@ -102,31 +110,31 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Product")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Contract")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Service")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Value")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Meaning")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
@@ -134,33 +142,32 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Representation")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Representation")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Business Object")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+                tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Location")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Application Component")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
@@ -168,35 +175,35 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Application Collaboration")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Application Component")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Application Interface")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Application Service")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Application Function")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+
 
 
             }
@@ -363,7 +370,7 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Plateau")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+                tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
             }
@@ -371,7 +378,7 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Gap")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+                tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
             }
@@ -379,14 +386,14 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Junction")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+                tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
             }
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("And Junction")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+                tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
             }
@@ -394,7 +401,7 @@ public class TrimModels  extends DefaultTreeCellRenderer {
             if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                     .getBusinessInteractionAndDefaultView().equals("Or Junction")){
                 setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-                //tree.setToolTipText("Business Actor");
+                tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
             }
@@ -405,7 +412,7 @@ public class TrimModels  extends DefaultTreeCellRenderer {
         if(((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())
                 .getBusinessInteractionAndDefaultView().equals("Default View")){
             setIcon((((SubFolders) ((DefaultMutableTreeNode)value).getUserObject())).getIcon());
-            //tree.setToolTipText("Business Actor");
+            tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
 
         }

@@ -1,9 +1,11 @@
 package RenderFoldersAndSubFoders;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreePath;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 /**
  * Created by Ayettey on 05/03/2017.
@@ -31,15 +33,29 @@ public class Folders  extends CreateFolders{
 
     }
     TreePath node;
-    public void setSubNode(MutableTreeNode subNode) {
+    DefaultMutableTreeNode newCopyClone;
+    public DefaultMutableTreeNode copyClone(DefaultMutableTreeNode source)
+    {
 
-        if(node !=null){
-            node=(TreePath) treeNodes.getLastSelectedPathComponent();
-        for(int x=0;x<node.getPathCount();x++){
-            this.subNode.insert(subNode,x);
-        }
+
+        newCopyClone= (DefaultMutableTreeNode) source.clone();
+        DefaultMutableTreeNode mutable=null;
+        for(Enumeration enumerate = source.children(); enumerate.hasMoreElements();){
+            mutable=new DefaultMutableTreeNode( enumerate.nextElement());
+
+            newCopyClone.add(mutable);
+            //copyClone(newCopyClone).add(mutable);
+
         }
 
+
+       // newCopyClone.add(mutable);
+        return newCopyClone;
+    } //end of deepClone
+
+
+    public DefaultMutableTreeNode getNewCopyClone() {
+        return newCopyClone;
     }
 
     public MutableTreeNode getSubNode() {

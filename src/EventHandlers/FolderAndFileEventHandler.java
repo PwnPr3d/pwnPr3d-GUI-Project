@@ -16,6 +16,7 @@ import java.awt.*;
 import java.awt.datatransfer.*;
 import java.awt.dnd.*;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -49,6 +50,7 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
     private ArrayList <String> cloneTemp;
 
     TrimModels t=new TrimModels();
+    private DefaultMutableTreeNode getSelectionPoint;
 
     public Icon getFolderIcon() {
         return folderIcon;
@@ -85,14 +87,26 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
     DefaultMutableTreeNode newCopyClone;
     private DefaultMutableTreeNode copyClone(DefaultMutableTreeNode source)
     {
-        newCopyClone=(DefaultMutableTreeNode)source.clone();
-        for(Enumeration enumerate=source.children();enumerate.hasMoreElements();){
-            copyClone((DefaultMutableTreeNode)enumerate.nextElement());
 
+
+       newCopyClone= (DefaultMutableTreeNode) source.clone();
+        DefaultMutableTreeNode mutable=null;
+        for(Enumeration enumerate=source.children();enumerate.hasMoreElements();){
+            mutable=new DefaultMutableTreeNode( enumerate.nextElement());
+
+                newCopyClone.add(mutable);
+                cloneDrag(newCopyClone).add(mutable);
+                newCopyClone.add(mutable);
         }
+
+
 
         return newCopyClone;
     } //end of deepClone
+
+
+
+
 
     DefaultMutableTreeNode folderNode;
     private DefaultMutableTreeNode folderClone(DefaultMutableTreeNode source)
@@ -283,8 +297,6 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
         eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
 
-        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         if(isEventModelHandlerItemsEnable.equals(false)){
             eventModelHandlerItems.setEnabled(false);
@@ -292,6 +304,10 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
             eventModelHandlerItems.setEnabled(true);
         }
 
+
+
+        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
+        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
         eventModelHandlerItems=new JMenuItem("Delete",new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
@@ -370,6 +386,7 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
         eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
+        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
         if(isEventModelHandlerItemsEnable.equals(false)){
@@ -462,20 +479,20 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
         eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
 
         eventModelHandlerItems=new JMenuItem(new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
         eventModelHandlerItems.setText("Delete");
         items=eventModelHandlerItems.getText();
         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
 
 
 
@@ -676,7 +693,7 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
 
 
-      return  (newCopyClone)  ;
+      return (DefaultMutableTreeNode) newCopyClone;
 
     }
 
@@ -758,126 +775,127 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
         ActionListener listenToItems(JTree treeNode, JMenuItem item){
 
-            TreePath path=tree.treeNodes.getSelectionPath();
-            insertANode = (DefaultMutableTreeNode) path.getLastPathComponent();
-            System.out.println(insertANode.getUserObject());
+            TreePath path[]= tree.treeNodes.getSelectionPaths();
 
-            ActionListener listen = new ActionListener() {
-
-
-
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-
-                    try {
+            for(int i=0;i<path.length;i++) {
+                insertANode = (DefaultMutableTreeNode) path[i].getLastPathComponent();
+                System.out.println(insertANode.getUserObject());
+            }
+                ActionListener listen = new ActionListener() {
 
 
-                        if (item.getText().equals("Delete")) {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
 
-                            delete(treeNode);
-
-                        } else if (item.getText().equals("Folder")) {
-
-                            newFolder(treeNode);
+                        try {
 
 
-                        } else if ((!e.getActionCommand().equals("Folder")) && (!(e.getActionCommand().equals("Delete"))
-                                && (!(e.getActionCommand().equals("Copy")) && (!(e.getActionCommand().equals("Paste"))))
-                                && (!(e.getActionCommand().equals("Duplicate")) && (!(e.getActionCommand().equals("Rename")))))) {
+                            if (item.getText().equals("Delete")) {
 
-                            allBusinessActivities(treeNode, e.getActionCommand(), item.getIcon());
-                           // treeNode.setDropTarget(new DropTarget(treeNode,dragObject((JMenuItem) item)));
+                                delete(treeNode);
 
+                            } else if (item.getText().equals("Folder")) {
 
-                        } else if (item.getText().equals("Rename")) {
-
-                            rename(treeNode);
+                                newFolder(treeNode);
 
 
-                        } else if (item.getText().equals("Duplicate")) {
-                            duplicate(treeNode, e.getActionCommand(), item.getIcon());
+                            } else if ((!e.getActionCommand().equals("Folder")) && (!(e.getActionCommand().equals("Delete"))
+                                    && (!(e.getActionCommand().equals("Copy")) && (!(e.getActionCommand().equals("Paste"))))
+                                    && (!(e.getActionCommand().equals("Duplicate")) && (!(e.getActionCommand().equals("Rename")))))) {
+
+                                allBusinessActivities(treeNode, e.getActionCommand(), item.getIcon());
+                                // treeNode.setDropTarget(new DropTarget(treeNode,dragObject((JMenuItem) item)));
 
 
-                        }
-                        if (item.getText().equals("Copy")) {
+                            } else if (item.getText().equals("Rename")) {
 
-                            copy();
-                            isEventModelHandlerItemsEnable = true;
+                                rename(treeNode);
 
 
-                        }
+                            } else if (item.getText().equals("Duplicate")) {
+                                duplicate(treeNode, e.getActionCommand(), item.getIcon());
 
 
-                        if (item.getText().equals("Paste")) {
+                            }
+                            if (item.getText().equals("Copy")) {
+                                System.out.println("copy");
 
-                            TreePath paths[] = tree.treeNodes.getSelectionPaths();
-                            for (int i = 0; i < paths.length; i++) {
-                                newNodes = (DefaultMutableTreeNode) paths[i].getLastPathComponent();
-                               DefaultMutableTreeNode mainContainer= (DefaultMutableTreeNode) newNodes;
-                                DefaultMutableTreeNode childrenContainer= (DefaultMutableTreeNode) newNodes.getParent();
+                                isEventModelHandlerItemsEnable = true;
 
-
-
-                                if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof SubFolders) {
-                                    if (getFolderIcon().toString().equals(((SubFolders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString())) {
-                                        paste(mainContainer);
-                                    }
-
-                                }else {
-                                    paste(childrenContainer);
-                                }
-
-                                if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof Folders) {
-                                    if (getFolderIcon().toString().equals(((Folders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString())) {
-                                        paste(mainContainer);
-                                    }
-                                }else {
-                                    paste(childrenContainer);
-                                }
-
-                                ///if(childrenContainer.getAllowsChildren()){
-                                   // paste(childrenContainer);
-                               // }
-
+                                copy();
 
 
                             }
 
+
+                            if (item.getText().equals("Paste")) {
+
+                                paste();
+
+                                //   TreePath paths[] = tree.treeNodes.getSelectionPaths();
+                                //   for (int i = 0; i < paths.length; i++) {
+                                //       newNodes = (DefaultMutableTreeNode) paths[i].getLastPathComponent();
+                                //      DefaultMutableTreeNode mainContainer= (DefaultMutableTreeNode) newNodes;
+                                //       DefaultMutableTreeNode childrenContainer= (DefaultMutableTreeNode) newNodes.getParent();
+                                //
+                                //
+                                //
+                                //       if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof SubFolders) {
+                                //           if (getFolderIcon().toString().equals(((SubFolders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString())) {
+                                //               paste(mainContainer);
+                                //           }
+                                //
+                                //       }else {
+                                //           paste(childrenContainer);
+                                //       }
+                                //
+                                //       if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof Folders) {
+                                //           if (getFolderIcon().toString().equals(((Folders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString())) {
+                                //               paste(mainContainer);
+                                //           }
+                                //       }else {
+                                //           paste(childrenContainer);
+                                //       }
+                                //
+                                //       ///if(childrenContainer.getAllowsChildren()){
+                                //          // paste(childrenContainer);
+                                //      // }
+                                //
+                                //
+                                //
+                                //   }
+
+                            }
+
+
+                        } catch (Exception x) {
+
+                        }
+
+                        if (!item.getText().equals("Paste") && !item.getText().equals("Copy")
+                                && !item.getText().equals("Remove") && !item.getText().equals("Paste")
+                                && !item.getText().equals("Delete")) {
+
+
+                            // treeNode.setDropTarget(new DropTarget(treeNode,dragObject( item)));
+                            TreePath[] paths = treeNode.getSelectionPaths();
+                            for (int x = 0; x < paths.length; x++) {
+                                treeNode.expandPath(paths[x]);
+                            }
+
+                            // treeNode.setDropTarget(new DropTarget(treeNode,dragObject(item)));
+
+
                         }
 
 
-
-
-                    } catch (Exception x) {
 
                     }
 
-                    if (!item.getText().equals("Paste") && !item.getText().equals("Copy")
-                            && !item.getText().equals("Remove")   &&!item.getText().equals("Paste")
-                            && !item.getText().equals("Delete")) {
 
+                };
+                return listen;
 
-
-
-                       // treeNode.setDropTarget(new DropTarget(treeNode,dragObject( item)));
-                        TreePath[] paths=treeNode.getSelectionPaths();
-                        for(int x=0;x<paths.length;x++) {
-                            treeNode.expandPath(paths[x]);
-                        }
-
-                        // treeNode.setDropTarget(new DropTarget(treeNode,dragObject(item)));
-
-
-
-                }
-
-                }
-
-
-
-
-            }; return listen;
         }
   
         public  DropTargetListener dragObject(JMenuItem items){
@@ -1052,71 +1070,136 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
         }
         public void copy(){
 
-            TreePath[] paths = tree.treeNodes.getSelectionPaths();
-            DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
-            for (int i = 0; i < paths.length; i++){
-                newNodes = (DefaultMutableTreeNode) paths[i].getLastPathComponent();
 
-
-                copyClone(new DefaultMutableTreeNode(newNodes.getUserObject()));
 
                 try {
-                    setClip(paths[i].getLastPathComponent().toString());
-                } catch (Exception x) {
-                    x.printStackTrace();
-                }
-
-            }
-
-        }
-
-        public void paste(DefaultMutableTreeNode newNode){
 
 
 
-            try {
-                System.out.println("paste");
-                TreePath paths[] = tree.treeNodes.getSelectionPaths();
-                DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+                    TreeNode getNode = (TreeNode) tree.treeNodes.getLastSelectedPathComponent();
+
+                    try {
 
 
 
-                createFolders = new Folders();
 
 
-                for (int i = 0; i < paths.length; i++) {
-                    String itemName = paths[i].getLastPathComponent().toString();
-                    newNodes= (DefaultMutableTreeNode) paths[i].getLastPathComponent();
 
-
-                    if ((itemName.startsWith(itemName))) {
-
-
-                        if(itemName.equals("")  ){
+                        Point loc = tree.treeNodes.getLocation();
+                        TreePath destinationPath = tree.treeNodes.getSelectionPath().getParentPath();
+                        DefaultMutableTreeNode getLastSelectedPath = null;
+                        if (loc.getLocation() == null) {
 
                             return;
-                        }else if ( itemName.equals(newNodes.getUserObject().toString())){
-
-                            model.insertNodeInto(getCopyClone(),
-                                    (MutableTreeNode) newNode, newNodes.getChildCount());
-                           copyClone(getCopyClone());
-
-                            tree.treeNodes.expandPath(paths[i]);
-                            //tree.revalidate();
+                        } else {
 
 
-                        }    else{
-                            createFolders.setSubFolders( new SubFolders(itemName, icon));
+                            getLastSelectedPath = (DefaultMutableTreeNode) destinationPath.getLastPathComponent();
+
+                            if (getLastSelectedPath.getUserObject().equals("")) {
+                                System.out.println("Hole");
+
+                                return;
+                            }
+
+
+
+
+
                         }
 
 
 
 
 
+
+
+                        if(getNode !=null) {
+                            getLastSelectedPath= (DefaultMutableTreeNode) getNode;
+
+
+
+                            System.out.println("hate"+getLastSelectedPath);
+
+                            copyClone(getLastSelectedPath);
+
+
+                        }
+
+
+
+
+
+                    } catch (Exception x) {
+                        x.printStackTrace();
+
                     }
 
 
+
+
+
+                        //setClip(paths.toString());
+
+                } catch (Exception x) {
+                    x.printStackTrace();
                 }
+
+
+
+        }
+
+        public void paste(){
+
+
+
+            try {
+                System.out.println("paste");
+
+                TreePath paths = tree.treeNodes.getSelectionPath();
+
+
+                DefaultMutableTreeNode pastObjectPath=null;
+                DefaultMutableTreeNode pastObject=null;
+                if(paths ==null){
+                    return;
+                }else {
+                    pastObjectPath= (DefaultMutableTreeNode) paths.getLastPathComponent();
+
+
+
+
+
+                    DefaultTreeModel model= (DefaultTreeModel) tree.treeNodes.getModel();
+                    Folders folders=new Folders();
+                    folders.setSubFolders(new SubFolders(getCopyClone().getUserObject().toString(),icon));
+                    if(pastObjectPath.getChildCount() !=-1) {
+                        model.insertNodeInto(getCopyClone(), pastObjectPath, pastObjectPath.getChildCount());
+
+
+                        tree.treeNodes.setSelectionPath(paths);
+
+                        tree.treeNodes.setExpandsSelectedPaths(true);
+
+
+                        tree.treeNodes.expandPath(paths);
+                    }else {
+                        return;
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1348,7 +1431,7 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
 
                 // if(typeOfDataToBeTransfer[i].match(typeOfDataToBeTransfer[i])){
-                //   System.out.println(typeOfDataToBeTransfer[i].getMimeType());
+                 //  System.out.println(typeOfDataToBeTransfer[i].getMimeType());
 
 
                 getLastSelectedPath = (DefaultMutableTreeNode) destinationPath.getLastPathComponent();
@@ -1374,20 +1457,76 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
             }
 
 
-            getLastSelectedPath.add((MutableTreeNode) getNode);
-
-            DefaultMutableTreeNode filesDrag = new DefaultMutableTreeNode();
-            Folders folder = new Folders();
-            folder.setSubFolders(new SubFolders(getLastSelectedPath.getUserObject().toString(), icon));
-            folder.setSubNode(getLastSelectedPath);
-
-            DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
-            model.reload();
-            tree.treeNodes.setSelectionPath(destinationPath);
-            if (folder.getSubNode() != null)
-                filesDrag.add(folder.getSubNode());
 
 
+            UIManager.put("OptionPane.minimumSize",new Dimension(460,100));
+            String path = new File(getLastSelectedPath.toString()).getAbsolutePath();
+            Object option=  JOptionPane.showInputDialog(null,"You are about to move object to "
+                            +getLastSelectedPath + " directory, processed ?",
+                    "Move",JOptionPane.OK_CANCEL_OPTION,new ImageIcon(),null ,path
+            );
+
+
+
+            if(option !=null) {
+                TreePath seek= (TreePath) tree.treeNodes.getSelectionPath();
+                DefaultMutableTreeNode find= (DefaultMutableTreeNode) seek.getLastPathComponent();
+
+                if(((DefaultMutableTreeNode)find).getUserObject() instanceof  Folders) {
+                    if (folderIcon.toString().equals((((Folders) ((DefaultMutableTreeNode) find).getUserObject())).getIcon().toString())) {
+                        getLastSelectedPath.add((MutableTreeNode) getNode);
+                        System.out.println("Pass through");
+
+                        DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+                        model.reload();
+                        getLastSelectedPath.remove(getLastSelectedPath);
+
+                        if (getLastSelectedPath.getUserObject() != null)
+                            // filesDrag.add(folder.getSubNode());
+                            tree.treeNodes.setSelectionPath(destinationPath);
+                        tree.treeNodes.setExpandsSelectedPaths(true);
+                    }
+
+                }if(((DefaultMutableTreeNode)find).getUserObject() instanceof  SubFolders){
+                    getLastSelectedPath.add((MutableTreeNode) getNode);
+
+
+                    DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+//                    model.insertNodeInto((MutableTreeNode) getLastSelectedPath.children(), (MutableTreeNode) find.getParent(),find.getChildCount());
+
+
+                    if (getLastSelectedPath.getUserObject() != null)
+                        // filesDrag.add(folder.getSubNode());
+                        tree.treeNodes.setSelectionPath(destinationPath);
+                    tree.treeNodes.setExpandsSelectedPaths(true);
+                }
+
+
+            }else {
+                dtde.rejectDrop();
+                return;
+            }
+
+
+
+
+           // DefaultMutableTreeNode filesDrag = new DefaultMutableTreeNode();
+            //Folders folder = new Folders();
+            //folder.setSubFolders(new SubFolders(getLastSelectedPath.getUserObject().toString(), icon));
+            //folder.setSubNode(getLastSelectedPath);
+
+
+
+           // tree.treeNodes.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+            //ToolTipManager.sharedInstance( ).registerComponent(tree.treeNodes);
+
+
+
+
+
+
+            tree.treeNodes.expandPath(destinationPath);
+            dtde.rejectDrop();
             System.out.println("Drop failed: " + dtde);
 
         } catch (Exception e) {

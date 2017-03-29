@@ -1479,7 +1479,11 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
                         DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
                         model.reload();
-                        getLastSelectedPath.remove(getLastSelectedPath);
+                        if(!getLastSelectedPath.getAllowsChildren()) {
+                            getLastSelectedPath.remove(getLastSelectedPath);
+                            tree.treeNodes.setSelectionPath(destinationPath);
+                            tree.treeNodes.setExpandsSelectedPaths(true);
+                        }
 
                         if (getLastSelectedPath.getUserObject() != null)
                             // filesDrag.add(folder.getSubNode());

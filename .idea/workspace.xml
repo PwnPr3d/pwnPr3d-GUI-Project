@@ -4,7 +4,6 @@
     <list default="true" id="3a6ece85-b283-430b-911d-37fa1acf9e0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java" afterPath="$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Folders.java" afterPath="$PROJECT_DIR$/src/RenderFoldersAndSubFoders/Folders.java" />
     </list>
     <ignored path="pwnPr3d-GUI-Project2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="FolderAndFileEventHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="1481" column="70" selection-start-line="1481" selection-start-column="70" selection-end-line="1481" selection-end-column="70" />
+            <state relative-caret-position="368">
+              <caret line="1484" column="73" selection-start-line="1484" selection-start-column="73" selection-end-line="1484" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setClip#0;class#FolderAndFileEventHandler#0" expanded="false" />
@@ -992,7 +991,7 @@
       <workItem from="1490015663458" duration="137647000" />
       <workItem from="1490440602477" duration="17558000" />
       <workItem from="1490477203217" duration="80243000" />
-      <workItem from="1490699828710" duration="41124000" />
+      <workItem from="1490699828710" duration="41792000" />
     </task>
     <task id="LOCAL-00001" summary="deleted panel">
       <created>1487679886058</created>
@@ -1064,11 +1063,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490655007146</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Tree update">
+      <created>1490751096580</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1490751096580</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="680285000" />
+    <option name="totallyTimeSpent" value="680953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1711,8 +1717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventHandlers/FolderAndFileEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="1481" column="70" selection-start-line="1481" selection-start-column="70" selection-end-line="1481" selection-end-column="70" />
+        <state relative-caret-position="368">
+          <caret line="1484" column="73" selection-start-line="1484" selection-start-column="73" selection-end-line="1484" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setClip#0;class#FolderAndFileEventHandler#0" expanded="false" />

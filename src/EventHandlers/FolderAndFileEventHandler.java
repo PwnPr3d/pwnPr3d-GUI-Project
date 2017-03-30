@@ -94,8 +94,8 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
         for(Enumeration enumerate=source.children();enumerate.hasMoreElements();){
             mutable=new DefaultMutableTreeNode( enumerate.nextElement());
 
-                newCopyClone.add(mutable);
-                cloneDrag(newCopyClone).add(mutable);
+               // newCopyClone.add(mutable);
+               // cloneDrag(newCopyClone).add(mutable);
                 newCopyClone.add(mutable);
         }
 
@@ -174,8 +174,8 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
                     final String selectedLeafOrNode = insertANode.getUserObject().toString();
 
                     if (model.toString().equals(selectedLeafOrNode)) {
-                        tree.treeNodes.setSelectionRow(1);
-                        eventModelHandlerMenu.setEnabled(false);
+                       // tree.treeNodes.setSelectionRow(1);
+                       // eventModelHandlerMenu.setEnabled(false);
 
 
                     }
@@ -183,30 +183,119 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
                 if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof SubFolders){
 
-                    System.out.println(getFolderIcon().toString() +" Fa"+(((SubFolders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString()));
-                    if(getFolderIcon().toString().equals(((SubFolders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString())){
-                        //  businessPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
 
 
-                        if(insertANode.getUserObject().toString().equals("Business Interaction")){
-                            businessPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+
+                    if((getFolderIcon().toString().equals(((SubFolders) ((DefaultMutableTreeNode) insertANode).
+                            getUserObject()).getIcon().toString()))){
+
+                        TreeNode m= (TreeNode) path.getLastPathComponent();
+
+                        System.out.println(insertANode.getSharedAncestor((DefaultMutableTreeNode) insertANode.getRoot()).children().hasMoreElements()?
+                                insertANode.getUserObject():insertANode.getUserObject());
+
+
+                        if((insertANode.getSharedAncestor((DefaultMutableTreeNode) insertANode.getRoot()).children().hasMoreElements())){
+
+                            for(int x=0;x<(insertANode.getRoot()).getChildCount();x++) {
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Application"))) {
+                                    applicationModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Business Model"))) {
+                                   businessPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Technology"))) {
+                                    applicationModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Business Model"))) {
+                                    technologyModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Motivation"))) {
+                                    motivationModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Implementation And Migration"))) {
+                                    implementationAndMigrationModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }   if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Relations"))) {
+                                    relationsPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Connector"))) {
+                                    connectorModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("nest");
+
+                                }
+
+
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Views"))) {
+                                    viewsModelsPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("next");
+
+                                }
+
+                                if ((insertANode.getSharedAncestor((DefaultMutableTreeNode) ((DefaultMutableTreeNode)
+                                        insertANode.getRoot()).getChildAt(x)).toString().equals("Network Analysis"))) {
+                                    connectorModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                                    System.out.println("next");
+
+                                }
+
+
+
+
+
+
+                            }
                         }
-
-
-
-
 
                     }else {
                         trimLeaves(e.getX(), e.getY(), tree.treeNodes);
                     }
 
 
+
+
+
                 }
 
-                    if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof Folders) {
+
+                if (((DefaultMutableTreeNode) insertANode).getUserObject() instanceof Folders) {
                         //tree.setEditable(true);
 
-                        if(getFolderIcon().toString().equals(((Folders) ((DefaultMutableTreeNode) insertANode).getUserObject()).getIcon().toString())) {
+
+
+
+
+                        if(getFolderIcon().toString().equals(((Folders) ((DefaultMutableTreeNode) insertANode).
+                                getUserObject()).getIcon().toString())) {
+
+
+
 
 
                             if(insertANode.getUserObject().toString().equals("Business Model")){
@@ -216,8 +305,13 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
                             if(insertANode.getUserObject().toString().equals("Application")){
                                 applicationModelPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
                             }
+
+
+
                             if(insertANode.getUserObject().toString().equals("Technology")){
                                technologyModelPopUpMenu (e.getX(), e.getY(), tree.treeNodes);
+
+
                             }
                             if(insertANode.getUserObject().toString().equals("Business Model")){
                                 businessPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
@@ -238,6 +332,9 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
                                 viewsModelsPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
                             }
                             if(insertANode.getUserObject().toString().equals("Views")){
+                                viewsModelsPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
+                            }
+                            if(insertANode.getUserObject().toString().equals("Network Analysis")){
                                 viewsModelsPopUpMenu(e.getX(), e.getY(), tree.treeNodes);
                             }
 
@@ -271,7 +368,8 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
 
             }catch (Exception x){
-              // x.printStackTrace();
+                System.out.println("error");
+               x.printStackTrace();
             }
 
 
@@ -325,10 +423,10 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
         eventModelHandlerMenu.add(eventModelHandlerItems);
 
 
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
-        eventModelHandlerMenu.add(eventModelHandlerItems);
+       // eventModelHandlerItems=new JMenuItem("Rename");
+       // eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
+        //eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
+        //eventModelHandlerMenu.add(eventModelHandlerItems);
 
         eventModelHandlerItems.add(new JSeparator());
 
@@ -497,10 +595,10 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
 
 
-        eventModelHandlerItems=new JMenuItem("Rename");
-        eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-        eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
-        eventModelHandlerPopupMenu.add(eventModelHandlerItems);
+       // eventModelHandlerItems=new JMenuItem("Rename");
+       // eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
+       // eventModelHandlerItems.addActionListener(listenToItems(treeNodes,eventModelHandlerItems));
+       // eventModelHandlerPopupMenu.add(eventModelHandlerItems);
 
 
         eventModelHandlerPopupMenu.add(new JSeparator());
@@ -1169,17 +1267,32 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
 
 
-
                     DefaultTreeModel model= (DefaultTreeModel) tree.treeNodes.getModel();
-                    Folders folders=new Folders();
-                    folders.setSubFolders(new SubFolders(getCopyClone().getUserObject().toString(),icon));
+
                     if(pastObjectPath.getChildCount() !=-1) {
-                        model.insertNodeInto(getCopyClone(), pastObjectPath, pastObjectPath.getChildCount());
+
+                        Folders folders=new Folders();
+                        folders.setSubFolders(new SubFolders(getCopyClone().getUserObject().toString(),
+                                new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/business-actor-16.png"))));
+                        if(!getCopyClone().equals(getCopyClone().children())) {
+
+                            model.insertNodeInto(getCopyClone(), (MutableTreeNode) pastObjectPath.getParent(), pastObjectPath.getChildCount());
+                            model.reload();
+                            tree.treeNodes.requestFocus();
+
+                        }
+
+                        DefaultTreeModel model_1 = (DefaultTreeModel) tree.treeNodes.getModel();
+
+                        // DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+
 
 
                         tree.treeNodes.setSelectionPath(paths);
 
                         tree.treeNodes.setExpandsSelectedPaths(true);
+
+
 
 
                         tree.treeNodes.expandPath(paths);
@@ -1324,8 +1437,9 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
                     cloneTemp=new ArrayList<>();
                     cloneTemp.add(i,createFiles.getSubFolders().get(x).getBusinessInteraction());
-                    model.insertNodeInto(newFolder = new DefaultMutableTreeNode(createFiles.getSubFolders().get(x)),
-                            newNodes, newNodes.getChildCount());
+
+                    newFolder = new DefaultMutableTreeNode(createFiles.getSubFolders().get(x));
+                    model.insertNodeInto(newFolder, newNodes, newNodes.getChildCount());
 
                 }
 
@@ -1477,8 +1591,9 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
                         getLastSelectedPath.add((MutableTreeNode) getNode);
                         System.out.println("Pass through");
 
-                        DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
-                        model.reload();
+                       DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+                       model.reload();
+                       ;
                         if(!getLastSelectedPath.getAllowsChildren()) {
                             getLastSelectedPath.remove(getLastSelectedPath);
                             tree.treeNodes.setSelectionPath(destinationPath);
@@ -1492,10 +1607,17 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
                     }
 
                 }if(((DefaultMutableTreeNode)find).getUserObject() instanceof  SubFolders){
+
+
+
+                    if(getNode.toString().equals(getNode.toString()))
                     getLastSelectedPath.add((MutableTreeNode) getNode);
 
 
                     DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+
+                   // DefaultTreeModel model = (DefaultTreeModel) tree.treeNodes.getModel();
+                    model.reload();
 //                    model.insertNodeInto((MutableTreeNode) getLastSelectedPath.children(), (MutableTreeNode) find.getParent(),find.getChildCount());
 
 
@@ -1624,10 +1746,11 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
 
     }
 
-    public void applicationModelPopUpMenu(int x,int y,JTree treeNodes){
+    public DefaultMutableTreeNode applicationModelPopUpMenu(int x,int y,JTree treeNodes){
 
         eventModelHandlerPopupMenu=new JPopupMenu();
-        eventModelHandlerPopupMenu.setBorder(new LineBorder(new Color(130, 173, 255),1,true));
+        item=new JMenuItem();
+
         eventModelHandlerMenu=new JMenu("New");
         eventModelHandlerPopupMenu.add(eventModelHandlerMenu);
 
@@ -1674,6 +1797,7 @@ public  class FolderAndFileEventHandler extends PopUpMenuListComponents implemen
         trimTree(x,y,treeNodes);
 
 
+        return newCopyClone;
     }
     public void technologyModelPopUpMenu(int x,int y,JTree treeNodes){
 

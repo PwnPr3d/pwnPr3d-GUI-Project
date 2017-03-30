@@ -6,10 +6,7 @@ import RenderFoldersAndSubFoders.FolderAndFileCellEditor.TrimModels;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeSelectionModel;
+import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DragSource;
@@ -55,7 +52,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
 
-
+    Model modelRoot;
 
     public JComponent modelTree(){
 
@@ -63,7 +60,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
         //Initialize tree objects
        label=new JLabel();
-        Model modelRoot=new Model();
+        modelRoot=new Model();
         modelRoot.setModels("Models");
         modelRoot.setIcon(modelIcon);
         modelRoot.setCollapseIcon(collapseIcon);
@@ -81,6 +78,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
         Folders applicationModels=new Folders();
         applicationModels.setNodes("Application");
+        applicationModels.setSubFolders(new SubFolders("Default View",folderIcon));
         applicationModels.setIcon(folderIcon);
         modelRoot.setNodesOfFolders(applicationModels);
 
@@ -125,10 +123,10 @@ public class CreateFolders extends DefaultTreeCellRenderer{
 
 
 
-        root=new DefaultMutableTreeNode(modelRoot);
+
 
         //Initialize Tree Nodes
-
+        root=new DefaultMutableTreeNode(modelRoot);
 
 
 
@@ -143,8 +141,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
            for(SubFolders subFolders:folders.getSubFolders()){
 
 
-
-               nodes.add(new DefaultMutableTreeNode(subFolders));
+               nodes.add(new DefaultMutableTreeNode(subFolders) );
            }
 
            root.add(nodes);

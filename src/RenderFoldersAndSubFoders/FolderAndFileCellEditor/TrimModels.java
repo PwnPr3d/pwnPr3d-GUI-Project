@@ -22,7 +22,7 @@ public class TrimModels  extends DefaultTreeCellRenderer {
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
         tree.setRowHeight(20);
         //tree.setEditable(true);
-//         tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
+//        tree.setToolTipText(((DefaultMutableTreeNode)value).getUserObject().toString());
 
         if(sel)
             setBackground(new Color(0xFF4F59));

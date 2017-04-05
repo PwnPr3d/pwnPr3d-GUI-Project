@@ -6,7 +6,9 @@ import RenderFoldersAndSubFoders.FolderAndFileCellEditor.TrimModels;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DragSource;
@@ -16,7 +18,7 @@ import java.awt.dnd.DropTarget;
 /**
  * Created by Ayettey on 10/02/2017.
  */
-public class CreateFolders extends DefaultTreeCellRenderer{
+public class CreateFolders extends TransferHandler{
 
 
 
@@ -163,6 +165,7 @@ public class CreateFolders extends DefaultTreeCellRenderer{
         treeNodes.setDropMode(DropMode.ON);
         treeNodes.setDragEnabled(true);
         treeNodes.setDropTarget(new DropTarget(treeNodes,modelHandler));
+
 
 
 

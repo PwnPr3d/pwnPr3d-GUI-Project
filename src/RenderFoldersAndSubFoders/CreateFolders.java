@@ -6,8 +6,11 @@ import RenderFoldersAndSubFoders.FolderAndFileCellEditor.TrimModels;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 import java.awt.dnd.DnDConstants;
@@ -27,7 +30,7 @@ public class CreateFolders extends TransferHandler{
 
 
     public DefaultMutableTreeNode newModels;
-    public JTree treeNodes;
+    public JTree treeNodes =new JTree();
     private JPopupMenu menuPopUp;
     private  JMenuItem popUpItems;
     private JEditorPane pane;
@@ -36,6 +39,7 @@ public class CreateFolders extends TransferHandler{
     private ImageIcon paletteImages;
     DefaultMutableTreeNode nodes;
     DefaultMutableTreeNode root;
+
     int count=0;
 
     private ImageIcon modelIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/module.png"));
@@ -44,7 +48,8 @@ public class CreateFolders extends TransferHandler{
     private ImageIcon collapseIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/collapseall.png"));
     private ImageIcon defaultViewIcon = new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/models.gif"));
 
-    public JLabel label;
+    public JTextField label=new JTextField(80);
+    public JLabel labels=new JLabel();
 
 
 
@@ -55,13 +60,14 @@ public class CreateFolders extends TransferHandler{
 
 
     Model modelRoot;
+    private JTextField textField;
 
     public JComponent modelTree(){
 
 
 
         //Initialize tree objects
-       label=new JLabel();
+
         modelRoot=new Model();
         modelRoot.setModels("Models");
         modelRoot.setIcon(modelIcon);
@@ -161,10 +167,40 @@ public class CreateFolders extends TransferHandler{
         treeNodes.setSelectionModel(treeSelectionModel);
 
 
+
+
         //Set the tree cell editable true and show handle of the root
         treeNodes.setDropMode(DropMode.ON);
         treeNodes.setDragEnabled(true);
         treeNodes.setDropTarget(new DropTarget(treeNodes,modelHandler));
+
+
+
+        treeNodes.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+
+                DefaultMutableTreeNode select=(DefaultMutableTreeNode) treeNodes.getLastSelectedPathComponent();
+                label.setText(e.getPath().getLastPathComponent().toString());
+                labels.setForeground(new Color(0x0B88A3));
+                labels.setText(e.getPath().getLastPathComponent().toString());
+
+                TreePath path=e.getPath();
+                DefaultMutableTreeNode node= (DefaultMutableTreeNode) path.getLastPathComponent();
+
+                if(((DefaultMutableTreeNode) node  ).getUserObject() instanceof Folders){
+                    labels.setIcon(((Folders) (node.getUserObject()) ).getIcon()  );
+                }else {
+                    labels.setIcon(((SubFolders) (node.getUserObject()) ).getIcon()  );
+                }
+
+
+
+
+
+            }
+
+        });
 
 
 
@@ -207,6 +243,85 @@ public class CreateFolders extends TransferHandler{
     }
 
 
+
+    public void setLabel(JTextField label) {
+        this.label = label;
+    }
+
+    public JTextField getLabel() {
+        return label;
+    }
+
+
+    public  JComponent properties(){
+        GridBagConstraints constraints=new GridBagConstraints();
+        GridBagLayout layout=new GridBagLayout();
+        constraints.fill=GridBagConstraints.HORIZONTAL;
+        constraints.anchor=GridBagConstraints.NORTH;
+        constraints.insets=new Insets(5,10,5,10);
+
+        JLabel label=new JLabel("Name:",JLabel.LEFT);
+        label.setFont(new Font("",Font.PLAIN,14));
+
+        JTextArea textArea=new JTextArea();
+
+
+        textArea.append(getLabel().getText());
+        textField=new JTextField(120);
+        System.out.println("This is: " + getLabel().getText());
+        textField.setText(getLabel().getText());
+        textField.revalidate();
+        textField.repaint();
+
+
+        JPanel mainPropertyPanel=new JPanel(layout);
+        JPanel viewPanel=new JPanel(new BorderLayout());
+        constraints.gridx=0;
+        constraints.anchor=GridBagConstraints.FIRST_LINE_START;
+
+        mainPropertyPanel.add(label,constraints);
+
+        constraints.gridx=1;
+        constraints.ipady=7;
+        constraints.anchor=GridBagConstraints.FIRST_LINE_START;
+        mainPropertyPanel.add(textField,constraints);
+
+
+        label=new JLabel("Documentation:",JLabel.LEFT);
+        label.setFont(new Font("",Font.PLAIN,14));
+
+        constraints.gridx=1;
+        constraints.anchor=GridBagConstraints.FIRST_LINE_START;
+        mainPropertyPanel.add(label,constraints);
+
+
+        constraints.gridx=1;
+        constraints.ipady=120;
+        mainPropertyPanel.add(new JScrollPane(textArea),constraints);
+
+        mainPropertyPanel.revalidate();
+        label=new JLabel("Business Model",
+                new ImageIcon(getClass().getResource("/PwpIcons/toolbarDecorator/analyze.png")),SwingConstants.LEFT);
+        viewPanel.add(label,BorderLayout.BEFORE_FIRST_LINE);
+        viewPanel.add(mainPropertyPanel,BorderLayout.CENTER);
+        viewPanel.revalidate();
+
+
+        JTabbedPane tabbes=new JTabbedPane(SwingConstants.LEFT,JTabbedPane.TOP);
+
+
+
+
+        tabbes.setFont(new Font("",Font.PLAIN,13));
+        tabbes.addTab("Main",null,viewPanel,"Orange");
+        tabbes.revalidate();
+        tabbes.repaint();
+        tabbes.addTab("Property",null,new JTable(),"");
+
+
+        return  tabbes;
+
+    }
 
     private Cursor cursor(int action){
         return (action==DnDConstants.ACTION_MOVE)?

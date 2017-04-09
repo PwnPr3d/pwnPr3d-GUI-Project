@@ -235,76 +235,7 @@ public class PopUpMenuListComponents  {
 
 
 
-// private void trimTree(int x,int y,JTree treeNodes,String itemName){
-//
-//
-//
-//     eventModelHandlerPopupMenu=new JPopupMenu();
-//
-//     eventModelHandlerItems=new JMenuItem("Copy",new ImageIcon(getClass().getResource("/PwpIcons/actions/copy.png")));
-//     eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//     eventModelHandlerItems.addActionListener( eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
-//
-//     eventModelHandlerItems=new JMenuItem("Paste" ,new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-paste.png")));
-//     eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//     eventModelHandlerItems.addActionListener( eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
-//
-//
-//
-//     eventModelHandlerItems=new JMenuItem(new ImageIcon(getClass().getResource("/PwpIcons/actions/delete.png")));
-//     eventModelHandlerItems.setText("Delete");
-//     eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,2));
-//
-//     eventModelHandlerItems.addActionListener( eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
-//
-//     eventModelHandlerPopupMenu.addMouseListener(eventItemHandler);
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//
-//
-//
-//     eventModelHandlerItems=new JMenuItem("Rename");
-//     eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//     eventModelHandlerItems.addActionListener(eventHandler.eventHandler(treeNodes,eventModelHandlerItems));
-//
-//     eventModelHandlerPopupMenu.add(new JSeparator());
-//
-//     if(itemName.equals("Views")) {
-//         eventModelHandlerItems = new JMenuItem("Collapsed", new ImageIcon(getClass().getResource("/PwpIcons/actions/collapseall.png")));
-//         eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0));
-//         eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//          eventModelHandlerPopupMenu.add(new JSeparator());
-//     }
-//
-//
-//     eventModelHandlerItems=new JMenuItem("Generate view for..");
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//
-//
-//
-//     eventModelHandlerItems=new JMenuItem("Validate model");
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//
-//     eventModelHandlerPopupMenu.add(new JSeparator());
-//     eventModelHandlerItems=new JMenuItem("Property");
-//     eventModelHandlerItems.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, ActionEvent.ALT_MASK));
-//     eventModelHandlerPopupMenu.add(eventModelHandlerItems);
-//
-//
-//
-//     eventModelHandlerItems.setPreferredSize(new Dimension(300,20));
-//
-//     TreePath path=treeNodes.getSelectionPath();
-//     Object node=path.getLastPathComponent();
-//     if(node==treeNodes.getModel().getRoot()){
-//         eventModelHandlerPopupMenu.setEnabled(false);
-//     }else {
-//         eventModelHandlerPopupMenu.show(treeNodes,x,y);
-//     }
-//
-// }
+
 
 
 

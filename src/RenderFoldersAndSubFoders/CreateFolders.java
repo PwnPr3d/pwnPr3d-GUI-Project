@@ -2,10 +2,10 @@ package RenderFoldersAndSubFoders;
 
 
 import EventHandlers.FolderAndFileEventHandler;
+import EventHandlers.PaletteEventHandler;
 import RenderFoldersAndSubFoders.FolderAndFileCellEditor.TrimModels;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -13,15 +13,15 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
-import java.awt.dnd.DnDConstants;
-import java.awt.dnd.DragSource;
 import java.awt.dnd.DropTarget;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 /**
  * Created by Ayettey on 10/02/2017.
  */
-public class CreateFolders extends TransferHandler{
+public class CreateFolders  extends PaletteEventHandler{
 
 
 
@@ -31,16 +31,11 @@ public class CreateFolders extends TransferHandler{
 
     public DefaultMutableTreeNode newModels;
     public JTree treeNodes =new JTree();
-    private JPopupMenu menuPopUp;
-    private  JMenuItem popUpItems;
     private JEditorPane pane;
-    private JPanel modelPanel;
-    private JLabel []paletteNetworkObjects;
-    private ImageIcon paletteImages;
     DefaultMutableTreeNode nodes;
     DefaultMutableTreeNode root;
 
-    int count=0;
+
 
     private ImageIcon modelIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/module.png"));
     private ImageIcon folderIcon=new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-open.png"));
@@ -61,12 +56,15 @@ public class CreateFolders extends TransferHandler{
 
     Model modelRoot;
     private JTextField textField;
+    private PaletteEventHandler handler;
 
     public JComponent modelTree(){
 
 
 
         //Initialize tree objects
+
+
 
         modelRoot=new Model();
         modelRoot.setModels("Models");
@@ -175,14 +173,29 @@ public class CreateFolders extends TransferHandler{
         treeNodes.setDropTarget(new DropTarget(treeNodes,modelHandler));
 
 
+        treeNodes.setSelectionRow(1);
+
+        if(treeNodes.isRowSelected(1)){
+
+            labels.setText(treeNodes.getSelectionPath().getLastPathComponent().toString());
+            label.setText(treeNodes.getSelectionPath().getLastPathComponent().toString());
+            labels.setIcon(folderIcon);
+            labels.setForeground(new Color(0x0B88A3));
+            //tree.setEditable(false);
+
+
+
+        }
+
 
         treeNodes.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
 
-                DefaultMutableTreeNode select=(DefaultMutableTreeNode) treeNodes.getLastSelectedPathComponent();
+
                 label.setText(e.getPath().getLastPathComponent().toString());
                 labels.setForeground(new Color(0x0B88A3));
+
                 labels.setText(e.getPath().getLastPathComponent().toString());
 
                 TreePath path=e.getPath();
@@ -190,9 +203,13 @@ public class CreateFolders extends TransferHandler{
 
                 if(((DefaultMutableTreeNode) node  ).getUserObject() instanceof Folders){
                     labels.setIcon(((Folders) (node.getUserObject()) ).getIcon()  );
+
                 }else {
                     labels.setIcon(((SubFolders) (node.getUserObject()) ).getIcon()  );
+
                 }
+
+                //
 
 
 
@@ -201,6 +218,12 @@ public class CreateFolders extends TransferHandler{
             }
 
         });
+
+       // handler.label=new JLabel();
+
+
+
+
 
 
 
@@ -224,6 +247,25 @@ public class CreateFolders extends TransferHandler{
 
         treeNodes.addMouseListener(modelHandler);
        //treeNodes.setInvokesStopCellEditing(true);
+        handler=new PaletteEventHandler();
+
+        this.label.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.print(handler.label.getText());
+                labels.setText(handler.label.getText());
+                System.out.print(handler.label.getText());
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.print(handler.label.getText());
+                labels.setText(handler.label.getText());
+                System.out.print(handler.label.getText());
+            }
+        });
+        //labels.setText(handler.label.getText());
+       System.out.print("Text"+handler.label.getText());
 
 
 
@@ -244,9 +286,7 @@ public class CreateFolders extends TransferHandler{
 
 
 
-    public void setLabel(JTextField label) {
-        this.label = label;
-    }
+
 
     public JTextField getLabel() {
         return label;
@@ -323,10 +363,7 @@ public class CreateFolders extends TransferHandler{
 
     }
 
-    private Cursor cursor(int action){
-        return (action==DnDConstants.ACTION_MOVE)?
-                DragSource.DefaultMoveDrop:DragSource.DefaultCopyDrop;
-    }
+
 
 
 
@@ -344,45 +381,6 @@ public class CreateFolders extends TransferHandler{
         return pane;
     }
 
-    public JComponent paletteModel(){
-
-        pane=new JEditorPane();
-        GridLayout layout=new GridLayout(6,5);
-         layout.setHgap(-150);
-         layout.setVgap(-120);
-
-        modelPanel=new JPanel(layout);
-        modelPanel.setBackground(modelPanel.getBackground());
-        modelPanel.setBorder(new LineBorder(new Color(0x9C353E),1,true));
-
-        pane.setLayout(new BorderLayout());
-
-        paletteNetworkObjects=new JLabel[25];
-
-        for(int i=1;i<paletteNetworkObjects.length;i++){
-
-
-            paletteImages=new ImageIcon(new ImageIcon(getClass().getResource("/PaletteIconsNetworkIcons/NetworkAndActivities" +
-                    "/pwp-computer-analyzer-"+i+".png")).getImage().getScaledInstance(35,35,Image.SCALE_DEFAULT));
-
-            paletteNetworkObjects[i]=new JLabel(paletteImages,JLabel.CENTER);
-            paletteNetworkObjects[i].setCursor(new Cursor(12));
-
-
-
-            modelPanel.add(paletteNetworkObjects[i]);
-
-
-        }
-
-        pane.add(modelPanel,BorderLayout.CENTER);
-
-
-
-
-
-        return pane;
-    }
 
 
 

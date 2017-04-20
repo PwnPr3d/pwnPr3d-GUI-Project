@@ -1,5 +1,6 @@
 package com.company;
 
+import EventHandlers.PaletteEventHandler;
 import PwpCreateComponents.MenuBarComponents;
 import RenderFoldersAndSubFoders.CreateFolders;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
@@ -15,10 +16,14 @@ public class PwnFrame extends JFrame {
     private  JTabbedPane[] tabbedPane=new JTabbedPane[4];
     private  JPanel panel;
     private  JSplitPane[] splitLayersOfPan;
+    private JEditorPane editorPane;
     private  JTabbedPane[] tabbeds;
-    CreateFolders folders=new CreateFolders();
+    private CreateFolders folders=new CreateFolders();
+    private PaletteEventHandler handler=new PaletteEventHandler();
 
-   public PwnFrame()  {
+
+
+   public  PwnFrame()  {
 
 
        /*Create MenuBarComponent instance
@@ -43,8 +48,19 @@ public class PwnFrame extends JFrame {
 
 
 
-              add(new PwnPane(folders.label,null,folders,folders.labels).mainPane(folders.label,
-                      new JTextArea("Add documentation relating to this object here"),folders,folders.labels));
+
+
+           panel=new JPanel(new BorderLayout());
+           splitLayersOfPan=new JSplitPane[4];
+           tabbeds=new JTabbedPane[4];
+           editorPane=new JEditorPane();
+
+           new PaletteEventHandler().revalidate();
+              add(new PwnPane().mainPane(panel,splitLayersOfPan,folders.label,
+                      new JTextArea("Add documentation relating to this object here")
+                      ,tabbedPane,folders,folders.labels,editorPane));
+
+
 
 
 
@@ -58,7 +74,7 @@ public class PwnFrame extends JFrame {
            } catch (UnsupportedLookAndFeelException e) {
                e.printStackTrace();
            }
-       }
+   }
 
 
   //    } catch (UnsupportedLookAndFeelException e) {

@@ -1,6 +1,7 @@
 package com.company;
 
-import EventHandlers.FolderAndFileEventHandler;
+import EventHandlers.EditorViewHandler;
+import EventHandlers.PaletteEventHandler;
 import RenderFoldersAndSubFoders.CreateFolders;
 
 import javax.swing.*;
@@ -13,35 +14,32 @@ import java.awt.*;
 public class PwnPane extends CreateFolders {
 
 
-    private JTabbedPane[] tabbeds=new JTabbedPane[3];
-    private JSplitPane[] splitLayersOfPan=new JSplitPane[4];
-    private JPanel panel;
-
     private JPanel titlePanel;
     private String title;
-    private CreateFolders folders;
-    private FolderAndFileEventHandler listen;
 
 
 
-    public  PwnPane(JTextField textField,JTextArea textArea,CreateFolders createFolders,JLabel labels){
+    public  PwnPane(){
 
-        mainPane(textField,textArea,createFolders,labels);
+
 
     }
 
-    public JComponent mainPane(JTextField textField,JTextArea textArea,CreateFolders createFolders,JLabel labels){
+    public JComponent mainPane(JPanel panel,JSplitPane splitLayersOfPane[],JTextField textField,JTextArea textArea,
+            JTabbedPane[] tabbeds ,CreateFolders createFolders,JLabel labels,JEditorPane editorPane){
 
-          panel=new JPanel(new BorderLayout());
-          splitLayersOfPan=new JSplitPane[4];
-          tabbeds=new JTabbedPane[4];
 
-          createPane(panel,splitLayersOfPan,textField,textArea,tabbeds,createFolders,labels);
+
+
+
+
+          createPane(panel,splitLayersOfPane,textField,textArea,tabbeds,createFolders,labels,editorPane);
 
 
 
 
         return panel;
+
     }
 
 
@@ -50,7 +48,8 @@ public class PwnPane extends CreateFolders {
 
 
     public JPanel createPane(JPanel panel, JSplitPane[] splitLayersOfPan
-            , JTextField textField, JTextArea textArea, JTabbedPane tabbeds[], CreateFolders createFolders, JLabel labels){
+            , JTextField textField, JTextArea textArea, JTabbedPane tabbeds[],
+                             CreateFolders createFolders, JLabel labels,JEditorPane editorPane){
 
 
         splitLayersOfPan[0]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
@@ -60,7 +59,8 @@ public class PwnPane extends CreateFolders {
         projectView(tabbeds,splitLayersOfPan,createFolders);
 
         tabbeds[0]=new JTabbedPane();
-        modelView(tabbeds);
+
+        modelView(tabbeds,editorPane);
 
 
         splitLayersOfPan[1]=new JSplitPane();
@@ -115,12 +115,15 @@ public class PwnPane extends CreateFolders {
      return splitLayersOfPan[0];
     }
 
-    public JComponent modelView(JTabbedPane tabbeds[]){
+
+
+    public JComponent modelView(JTabbedPane tabbeds[],JEditorPane editorPane){
 
         //Model view and palette
 
         tabbeds[0].addTab("Network model",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowStructure.png")),
-                new JScrollPane(new JEditorPane()));
+                new JScrollPane(new EditorViewHandler()));
+
         tabbeds[0].addTab("Analysis View",new ImageIcon(getClass().getResource("/PwpIcons/toolbarDecorator/analyze.png"))
                 ,new JScrollPane(modelEditor()));
 
@@ -133,14 +136,15 @@ public class PwnPane extends CreateFolders {
 
 
         tabbeds[1].addTab("Palette",new ImageIcon(getClass().getResource("/PwpIcons/toolwindows/toolWindowPalette.png")),
-                new JScrollPane(paletteModel()));
+                new JScrollPane(new PaletteEventHandler()));
 
         tabbeds[1].addTab("Network View",new ImageIcon(getClass().getResource("/PwpIcons/general/ellipsis.png")),
                 new JScrollPane(new JTable()));
 
-        splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,tabbeds[0],new JScrollPane(tabbeds[1]));
+
+        splitLayersOfPan[3]=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,new JScrollPane(tabbeds[0]),new JScrollPane(tabbeds[1]));
         splitLayersOfPan[3].setContinuousLayout(true);
-        splitLayersOfPan[3].setDividerLocation(740);
+        splitLayersOfPan[3].setDividerLocation(70);
         splitLayersOfPan[3].setDividerSize(20);
         splitLayersOfPan[3].setOneTouchExpandable(true);
         splitLayersOfPan[3].setBackground(treeNodes.getBackground());
@@ -157,7 +161,7 @@ public class PwnPane extends CreateFolders {
 
 
 
-        return  splitLayersOfPan[0];
+        return  new JScrollPane(splitLayersOfPan[0]);
 
     }
 
@@ -219,11 +223,13 @@ public class PwnPane extends CreateFolders {
         constraints.gridx=0;
         constraints.anchor=GridBagConstraints.FIRST_LINE_START;
 
+
         mainPropertyPanel.add(label,constraints);
 
         constraints.gridx=1;
         constraints.ipady=7;
         constraints.anchor=GridBagConstraints.FIRST_LINE_START;
+        textField.setForeground(new Color(0x0B88A3));
         mainPropertyPanel.add(textField,constraints);
 
 
@@ -255,14 +261,20 @@ public class PwnPane extends CreateFolders {
         tabbed.addTab("Main",null,viewPanel,"Orange");
 
 
+
+        constraints.gridx=0;
+        constraints.ipadx=40;
         mainPropertyPanel=new JPanel();
 
-
-        DefaultTableModel model=new DefaultTableModel(new Object[]{"Name","Value"},new Integer(3));
+        DefaultTableModel model=new DefaultTableModel(new Object[]{"Name","Value"},new Integer(10));
+        viewPanel=new JPanel();
         JTable table=new JTable(model);
-        mainPropertyPanel.add(new JScrollPane(table));
+        table.setPreferredScrollableViewportSize(new Dimension(1200,200));
 
-         viewPanel=new JPanel();
+
+
+        mainPropertyPanel.add(new JScrollPane(table),constraints);
+
         viewPanel.add(mainPropertyPanel,BorderLayout.CENTER);
         tabbed.addTab("Property",null, viewPanel,"");
 
@@ -275,9 +287,7 @@ public class PwnPane extends CreateFolders {
 
 
 
-    public String getTitle() {
-        return title;
-    }
+
 
     public void setTitle(String title) {
         this.title = title;

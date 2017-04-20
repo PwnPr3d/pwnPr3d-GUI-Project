@@ -6,6 +6,8 @@ import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Created by Ayettey on 02/02/2017.
@@ -51,9 +53,23 @@ public class PwnFrame extends JFrame {
 
 
 
-               setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+               setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+               addWindowListener(new WindowAdapter() {
+                   @Override
+                   public void windowClosing(WindowEvent e) {
+                     //  int action1 = JOptionPane.showConfirmDialog(getParent(),"Are you sure you want to Exit PwnPr3d?");
+                       int action1 = JOptionPane.showConfirmDialog(getParent(), "Are you sure you want to Exit " +
+                               " PwnPr3d? ", "Confirm Exit", JOptionPane.OK_CANCEL_OPTION);
+                       if (action1==JOptionPane.OK_OPTION) {
+                           System.exit(0);
+                       }
+                       super.windowClosing(e);
+                   }
+               });
+
                setVisible(true);
                setExtendedState(MAXIMIZED_BOTH);
+               setMinimumSize(new Dimension(900,700));
 
            } catch (UnsupportedLookAndFeelException e) {
                e.printStackTrace();
@@ -61,7 +77,7 @@ public class PwnFrame extends JFrame {
        }
 
 
-  //    } catch (UnsupportedLookAndFeelException e) {
+    //    } catch (UnsupportedLookAndFeelException e) {
   //        e.printStackTrace();
   //    }
   //

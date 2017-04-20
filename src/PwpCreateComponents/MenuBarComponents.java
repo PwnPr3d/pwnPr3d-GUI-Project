@@ -1,5 +1,7 @@
 package PwpCreateComponents;
 
+import com.company.AboutPwnpr3d;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -7,8 +9,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.util.*;
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
+
 
 
 /**
@@ -22,7 +27,15 @@ public class MenuBarComponents extends JMenuBar {
     private JButton editToolWindowHandler;
     private JTextField textField;
     private JMenuItem items;
+    private JCheckBox firstButton;
+    private JCheckBox secondButton;
     private JComboBox zoomList;
+    private JComboBox fontList;
+    private JComboBox sizeList;
+    private JFileChooser fileChooser = new JFileChooser();
+    private JTabbedPane[] tabbedPane = new JTabbedPane[3];
+    private AboutPwnpr3d aboutPwnpr3d;
+    private JDialog jDialog = new JDialog((Frame) getParent(),"About PwnPr3d", false);
 
     private JSeparator separator;
 
@@ -50,6 +63,10 @@ public class MenuBarComponents extends JMenuBar {
         items = new JMenuItem("Empty Model");
         items.getAccessibleContext().setAccessibleDescription("Create empty model");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, KeyEvent.VK_C));
+        items.addActionListener(e -> {
+            System.out.println("new model");
+            tabbedPane[0].addTab("new model", new JScrollPane());
+        });
         menus[1].add(items);
 
         items = new JMenuItem("Model From Template");
@@ -62,7 +79,14 @@ public class MenuBarComponents extends JMenuBar {
 
 
         items = new JMenuItem("Open", new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
+        items.addActionListener(e -> {
+            fileChooser = new JFileChooser();
+            if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+                System.out.println(fileChooser.getSelectedFile());
+            }
+        });
         menus[0].add(items);
+
 
 
         menus[1] = new JMenu("Open Recently");
@@ -116,9 +140,19 @@ public class MenuBarComponents extends JMenuBar {
 
         items = new JMenuItem("Save");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.ALT_DOWN_MASK, getAutoscrolls()));
+        items.addActionListener(e -> {
+            if(new JFileChooser().showSaveDialog(this) == JFileChooser.APPROVE_OPTION){
+                System.out.println(new JFileChooser().getSelectedFile());
+            }
+        });
         menus[0].add(items);
 
         items = new JMenuItem("Save As");
+        items.addActionListener(e -> {
+            if(new JFileChooser().showSaveDialog(this) == JFileChooser.APPROVE_OPTION){
+                System.out.println(new JFileChooser().getSelectedFile());
+            }
+        });
         menus[0].add(items);
 
         items = new JMenuItem("Save All", new ImageIcon(getClass().getResource("/PwpIcons/actions/menu-saveall.png")));
@@ -160,8 +194,19 @@ public class MenuBarComponents extends JMenuBar {
         menus[0].add(separator);
 
         items = new JMenuItem("Exit");
+        items.setMnemonic(KeyEvent.VK_X);
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
+        items.addActionListener(e -> {int action = JOptionPane.showConfirmDialog(this,"Are you sure you want " +
+                " to Exit PwnPr3d?", "Confirm Dialog", JOptionPane.OK_CANCEL_OPTION);
+                if (action == JOptionPane.OK_OPTION) {
+                System.exit(0);
+                }
+        });
+
+        //  items.addActionListener(e -> System.exit(0));
         menus[0].add(items);
 
+        //   items.addActionListener(e -> System.exit(0));
 
         items.setPreferredSize(new Dimension(200, 20));
 
@@ -173,7 +218,7 @@ public class MenuBarComponents extends JMenuBar {
         menuBar = new JMenuBar();
 
 
-        JMenuBar[] menuList = new JMenuBar[2];
+        JMenuBar[] menuList = new JMenuBar[3];
 
         menuList[0] = new JMenuBar();
         menuList[0].add(createFileComponents());
@@ -235,12 +280,31 @@ public class MenuBarComponents extends JMenuBar {
         menuList[1].add(createTextFieldSearchField());
         menuList[1].add(new JSeparator(JSeparator.VERTICAL));
         menuList[1].add(createEditToolWindowValidateModelBrowserGlobe());
+//        menuList[1].add(createCheckBox());
+//        menuList[1].add(createCheckBox2());
+//        menuList[1].add(createFontBox());
+//        menuList[1].add(createFontSize());
+
+     /*   menuList[2] = new JMenuBar();
+        menuList[2].add(createCheckBox());
+        menuList[2].add(createCheckBox2());
+        menuList[2].add(createFontBox());
+        menuList[2].add(createFontSize()); */
+//        menuList[2].add(new JSeparator(JSeparator.VERTICAL));
+//        menuList[2].add(createTextFieldSearchField());
+//        menuList[2].add(new JSeparator(JSeparator.VERTICAL));
+//        menuList[2].add(createEditToolWindowValidateModelBrowserGlobe());
+//        menuList[2].add(new JSeparator(JSeparator.VERTICAL));
+
+
+
 
 
         menuBar.setLayout(new BorderLayout());
 
         menuBar.add(menuList[0], BorderLayout.NORTH);
         menuBar.add(menuList[1]);
+//        menuBar.add(menuList[2], BorderLayout.SOUTH);
 
 
         return menuBar;
@@ -443,7 +507,7 @@ public class MenuBarComponents extends JMenuBar {
         menus[0].add(items);
         menus[1].add(menus[0]);
 
-        menus[0] = new JMenu("Postion");
+        menus[0] = new JMenu("Position");
         //   menus[0].setMnemonic(KeyEvent.VK_O);
 
         items = new JMenuItem("Align Left");
@@ -531,8 +595,8 @@ public class MenuBarComponents extends JMenuBar {
         //new Edit items;
 
 
-        items = new JMenuItem("CreateFolders", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/models.gif")));
-        items.getAccessibleContext().setAccessibleDescription("CreateFolders");
+        items = new JMenuItem("Models", new ImageIcon(getClass().getResource("/PwpIcons/otherImages/models.gif")));
+        items.getAccessibleContext().setAccessibleDescription("Models");
         items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
         menus[1].add(items);
 
@@ -731,6 +795,10 @@ public class MenuBarComponents extends JMenuBar {
 
     public JButton createEditToolWindowOpen() {
 
+        /*  items=new JMenuItem("Select  All");
+        items.getAccessibleContext().setAccessibleDescription("Select");
+        items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,KeyEvent.VK_S));
+        menus[1].add(items); */
 
 
         editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/FileIcon/welcome/openProject.png")));
@@ -739,11 +807,9 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
+        editToolWindowHandler.addActionListener(e -> {
+            if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+                System.out.println(fileChooser.getSelectedFile());
             }
         });
 
@@ -760,11 +826,9 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
+        editToolWindowHandler.addActionListener(e -> {
+            if(fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION){
+                System.out.println(fileChooser.getSelectedFile());
             }
         });
 
@@ -781,13 +845,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -802,13 +860,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -823,13 +875,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -844,13 +890,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -865,13 +905,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -886,13 +920,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -907,13 +935,7 @@ public class MenuBarComponents extends JMenuBar {
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
-
-            }
-        });
+        editToolWindowHandler.addActionListener(e -> System.out.println("Menu"));
 
         return editToolWindowHandler;
 
@@ -987,7 +1009,7 @@ public class MenuBarComponents extends JMenuBar {
         ImageIcon icon = new ImageIcon();
 
         editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/models.gif")));
-        editToolWindowHandler.setToolTipText("CreateFolders (Alt+1)");
+        editToolWindowHandler.setToolTipText("Models (Alt+1)");
         EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
@@ -1197,8 +1219,15 @@ public class MenuBarComponents extends JMenuBar {
         separator = new JSeparator();
         menus[1].add(separator);
 
-        items = new JMenuItem("About PwnPr3d", new ImageIcon(getClass().getResource("/PwpIcons/OtherImages/archimate/actor-16.png")));
-        items.getAccessibleContext().setAccessibleDescription("reset to default");
+        items = new JMenuItem("About PwnPr3d", new ImageIcon(getClass().getResource("/PwpIcons/windowDecorator/favicon.png")));
+        items.getAccessibleContext().setAccessibleDescription("About PwnPr3d");
+        items.addActionListener(e -> {
+            jDialog.setSize(400,300);
+         //   jDialog.add(new JTabbedPane());
+            jDialog.setVisible(true);
+
+        });
+     ///   items.add(aboutPwnpr3d = new AboutPwnpr3d(this));
         //   items.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
         menus[1].add(items);
 
@@ -1399,7 +1428,9 @@ public class MenuBarComponents extends JMenuBar {
     public JTextField createTextFieldSearchField() {
 
 
-        textField = new JTextField(5);
+        textField = new JTextField();
+        textField.setPreferredSize(new Dimension(5,5));
+        //       textField.setSize(100,100);
         textField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -1416,21 +1447,27 @@ public class MenuBarComponents extends JMenuBar {
 
 
         editToolWindowHandler = new JButton(new ImageIcon(getClass().getResource("/PwpIcons/general/web.png")));
-        editToolWindowHandler.setToolTipText("Internet");
+        editToolWindowHandler.setToolTipText("Browser");
         EmptyBorder emptyBorder = new EmptyBorder(4, 4, 4, 4);
         editToolWindowHandler.setBorder(emptyBorder);
         editToolWindowHandler.setBorderPainted(false);
         editToolWindowHandler.setBackground(getBackground());
-        editToolWindowHandler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Menu");
+        editToolWindowHandler.addActionListener(e -> {
+            System.out.println("Menu");
 
+            String s = "http://www.google.com";
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.browse(URI.create(s));
+            } catch (IOException e1) {
+                e1.printStackTrace();
             }
+
         });
 
         return editToolWindowHandler;
 
     }
+
 
 }

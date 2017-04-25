@@ -117,6 +117,7 @@ public class PwnPane extends CreateFolders {
 
 
 
+
     public JComponent modelView(JTabbedPane tabbeds[],JEditorPane editorPane){
 
         //Model view and palette

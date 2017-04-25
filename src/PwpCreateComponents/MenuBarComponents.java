@@ -1,6 +1,6 @@
 package PwpCreateComponents;
 
-import com.company.AboutPwnpr3d;
+//import com.company.AboutPwnpr3d;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -34,7 +34,7 @@ public class MenuBarComponents extends JMenuBar {
     private JComboBox sizeList;
     private JFileChooser fileChooser = new JFileChooser();
     private JTabbedPane[] tabbedPane = new JTabbedPane[3];
-    private AboutPwnpr3d aboutPwnpr3d;
+   // private AboutPwnpr3d aboutPwnpr3d;
     private JDialog jDialog = new JDialog((Frame) getParent(),"About PwnPr3d", false);
 
     private JSeparator separator;

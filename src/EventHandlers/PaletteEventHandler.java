@@ -71,7 +71,9 @@ public class  PaletteEventHandler  extends JPanel  {
 
                 setLayout(layout);
                 String str=file.getName();
-               // System.out.println(str.substring(0,str.lastIndexOf('.')+1));
+
+
+
                 createImage(file);
 
                 label=new JLabel(icon);

@@ -32,6 +32,7 @@ public class PwnFrame extends JFrame {
 
        try{
            UIManager.setLookAndFeel(new WindowsLookAndFeel());
+           setDefaultLookAndFeelDecorated(true);
 
            MenuBarComponents menuBar=new MenuBarComponents();
            menuBar.setBackground(new Color(142, 208, 255));
@@ -68,9 +69,10 @@ public class PwnFrame extends JFrame {
 
 
                setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-               setVisible(true);
+
                setExtendedState(MAXIMIZED_BOTH);
 
+               setVisible(true);
            } catch (UnsupportedLookAndFeelException e) {
                e.printStackTrace();
            }

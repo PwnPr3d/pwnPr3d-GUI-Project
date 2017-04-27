@@ -1,5 +1,7 @@
 package EventHandlers;
 
+
+import PwnAnalysis.PwnAnalysisDiagram;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 import javax.swing.*;
@@ -44,22 +46,23 @@ public class EditorViewHandler extends JDesktopPane {
     private JLabel titles;
     private JPanel transmissionPanel;
     private JTextField attackTransmissionTraffic;
-    private JDesktopPane deskTop;
     private JPanel colors[];
     private JButton []tool;
     private int openFrameCount=50;
+
 
     public JComponent controlPanel(Boolean control){
 
         //super("IFrame #" + (++openFrameCount))
         transmissionPanel=new JPanel();
+
         JInternalFrame frame=new JInternalFrame("Transmissions");
         if(true){
 
             GridBagConstraints constraints=new GridBagConstraints();
             GridBagLayout layout=new GridBagLayout();
 
-            frame.setLayout(layout);
+            frame.setLayout(new BorderLayout());
 
             frame.setBorder(new LineBorder(new Color(0x8ED0FF),1,true));
             frame.setBackground(getBackground());
@@ -68,60 +71,80 @@ public class EditorViewHandler extends JDesktopPane {
             constraints.insets=new Insets(5,10,5,10);
 
 
+
+
+
             constraints.gridx=0;
 
-
+            transmissionPanel.setLayout(layout);
             titles=new JLabel("Connection Type : ",JLabel.LEFT);
-            frame.add(titles,constraints);
+            transmissionPanel.add(titles,constraints);
 
             titles=new JLabel("Transmission Type : ",JLabel.LEFT);
-            frame.add(titles,constraints);
+            transmissionPanel.add(titles,constraints);
 
             titles=new JLabel("Ordering  Type : ",JLabel.LEFT);
-            frame.add(titles,constraints);
+            transmissionPanel.add(titles,constraints);
 
             titles=new JLabel("Attacker's  Traffic : ",JLabel.LEFT);
-            frame.add(titles,constraints);
+            transmissionPanel.add(titles,constraints);
 
             titles=new JLabel("Attacker : ",JLabel.LEFT);
-            frame.add(titles,constraints);
+            transmissionPanel.add(titles,constraints);
 
 
             constraints.gridx=1;
 
 
             transmissionsSettings=new JComboBox(new Object[]{"Wired","Wireless"});
-            frame.add(transmissionsSettings,constraints);
+            transmissionPanel.add(transmissionsSettings,constraints);
 
             transmissionsSettings=new JComboBox(new Object[]{"UDP","TCP"});
-            frame.add(transmissionsSettings,constraints);
+            transmissionPanel.add(transmissionsSettings,constraints);
 
             transmissionsSettings=new JComboBox(new Object[]{"FIFO","LIFO"});
-            frame.add(transmissionsSettings,constraints);
+            transmissionPanel.add(transmissionsSettings,constraints);
 
 
 
 
             constraints.ipadx=60;
             attackTransmissionTraffic=new JTextField(10);
-            frame.add(attackTransmissionTraffic,constraints);
+            transmissionPanel.add(attackTransmissionTraffic,constraints);
             constraints.gridx=1;
 
 
             attack=new JButton("Attack");
-            frame.add(attack,constraints);
+            transmissionPanel.add(attack,constraints);
 
-            frame.add(new JSeparator(),constraints);
+            transmissionPanel.add(new JSeparator(),constraints);
 
             constraints.gridx=1;
 
-            frame.add(new JSeparator(),constraints);
+            transmissionPanel.add(new JSeparator(),constraints);
+
+            constraints.gridx=0;
+
+
 
 
            // String [] type=new String[2];
            // type[0]
 
 
+            constraints.gridx=0;
+
+
+            PwnAnalysisDiagram chart = new PwnAnalysisDiagram(
+                    "Network Analysis" ,"");
+
+           // chart.pack( );
+            //RefineryUtilities.centerFrameOnScreen( chart );
+            chart.setVisible( true );
+
+            frame.add(chart,BorderLayout.SOUTH);
+            //transmissionPanel.add(chart,BorderLayout.SOUTH);
+            //transmissionPanel.add(frame,BorderLayout.NORTH);
 
 
 
@@ -141,7 +164,7 @@ public class EditorViewHandler extends JDesktopPane {
                    frame.setIconifiable(true);
                    frame.setVisible(true);
                    frame.setFrameIcon(new ImageIcon(getClass().getResource("/PwpIcons/general/settings.png")));
-                   frame.add(transmissionPanel);
+                   frame.add(transmissionPanel,BorderLayout.NORTH);
                    frame.pack();
 
 
@@ -635,8 +658,10 @@ public class EditorViewHandler extends JDesktopPane {
             if ( i == 1)
             {
 
-                g2d.fillOval(point1.x  , point1.y + label1.getHeight() / 2,  6 ,  6);
-                g2d.fillOval( point2.x + label2.getWidth() , point2.y  +  label1.getHeight() / 2 ,  6 ,  6);
+                g2d.fillOval(point2.x +label2.getWidth() , point2.y + label2.getHeight() /2 ,  6 ,  6);
+                g2d.fillOval( point1.x  , point1.y +label1.getHeight()/2 ,  6 ,  6);
+
+
                 g.drawLine(point1.x  , point1.y + label1.getHeight() / 2 , point2.x + label2.getWidth() , point2.y  +  label2.getHeight() / 2);
 
 
@@ -653,15 +678,15 @@ public class EditorViewHandler extends JDesktopPane {
            }
          else if (i == 3)
          {
-             g2d.fillOval(point2.x  , point2.y + label2.getHeight() / 2 ,  6 ,  6);
-             g2d.fillOval( point1.x + label1.getWidth() , point1.y  +  label1.getHeight() / 2 ,  6 ,  6);
+             g2d.fillOval(point2.x +label2.getWidth()/2 , point2.y + label2.getHeight()  ,  6 ,  6);
+             g2d.fillOval( point1.x + label1.getWidth()/2 , point1.y  ,  6 ,  6);
              g.drawLine(point1.x + label1.getWidth() / 2 , point1.y , point2.x + label2.getWidth() / 2, point2.y + label2.getHeight());
 
          }
          else if (i == 4)
          {
-             g2d.fillOval(point2.x  , point2.y + label2.getHeight() / 2 ,  6,  6);
-             g2d.fillOval( point1.x + label1.getWidth() , point1.y  +  label1.getHeight() / 2 ,  6 ,  6);
+             g2d.fillOval(point2.x +label2.getWidth()/2 , point2.y ,  6,  6);
+             g2d.fillOval( point1.x + label1.getWidth()/2 , point1.y  +  label1.getHeight() ,  6 ,  6);
              g.drawLine(point2.x + label2.getWidth() / 2 , point2.y , point1.x + label1.getWidth() / 2, point1.y + label1.getHeight());
 
          }
